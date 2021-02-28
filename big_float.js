@@ -140,3 +140,81 @@ const sub = conform_op(big_integer.sub);
 
 function eq(comparahend, comparator) {
     return comparahend === comparator || is_zero(sub(comparahend, comparator));
+}
+
+function lt(comparahend, comparator) {
+    return is_negative(sub(comparahend, comparator));
+}
+
+function mul(multiplicand, multiplier) {
+    return make_big_float(
+        big_integer.mul(multiplicand.coefficient, multiplier.coefficient),
+        multiplicand.exponent + multiplier.exponent
+    );
+}
+
+function div(dividend, divisor, precision = -4) {
+    if (is_zero(dividend)) {
+        return zero;
+    }
+    if (is_zero(divisor)) {
+        return undefined;
+    }
+    let {coefficient, exponent} = dividend;
+    exponent -= divisor.exponent;
+
+// Scale the coefficient to the desired precision.
+
+    if (typeof precision !== "number") {
+        precision = number(precision);
+    }
+    if (exponent > precision) {
+        coefficient = big_integer.mul(
+            coefficient,
+            big_integer.power(big_integer.ten, exponent - precision)
+        );
+        exponent = precision;
+    }
+    let remainder;
+    [coefficient, remainder] = big_integer.divrem(
+        coefficient,
+        divisor.coefficient
+    );
+
+// Round the result if necessary.
+
+    if (!big_integer.abs_lt(
+        big_integer.add(remainder, remainder),
+        divisor.coefficient
+    )) {
+        coefficient = big_integer.add(
+            coefficient,
+            big_integer.signum(dividend.coefficient)
+        );
+    }
+    return make_big_float(coefficient, exponent);
+}
+
+function normalize(a) {
+    let {coefficient, exponent} = a;
+    if (coefficient.length < 2) {
+        return zero;
+    }
+
+// If the exponent is zero, it is already normal.
+
+    if (exponent !== 0) {
+
+// If the exponent is positive, multiply the coefficient by '10 **' exponent.
+
+        if (exponent > 0) {
+            coefficient = big_integer.mul(
+                coefficient,
+                big_integer.power(big_integer.ten, exponent)
+            );
+            exponent = 0;
+        } else {
+            let quotient;
+            let remainder;
+
+// While the exponent is negative, if the coefficient is divisible by ten,

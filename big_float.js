@@ -218,3 +218,86 @@ function normalize(a) {
             let remainder;
 
 // While the exponent is negative, if the coefficient is divisible by ten,
+// then we do the division and add '1' to the exponent.
+
+// To help this go a little faster, we first try units of ten million,
+// reducing 7 zeros at a time.
+
+            while (exponent <= -7 && (coefficient[1] & 127) === 0) {
+                [quotient, remainder] = big_integer.divrem(
+                    coefficient,
+                    big_integer_ten_million
+                );
+                if (remainder !== big_integer.zero) {
+                    break;
+                }
+                coefficient = quotient;
+                exponent += 7;
+            }
+            while (exponent < 0 && (coefficient[1] & 1) === 0) {
+                [quotient, remainder] = big_integer.divrem(
+                    coefficient,
+                    big_integer.ten
+                );
+                if (remainder !== big_integer.zero) {
+                    break;
+                }
+                coefficient = quotient;
+                exponent += 1;
+            }
+        }
+    }
+    return make_big_float(coefficient, exponent);
+}
+
+function integer(a) {
+
+// The integer function is like the normalize function except that it throws
+// away significance. It discards the digits after the decimal point.
+
+    let {coefficient, exponent} = a;
+    if (coefficient.length < 2) {
+        return zero;
+    }
+
+// If the exponent is zero, it is already an integer.
+
+    if (exponent === 0) {
+        return a;
+    }
+
+// If the exponent is positive,
+// multiply the coefficient by 10 ** exponent.
+
+    if (exponent > 0) {
+        return make_big_float(
+            big_integer.mul(
+                coefficient,
+                big_integer.power(big_integer.ten, exponent)
+            ),
+            0
+        );
+    }
+
+// If the exponent is negative, divide the coefficient by 10 ** -exponent.
+// This truncates the unnecessary bits. This might be a zero result.
+
+    return make_big_float(
+        big_integer.div(
+            coefficient,
+            big_integer.power(big_integer.ten, -exponent)
+        ),
+        0
+    );
+}
+
+function fraction(a) {
+    return sub(a, integer(a));
+}
+
+function deconstruct(number) {
+
+// This function deconstructs a number, reducing it to its components:
+// a sign, an integer coefficient, and an exponent, such that
+
+//            number = sign * coefficient * (2 ** exponent)

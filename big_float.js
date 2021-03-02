@@ -455,3 +455,49 @@ function string(a, radix) {
         s += "0".repeat(a.exponent);
     }
     if (big_integer.is_negative(a.coefficient)) {
+        s = "-" + s;
+    }
+    return s;
+}
+
+function scientific(a) {
+    if (is_zero(a)) {
+        return "0";
+    }
+    a = normalize(a);
+    let s = big_integer.string(big_integer.abs(a.coefficient));
+    let e = a.exponent + s.length - 1;
+    if (s.length > 1) {
+        s = s.slice(0, 1) + "." + s.slice(1);
+    }
+    if (e !== 0) {
+        s += "e" + e;
+    }
+    if (big_integer.is_negative(a.coefficient)) {
+        s = "-" + s;
+    }
+    return s;
+}
+
+export default Object.freeze({
+    abs,
+    add,
+    div,
+    eq,
+    fraction,
+    integer,
+    is_big_float,
+    is_negative,
+    is_positive,
+    is_zero,
+    lt,
+    make,
+    mul,
+    neg,
+    normalize,
+    number,
+    scientific,
+    string,
+    sub,
+    zero
+});

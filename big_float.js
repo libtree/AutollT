@@ -385,3 +385,73 @@ function make(a, b) {
             let frac = parts[2] || "";
             return make(
                 big_integer.make(parts[1] + frac),
+                (Number(parts[3]) || 0) - frac.length
+            );
+        }
+    }
+
+// If 'a' is a number, then we deconstruct it into its basis '2' exponent
+// and coefficient, and then reconstruct as a precise big float.
+
+    if (typeof a === "number" && Number.isFinite(a)) {
+        if (a === 0) {
+            return zero;
+        }
+        let {sign, coefficient, exponent} = deconstruct(a);
+        if (sign < 0) {
+            coefficient = -coefficient;
+        }
+        coefficient = big_integer.make(coefficient);
+
+// If the exponent is negative, then we can divide by '2 ** abs(exponent)'.
+
+        if (exponent < 0) {
+            return normalize(div(
+                make(coefficient, 0),
+                make(big_integer.power(big_integer.two, -exponent), 0),
+                b
+            ));
+        }
+
+// If the exponent is greater than zero, then we can multiply the coefficient
+// by '2 **' exponent.
+
+        if (exponent > 0) {
+            coefficient = big_integer.mul(
+                coefficient,
+                big_integer.power(big_integer.two, exponent)
+            );
+            exponent = 0;
+        }
+        return make(coefficient, exponent);
+    }
+    if (is_big_float(a)) {
+        return a;
+    }
+}
+
+function string(a, radix) {
+    if (is_zero(a)) {
+        return "0";
+    }
+    if (is_big_float(radix)) {
+        radix = normalize(radix);
+        return (
+            (radix && radix.exponent === 0)
+            ? big_integer.string(integer(a).coefficient, radix.coefficient)
+            : undefined
+        );
+    }
+    a = normalize(a);
+    let s = big_integer.string(big_integer.abs(a.coefficient));
+    if (a.exponent < 0) {
+        let point = s.length + a.exponent;
+        if (point <= 0) {
+            s = "0".repeat(1 - point) + s;
+            point = 1;
+        }
+        s = s.slice(0, point) + "." + s.slice(point);
+    } else if (a.exponent > 0) {
+        s += "0".repeat(a.exponent);
+    }
+    if (big_integer.is_negative(a.coefficient)) {

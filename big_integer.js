@@ -1,2 +1,5 @@
 // big_integer.js
-// Douglas
+// Douglas Crockford
+// 2023-02-12
+
+// You can access the big integer object in your module 

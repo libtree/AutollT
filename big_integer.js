@@ -8,4 +8,5 @@
 /*jslint bitwise, for */
 
 /*property
-    abs, abs_lt, add, and, asIntN, asUintN, clz32, crea
+    abs, abs_lt, add, and, asIntN, asUintN, clz32, create, div, divrem, eq,
+    forEach, freeze, gcd, isInteger, isSafeInteger, is_big_int

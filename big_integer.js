@@ -9,4 +9,5 @@
 
 /*property
     abs, abs_lt, add, and, asIntN, asUintN, clz32, create, div, divrem, eq,
-    forEach, freeze, gcd, isInteger, isSafeInteger, is_big_int
+    forEach, freeze, gcd, isInteger, isSafeInteger, is_big_integer, is_negative,
+    is_positive, is_zero, join, lt, make, mask, mul, neg, not, number, o

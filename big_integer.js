@@ -13,4 +13,7 @@
     is_positive, is_zero, join, lt, make, mask, mul, neg, not, number, or,
     population, power, push, random, rem, repeat, reverse, shift_down, shift_up,
     significant_bits, signum, split, string, sub, ten, toUpperCase, two, wun,
-    xor,
+    xor, zero
+*/
+
+// big_integer was made for my book /How JavaScript Works/. Since

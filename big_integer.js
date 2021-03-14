@@ -10,4 +10,5 @@
 /*property
     abs, abs_lt, add, and, asIntN, asUintN, clz32, create, div, divrem, eq,
     forEach, freeze, gcd, isInteger, isSafeInteger, is_big_integer, is_negative,
-    is_positive, is_zero, join, lt, make, mask, mul, neg, not, number, o
+    is_positive, is_zero, join, lt, make, mask, mul, neg, not, number, or,
+    population, power, push, random, rem, repeat, reverse, shift_down, shift_up,

@@ -17,4 +17,6 @@
 */
 
 // big_integer was made for my book /How JavaScript Works/. Since publication,
-// JavaScript has acquired BigInt. The BigInt provides a significant spee
+// JavaScript has acquired BigInt. The BigInt provides a significant speed
+// improvement. This file is a rewrite of the original big_integer using
+// Big

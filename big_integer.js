@@ -19,4 +19,8 @@
 // big_integer was made for my book /How JavaScript Works/. Since publication,
 // JavaScript has acquired BigInt. The BigInt provides a significant speed
 // improvement. This file is a rewrite of the original big_integer using
-// Big
+// BigInt.
+
+// big_integer is used by big_float and big_rational.
+
+const

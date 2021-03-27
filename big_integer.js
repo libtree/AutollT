@@ -23,4 +23,8 @@
 
 // big_integer is used by big_float and big_rational.
 
-const
+const zero = 0n;
+const wun = 1n;
+const two = 2n;
+const ten = 10n;
+const thirty_

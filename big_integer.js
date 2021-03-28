@@ -27,4 +27,8 @@ const zero = 0n;
 const wun = 1n;
 const two = 2n;
 const ten = 10n;
-const thirty_
+const thirty_two = 32n;
+const negative_wun = -1n;
+
+function is_big_integer(big) {
+    return typeof 

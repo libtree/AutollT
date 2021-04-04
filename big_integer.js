@@ -31,4 +31,11 @@ const thirty_two = 32n;
 const negative_wun = -1n;
 
 function is_big_integer(big) {
-    return typeof 
+    return typeof big === "bigint";
+}
+
+function is_negative(big) {
+    return big < zero;
+}
+
+function is_positive(

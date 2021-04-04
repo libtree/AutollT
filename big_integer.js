@@ -38,4 +38,12 @@ function is_negative(big) {
     return big < zero;
 }
 
-function is_positive(
+function is_positive(big) {
+    return big >= zero;
+}
+
+function is_zero(big) {
+    return big === zero;
+}
+
+func

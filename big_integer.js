@@ -46,4 +46,10 @@ function is_zero(big) {
     return big === zero;
 }
 
-func
+function neg(big) {
+    return -big;
+}
+
+function abs(big) {
+    return (
+        is_negati

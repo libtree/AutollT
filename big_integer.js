@@ -52,4 +52,11 @@ function neg(big) {
 
 function abs(big) {
     return (
-        is_negati
+        is_negative(big)
+        ? neg(big)
+        : big
+    );
+}
+
+function signum(big) {
+    re

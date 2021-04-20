@@ -63,4 +63,11 @@ function signum(big) {
         is_zero(big)
         ? zero
         : (
-            is_negat
+            is_negative(big)
+            ? negative_wun
+            : wun
+        )
+    );
+}
+
+function 

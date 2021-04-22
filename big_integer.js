@@ -74,4 +74,5 @@ function eq(comparahend, comparator) {
     return comparahend === comparator;
 }
 
-function abs_lt(c
+function abs_lt(comparahend, comparator) {
+    return abs(comparahend) < abs(compa

@@ -75,4 +75,11 @@ function eq(comparahend, comparator) {
 }
 
 function abs_lt(comparahend, comparator) {
-    return abs(comparahend) < abs(compa
+    return abs(comparahend) < abs(comparator);
+}
+
+function lt(comparahend, comparator) {
+    return comparahend < comparator;
+}
+
+funct

@@ -82,4 +82,9 @@ function lt(comparahend, comparator) {
     return comparahend < comparator;
 }
 
-funct
+function number(big) {
+    return Number(String(big));
+}
+
+function and(a, b) {
+   

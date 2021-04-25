@@ -87,4 +87,11 @@ function number(big) {
 }
 
 function and(a, b) {
-   
+    return a & b;
+}
+
+function or(a, b) {
+    return a | b;
+}
+
+function xor(a, b) {

@@ -95,3 +95,8 @@ function or(a, b) {
 }
 
 function xor(a, b) {
+    return a ^ b;
+}
+
+function mask(nr_bits) {
+    return BigInt.asUintN(number(nr_bit

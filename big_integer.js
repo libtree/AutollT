@@ -99,4 +99,9 @@ function xor(a, b) {
 }
 
 function mask(nr_bits) {
-    return BigInt.asUintN(number(nr_bit
+    return BigInt.asUintN(number(nr_bits), negative_wun);
+}
+
+function not(a, nr_bits) {
+    return (
+        

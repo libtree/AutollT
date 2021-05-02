@@ -104,4 +104,7 @@ function mask(nr_bits) {
 
 function not(a, nr_bits) {
     return (
-        
+        nr_bits === undefined
+        ? ~a
+        : xor(a, mask(nr_bits))
+    

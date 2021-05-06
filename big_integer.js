@@ -107,4 +107,10 @@ function not(a, nr_bits) {
         nr_bits === undefined
         ? ~a
         : xor(a, mask(nr_bits))
-    
+    );
+}
+
+function shift_up(big, places) {
+    return big << BigInt(places);
+}
+

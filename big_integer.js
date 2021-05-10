@@ -114,3 +114,8 @@ function shift_up(big, places) {
     return big << BigInt(places);
 }
 
+function shift_down(big, places) {
+    return big >> BigInt(places);
+}
+
+functi

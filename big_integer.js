@@ -118,4 +118,5 @@ function shift_down(big, places) {
     return big >> BigInt(places);
 }
 
-functi
+function random(nr_bits, random_source = Math.random) {
+    let result = zero;

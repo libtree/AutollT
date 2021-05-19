@@ -122,4 +122,9 @@ function random(nr_bits, random_source = Math.random) {
     let result = zero;
     while (nr_bits > 0) {
         result += result;
-        if (random_source() >=
+        if (random_source() >= 0.5) {
+            result += wun;
+        }
+        nr_bits -= 1;
+    }
+    return result

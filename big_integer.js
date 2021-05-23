@@ -138,4 +138,5 @@ function sub(minuend, subtrahend) {
     return minuend - subtrahend;
 }
 
-function mul(mult
+function mul(multiplicand, multiplier) {
+    if (is_zero(multiplicand) || is_zero(multiplie

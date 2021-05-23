@@ -127,4 +127,11 @@ function random(nr_bits, random_source = Math.random) {
         }
         nr_bits -= 1;
     }
-    return result
+    return result;
+}
+
+function add(augend, addend) {
+    return augend + addend;
+}
+
+function

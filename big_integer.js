@@ -134,4 +134,8 @@ function add(augend, addend) {
     return augend + addend;
 }
 
-function
+function sub(minuend, subtrahend) {
+    return minuend - subtrahend;
+}
+
+function mul(mult

@@ -142,4 +142,9 @@ function mul(multiplicand, multiplier) {
     if (is_zero(multiplicand) || is_zero(multiplier)) {
         return zero;
     }
-    return multiplicand * multipl
+    return multiplicand * multiplier;
+}
+
+function divrem(dividend, divisor) {
+    if (is_zero(dividend)) {
+       

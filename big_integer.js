@@ -156,4 +156,8 @@ function divrem(dividend, divisor) {
 }
 
 function div(dividend, divisor) {
-    if (is_zero
+    if (is_zero(dividend)) {
+        return zero;
+    }
+    if (is_zero(divisor)) {
+        re

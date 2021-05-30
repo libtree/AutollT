@@ -152,4 +152,8 @@ function divrem(dividend, divisor) {
     if (is_zero(divisor)) {
         return undefined;
     }
-    r
+    return [dividend / divisor, dividend % divisor];
+}
+
+function div(dividend, divisor) {
+    if (is_zero

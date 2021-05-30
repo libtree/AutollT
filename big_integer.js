@@ -147,4 +147,9 @@ function mul(multiplicand, multiplier) {
 
 function divrem(dividend, divisor) {
     if (is_zero(dividend)) {
-       
+        return [zero, zero];
+    }
+    if (is_zero(divisor)) {
+        return undefined;
+    }
+    r

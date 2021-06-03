@@ -165,4 +165,8 @@ function div(dividend, divisor) {
     return dividend / divisor;
 }
 
-function rem(dividen
+function rem(dividend, divisor) {
+    if (is_zero(dividend)) {
+        return zero;
+    }
+    if (is_zero(divisor)) {

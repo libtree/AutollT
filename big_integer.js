@@ -170,3 +170,6 @@ function rem(dividend, divisor) {
         return zero;
     }
     if (is_zero(divisor)) {
+        return undefined;
+    }
+    return dividend % divisor;

@@ -173,3 +173,10 @@ function rem(dividend, divisor) {
         return undefined;
     }
     return dividend % divisor;
+}
+
+function power(big, exponent) {
+    return big ** BigInt(exponent);
+}
+
+function gcd(a, b) {

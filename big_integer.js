@@ -180,3 +180,8 @@ function power(big, exponent) {
 }
 
 function gcd(a, b) {
+    a = abs(a);
+    b = abs(b);
+    while (!is_zero(b)) {
+        let remainder = a % b;
+    

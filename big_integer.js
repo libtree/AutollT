@@ -184,4 +184,10 @@ function gcd(a, b) {
     b = abs(b);
     while (!is_zero(b)) {
         let remainder = a % b;
-    
+        a = b;
+        b = remainder;
+    }
+    return a;
+}
+
+const digitset = "0

@@ -190,4 +190,5 @@ function gcd(a, b) {
     return a;
 }
 
-const digitset = "0
+const digitset = "0123456789ABCDEFGHJKMNPQRSTVWXYZ*~$=U";
+const charset = (function (ob

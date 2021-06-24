@@ -196,4 +196,8 @@ const charset = (function (object) {
         object[element] = element_nr;
     });
     return Object.freeze(object);
-}(Object.create(null
+}(Object.create(null)));
+
+function make(value, radix_2_37 = 10) {
+
+// The 'make' function returns a big integer. Th

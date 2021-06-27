@@ -200,4 +200,7 @@ const charset = (function (object) {
 
 function make(value, radix_2_37 = 10) {
 
-// The 'make' function returns a big integer. Th
+// The 'make' function returns a big integer. The value parameter is
+// a string and an optional radix, or an integer, or a big_integer.
+
+   

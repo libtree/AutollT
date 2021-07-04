@@ -206,4 +206,7 @@ function make(value, radix_2_37 = 10) {
     if (typeof value !== "string") {
         return BigInt(value);
     }
-    radix_2_37
+    radix_2_37 = number(radix_2_37);
+    if (
+        !Number.isInteger(radix_2_37)
+      

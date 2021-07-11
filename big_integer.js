@@ -217,4 +217,8 @@ function make(value, radix_2_37 = 10) {
     if (radix_2_37 === 10) {
         return BigInt(value);
     }
-    let radish = Big
+    let radish = BigInt(radix_2_37);
+    let good = false;
+    let sign = wun;
+    let result = zero;
+    v

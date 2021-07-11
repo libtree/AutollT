@@ -221,4 +221,5 @@ function make(value, radix_2_37 = 10) {
     let good = false;
     let sign = wun;
     let result = zero;
-    v
+    value.toUpperCase().split("").forEach(
+        function (element, element_nr) 

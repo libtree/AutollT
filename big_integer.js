@@ -228,4 +228,6 @@ function make(value, radix_2_37 = 10) {
                     return;
                 }
                 if (element === "-") {
-   
+                    sign = negative_wun;
+                    return;
+                

@@ -230,4 +230,7 @@ function make(value, radix_2_37 = 10) {
                 if (element === "-") {
                     sign = negative_wun;
                     return;
-                
+                }
+            }
+            let digit = charset[element];
+            if (digit !== undefined

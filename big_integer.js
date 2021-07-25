@@ -238,4 +238,8 @@ function make(value, radix_2_37 = 10) {
                 result = result * radish + BigInt(digit);
             }
             sign = undefined;
-      
+        }
+    );
+    if (sign === undefined || good === false) {
+        return undefined;
+ 

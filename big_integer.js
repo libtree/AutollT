@@ -233,4 +233,6 @@ function make(value, radix_2_37 = 10) {
                 }
             }
             let digit = charset[element];
-            if (digit !== undefined
+            if (digit !== undefined && digit < radix_2_37) {
+                good = true;
+                result = 

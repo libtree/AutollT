@@ -242,4 +242,9 @@ function make(value, radix_2_37 = 10) {
     );
     if (sign === undefined || good === false) {
         return undefined;
- 
+    }
+    return sign * result;
+}
+
+function string(a, radix_2_thru_37 = 10) {
+    if (is

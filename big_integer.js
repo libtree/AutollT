@@ -251,4 +251,6 @@ function string(a, radix_2_thru_37 = 10) {
         return "0";
     }
     radix_2_thru_37 = number(radix_2_thru_37);
-   
+    if (
+        !Number.isSafeInteger(radix_2_thru_37)
+        || radix_2_thru

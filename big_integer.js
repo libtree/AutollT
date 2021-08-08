@@ -261,4 +261,9 @@ function string(a, radix_2_thru_37 = 10) {
     if (radix_2_thru_37 === 10) {
         return String(a);
     }
-    const radish = make(radix_2_thru_37
+    const radish = make(radix_2_thru_37);
+    const the_sign = (
+        is_negative(a)
+        ? "-"
+        : ""
+   

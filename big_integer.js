@@ -258,4 +258,7 @@ function string(a, radix_2_thru_37 = 10) {
     ) {
         return undefined;
     }
-    if (radix_2_th
+    if (radix_2_thru_37 === 10) {
+        return String(a);
+    }
+    const radish = make(radix_2_thru_37

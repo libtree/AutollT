@@ -270,4 +270,6 @@ function string(a, radix_2_thru_37 = 10) {
     a = abs(a);
     let digits = [];
     while (!is_zero(a)) {
-        let re
+        let remainder = a % radish;
+        digits.push(digitset[number(remainder)]);
+        a =

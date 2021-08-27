@@ -266,4 +266,8 @@ function string(a, radix_2_thru_37 = 10) {
         is_negative(a)
         ? "-"
         : ""
-   
+    );
+    a = abs(a);
+    let digits = [];
+    while (!is_zero(a)) {
+        let re

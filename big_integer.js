@@ -272,4 +272,10 @@ function string(a, radix_2_thru_37 = 10) {
     while (!is_zero(a)) {
         let remainder = a % radish;
         digits.push(digitset[number(remainder)]);
-        a =
+        a = a / radish;
+    }
+    digits.push(the_sign);
+    return digits.reverse().join("");
+}
+
+fun

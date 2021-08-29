@@ -278,4 +278,8 @@ function string(a, radix_2_thru_37 = 10) {
     return digits.reverse().join("");
 }
 
-fun
+function population_32(int32) {
+
+// Produce the total count of '1' bits in a 32 bit integer.
+
+/

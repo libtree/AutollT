@@ -284,4 +284,6 @@ function population_32(int32) {
 
 // Count 16 pairs of bits, producing 16 two bit counts (0, 1, or 2).
 // For each pair, we subtract the higher bit from the pair,
-// which converts the two bits into a
+// which converts the two bits into a count.
+//.                     HL - H = count
+//.                

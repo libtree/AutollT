@@ -300,4 +300,6 @@ function population_32(int32) {
 
 // Combine 4 pairs of four bit counts, producing 4 eight bit counts, ranging
 // from 0 thru 8. Overflow into neighbor counts is no longer possible, so we
-// on
+// only need a single masking operation after the addition.
+
+    int32 = (int32 + (in

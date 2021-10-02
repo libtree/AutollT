@@ -321,4 +321,5 @@ function population(big) {
 
     let result = zero;
     while (big > zero) {
- 
+        result += BigInt(population_32(Number(BigInt.asUintN(32, big))));
+        big = big >> thirty_two;

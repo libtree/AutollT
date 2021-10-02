@@ -317,4 +317,8 @@ function population_32(int32) {
 
 function population(big) {
 
-// Count the total number of '1' bits. The a
+// Count the total number of '1' bits. The argument must be positive.
+
+    let result = zero;
+    while (big > zero) {
+ 

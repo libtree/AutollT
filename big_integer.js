@@ -329,4 +329,7 @@ function population(big) {
 
 function significant_bits(big) {
 
-// Count the tota
+// Count the total number of bits excluding leading zeros.
+// The argument must be positive.
+
+    let result = zero;

@@ -333,3 +333,8 @@ function significant_bits(big) {
 // The argument must be positive.
 
     let result = zero;
+    if (big <= zero) {
+        return result;
+    }
+    while (true) {
+        let ta

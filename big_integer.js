@@ -339,4 +339,5 @@ function significant_bits(big) {
     while (true) {
         let tail = Number(BigInt.asUintN(32, big));
         big = big >> thirty_two;
-        if (
+        if (big <= zero) {
+            return result + BigInt(32 - Math.clz32(tail));

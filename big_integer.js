@@ -341,3 +341,9 @@ function significant_bits(big) {
         big = big >> thirty_two;
         if (big <= zero) {
             return result + BigInt(32 - Math.clz32(tail));
+        }
+        result += thirty_two;
+    }
+}
+
+export default Object.fr

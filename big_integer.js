@@ -346,4 +346,12 @@ function significant_bits(big) {
     }
 }
 
-export default Object.fr
+export default Object.freeze({
+    abs,
+    abs_lt,
+    add,
+    and,
+    div,
+    divrem,
+    eq,
+   

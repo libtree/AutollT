@@ -354,4 +354,9 @@ export default Object.freeze({
     div,
     divrem,
     eq,
-   
+    gcd,
+    is_big_integer,
+    is_negative,
+    is_positive,
+    is_zero,
+  

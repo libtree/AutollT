@@ -374,4 +374,12 @@ export default Object.freeze({
     shift_down,
     shift_up,
     significant_bits,
-    signu
+    signum,
+    string,
+    sub,
+    ten,
+    two,
+    wun,
+    xor,
+    zero
+});

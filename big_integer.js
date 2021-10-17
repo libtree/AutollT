@@ -359,4 +359,13 @@ export default Object.freeze({
     is_negative,
     is_positive,
     is_zero,
+    lt,
+    make,
+    mask,
+    mul,
+    neg,
+    not,
+    number,
+    or,
+    population,
   

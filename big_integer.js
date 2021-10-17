@@ -368,4 +368,10 @@ export default Object.freeze({
     number,
     or,
     population,
-  
+    power,
+    random,
+    rem,
+    shift_down,
+    shift_up,
+    significant_bits,
+    signu

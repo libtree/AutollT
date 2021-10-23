@@ -5,4 +5,7 @@
 // You can access the big rational object in your module by importing it.
 //      import big_rational from "./big_rational.js";
 
-/*jslint bi
+/*jslint bitwise */
+
+/*property
+    abs, abs_lt, add, coefficient, create, dec, demo

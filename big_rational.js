@@ -8,4 +8,5 @@
 /*jslint bitwise */
 
 /*property
-    abs, abs_lt, add, coefficient, create, dec, demo
+    abs, abs_lt, add, coefficient, create, dec, demoninator, denominator, div,
+    divrem, eq, exponent, fraction, freeze, gcd, inc,

@@ -10,4 +10,5 @@
 /*property
     abs, abs_lt, add, coefficient, create, dec, demoninator, denominator, div,
     divrem, eq, exponent, fraction, freeze, gcd, inc, integer, isFinite,
-    isSafeInteger, is_big_integer, is_big_rational, is_integer, is
+    isSafeInteger, is_big_integer, is_big_rational, is_integer, is_negative,
+    is_zero, length, lt, make, match, mul, neg, normalize, n

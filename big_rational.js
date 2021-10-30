@@ -18,4 +18,7 @@
 
 import big_integer from "./big_integer.js";
 
-function is
+function is_big_rational(a) {
+    return (
+        typeof a === "object"
+        && big_integer.is_big_in

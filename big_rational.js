@@ -12,4 +12,10 @@
     divrem, eq, exponent, fraction, freeze, gcd, inc, integer, isFinite,
     isSafeInteger, is_big_integer, is_big_rational, is_integer, is_negative,
     is_zero, length, lt, make, match, mul, neg, normalize, number, numerator,
-    padStart, power, reciprocal, remainder, sign, string, sub
+    padStart, power, reciprocal, remainder, sign, string, sub, ten, two, wun,
+    zero
+*/
+
+import big_integer from "./big_integer.js";
+
+function is

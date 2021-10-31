@@ -28,4 +28,6 @@ function is_big_rational(a) {
 
 function is_integer(a) {
     return (
-        big_integer.eq(big_integer.wun, a.denomin
+        big_integer.eq(big_integer.wun, a.denominator)
+        || big_integer.is_zero(
+            big_integer.divrem(a.numerator, a.denominator)

@@ -26,4 +26,6 @@ function is_big_rational(a) {
     );
 }
 
-f
+function is_integer(a) {
+    return (
+        big_integer.eq(big_integer.wun, a.denomin

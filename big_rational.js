@@ -21,4 +21,9 @@ import big_integer from "./big_integer.js";
 function is_big_rational(a) {
     return (
         typeof a === "object"
-        && big_integer.is_big_in
+        && big_integer.is_big_integer(a.numerator)
+        && big_integer.is_big_integer(a.denominator)
+    );
+}
+
+f

@@ -30,4 +30,10 @@ function is_integer(a) {
     return (
         big_integer.eq(big_integer.wun, a.denominator)
         || big_integer.is_zero(
-            big_integer.divrem(a.numerator, a.denominator)
+            big_integer.divrem(a.numerator, a.denominator)[1]
+        )
+    );
+}
+
+function is_negative(a) {
+    return big_integer.is_negative(a.

@@ -36,4 +36,8 @@ function is_integer(a) {
 }
 
 function is_negative(a) {
-    return big_integer.is_negative(a.
+    return big_integer.is_negative(a.numerator);
+}
+
+function make_big_rational(numerator, denominator) {
+    const new

@@ -47,4 +47,8 @@ function make_big_rational(numerator, denominator) {
 }
 const zero = make_big_rational(big_integer.zero, big_integer.wun);
 const wun = make_big_rational(big_integer.wun, big_integer.wun);
-const two = make_big_rat
+const two = make_big_rational(big_integer.two, big_integer.wun);
+
+function normalize(a) {
+
+// Normalize a big rat

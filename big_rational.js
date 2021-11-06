@@ -46,3 +46,5 @@ function make_big_rational(numerator, denominator) {
     return Object.freeze(new_big_rational);
 }
 const zero = make_big_rational(big_integer.zero, big_integer.wun);
+const wun = make_big_rational(big_integer.wun, big_integer.wun);
+const two = make_big_rat

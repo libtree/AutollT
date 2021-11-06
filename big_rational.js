@@ -43,4 +43,6 @@ function make_big_rational(numerator, denominator) {
     const new_big_rational = Object.create(null);
     new_big_rational.numerator = numerator;
     new_big_rational.denominator = denominator;
-    return Object.freeze(new_b
+    return Object.freeze(new_big_rational);
+}
+const zero = make_big_rational(big_integer.zero, big_integer.wun);

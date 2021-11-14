@@ -51,4 +51,5 @@ const two = make_big_rational(big_integer.two, big_integer.wun);
 
 function normalize(a) {
 
-// Normalize a big rat
+// Normalize a big rational by dividing the two components by their greatest
+// common divisor. If their gcd is 

@@ -52,4 +52,6 @@ const two = make_big_rational(big_integer.two, big_integer.wun);
 function normalize(a) {
 
 // Normalize a big rational by dividing the two components by their greatest
-// common divisor. If their gcd is 
+// common divisor. If their gcd is '1', then the number was already normalized.
+
+    let {numerator, denominator} = a

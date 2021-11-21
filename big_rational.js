@@ -58,4 +58,6 @@ function normalize(a) {
     if (big_integer.eq(big_integer.wun, denominator)) {
         return a;
     }
-    let g_c_d
+    let g_c_d = big_integer.gcd(numerator, denominator);
+    return (
+        big_integer.eq(b

@@ -54,4 +54,8 @@ function normalize(a) {
 // Normalize a big rational by dividing the two components by their greatest
 // common divisor. If their gcd is '1', then the number was already normalized.
 
-    let {numerator, denominator} = a
+    let {numerator, denominator} = a;
+    if (big_integer.eq(big_integer.wun, denominator)) {
+        return a;
+    }
+    let g_c_d

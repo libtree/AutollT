@@ -60,4 +60,7 @@ function normalize(a) {
     }
     let g_c_d = big_integer.gcd(numerator, denominator);
     return (
-        big_integer.eq(b
+        big_integer.eq(big_integer.wun, g_c_d)
+        ? a
+        : make(
+            big_integer.div(numerator

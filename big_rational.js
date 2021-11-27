@@ -69,4 +69,6 @@ function normalize(a) {
     );
 }
 
-function de
+function deconstruct(number) {
+
+// This function deconstructs a number, reducing it to its co

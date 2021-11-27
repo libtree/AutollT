@@ -63,4 +63,10 @@ function normalize(a) {
         big_integer.eq(big_integer.wun, g_c_d)
         ? a
         : make(
-            big_integer.div(numerator
+            big_integer.div(numerator, g_c_d),
+            big_integer.div(denominator, g_c_d)
+        )
+    );
+}
+
+function de

@@ -82,4 +82,6 @@ function deconstruct(number) {
 
 // Remove the sign from the coefficient.
 
- 
+    if (coefficient < 0) {
+        coefficient = -coefficient;
+        sign = -1

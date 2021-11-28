@@ -77,4 +77,9 @@ function deconstruct(number) {
 //  '      number = sign * coefficient * (2 ** exponent)'
 
     let sign = 1;
-    let coefficient = 
+    let coefficient = number;
+    let exponent = 0;
+
+// Remove the sign from the coefficient.
+
+ 

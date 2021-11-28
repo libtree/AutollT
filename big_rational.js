@@ -89,4 +89,5 @@ function deconstruct(number) {
 
     if (Number.isFinite(number) && number !== 0) {
 
-// Reduce th
+// Reduce the coefficient: We can obtain the exponent by dividing the number by
+// two until 

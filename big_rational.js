@@ -84,4 +84,9 @@ function deconstruct(number) {
 
     if (coefficient < 0) {
         coefficient = -coefficient;
-        sign = -1
+        sign = -1;
+    }
+
+    if (Number.isFinite(number) && number !== 0) {
+
+// Reduce th

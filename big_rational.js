@@ -94,4 +94,6 @@ function deconstruct(number) {
 // the exponent of 'Number.MIN_VALUE' minus the number of bits in the
 // significand minus the bonus bit.
 
+        exponent = -1128;
+        let reduction = coefficient;
        

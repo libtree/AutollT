@@ -96,4 +96,6 @@ function deconstruct(number) {
 
         exponent = -1128;
         let reduction = coefficient;
-       
+        while (reduction !== 0) {
+
+// This loop is guaranteed to reach zero. Each division will d

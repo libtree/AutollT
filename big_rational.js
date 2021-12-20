@@ -107,4 +107,5 @@ function deconstruct(number) {
             reduction /= 2;
         }
 
-// Reduce the exponent: When th
+// Reduce the exponent: When the exponent is zero, the number can be viewed
+// as an integer. If the ex

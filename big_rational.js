@@ -118,4 +118,8 @@ function deconstruct(number) {
         }
         while (reduction < 0) {
             coefficient *= 2;
-            reduction 
+            reduction += 1;
+        }
+    }
+
+// Return an object containing the three compone

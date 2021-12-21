@@ -114,4 +114,8 @@ function deconstruct(number) {
         reduction = exponent;
         while (reduction > 0) {
             coefficient /= 2;
-            reduction -
+            reduction -= 1;
+        }
+        while (reduction < 0) {
+            coefficient *= 2;
+            reduction 

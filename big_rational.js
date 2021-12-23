@@ -122,4 +122,9 @@ function deconstruct(number) {
         }
     }
 
-// Return an object containing the three compone
+// Return an object containing the three components and the original number.
+
+    return {
+        sign,
+        coefficient,
+        expon

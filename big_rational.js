@@ -132,4 +132,6 @@ function deconstruct(number) {
     };
 }
 
-const number_pattern = /^(-?)(?:(\d+)(?:(?:\u0020(\
+const number_pattern = /^(-?)(?:(\d+)(?:(?:\u0020(\d+))?\/(\d+)|(?:\.(\d*))?(?:e(-?\d+))?)|\.(\d+))$/;
+
+function make(numerator, denominator) 

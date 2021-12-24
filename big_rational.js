@@ -127,4 +127,9 @@ function deconstruct(number) {
     return {
         sign,
         coefficient,
-        expon
+        exponent,
+        number
+    };
+}
+
+const number_pattern = /^(-?)(?:(\d+)(?:(?:\u0020(\

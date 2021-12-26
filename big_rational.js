@@ -140,4 +140,5 @@ function make(numerator, denominator) {
 // The return value is an object containing the numerator and the
 // denominator.
 
-// If called with
+// If called with 1 argument, we will try to make sense of that
+// argument. If the argument is a str

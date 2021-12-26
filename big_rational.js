@@ -134,4 +134,7 @@ function deconstruct(number) {
 
 const number_pattern = /^(-?)(?:(\d+)(?:(?:\u0020(\d+))?\/(\d+)|(?:\.(\d*))?(?:e(-?\d+))?)|\.(\d+))$/;
 
-function make(numerator, denominator) 
+function make(numerator, denominator) {
+
+// If there are two arguments, both will be converted to big integers.
+// The 

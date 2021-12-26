@@ -141,4 +141,5 @@ function make(numerator, denominator) {
 // denominator.
 
 // If called with 1 argument, we will try to make sense of that
-// argument. If the argument is a str
+// argument. If the argument is a string, we will try to parse it
+// as a mixed fraction or as a decimal literal. I

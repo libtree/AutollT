@@ -137,4 +137,7 @@ const number_pattern = /^(-?)(?:(\d+)(?:(?:\u0020(\d+))?\/(\d+)|(?:\.(\d*))?(?:e
 function make(numerator, denominator) {
 
 // If there are two arguments, both will be converted to big integers.
-// The 
+// The return value is an object containing the numerator and the
+// denominator.
+
+// If called with

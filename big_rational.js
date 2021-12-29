@@ -153,4 +153,6 @@ function make(numerator, denominator) {
 
         numerator = big_integer.make(numerator);
 
-// If the numera
+// If the numerator is zero, we do not care about the denominator.
+
+        if (big_integer.zero =

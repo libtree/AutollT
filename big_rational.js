@@ -148,4 +148,5 @@ function make(numerator, denominator) {
 
     if (denominator !== undefined) {
 
-// Make a ratio
+// Make a rational number from a numerator and a denominator. You may
+// pass in big integers, 

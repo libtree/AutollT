@@ -149,4 +149,8 @@ function make(numerator, denominator) {
     if (denominator !== undefined) {
 
 // Make a rational number from a numerator and a denominator. You may
-// pass in big integers, 
+// pass in big integers, integers, or strings.
+
+        numerator = big_integer.make(numerator);
+
+// If the numera

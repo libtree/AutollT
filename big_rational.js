@@ -160,4 +160,6 @@ function make(numerator, denominator) {
         }
         denominator = big_integer.make(denominator);
         if (
-            !big_integer.is_big_inte
+            !big_integer.is_big_integer(numerator)
+            || !big_integer.is_big_integer(denominator)
+     

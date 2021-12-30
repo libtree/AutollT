@@ -155,4 +155,7 @@ function make(numerator, denominator) {
 
 // If the numerator is zero, we do not care about the denominator.
 
-        if (big_integer.zero =
+        if (big_integer.zero === numerator) {
+            return zero;
+        }
+        denominator

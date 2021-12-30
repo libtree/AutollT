@@ -158,4 +158,6 @@ function make(numerator, denominator) {
         if (big_integer.zero === numerator) {
             return zero;
         }
-        denominator
+        denominator = big_integer.make(denominator);
+        if (
+            !big_integer.is_big_inte

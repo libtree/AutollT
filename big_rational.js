@@ -162,4 +162,6 @@ function make(numerator, denominator) {
         if (
             !big_integer.is_big_integer(numerator)
             || !big_integer.is_big_integer(denominator)
-     
+            || big_integer.zero === denominator
+        ) {
+            return undefined;

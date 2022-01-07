@@ -170,4 +170,6 @@ function make(numerator, denominator) {
 // If the denominator is negative, move the sign to the numerator.
 
         if (big_integer.is_negative(denominator)) {
-            numerator = big_integer.neg(numer
+            numerator = big_integer.neg(numerator);
+            denominator = big_integer.abs(denominator);
+        }

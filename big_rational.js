@@ -165,3 +165,8 @@ function make(numerator, denominator) {
             || big_integer.zero === denominator
         ) {
             return undefined;
+        }
+
+// If the denominator is negative, move the sign to the numerator.
+
+       

@@ -173,3 +173,7 @@ function make(numerator, denominator) {
             numerator = big_integer.neg(numerator);
             denominator = big_integer.abs(denominator);
         }
+        return make_big_rational(numerator, denominator);
+    }
+
+// Is the argument a s

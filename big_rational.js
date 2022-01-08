@@ -176,4 +176,7 @@ function make(numerator, denominator) {
         return make_big_rational(numerator, denominator);
     }
 
-// Is the argument a s
+// Is the argument a string? If so, try to parse it.
+
+    if (typeof numerator === "string") {
+        let parts = n

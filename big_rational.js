@@ -179,4 +179,6 @@ function make(numerator, denominator) {
 // Is the argument a string? If so, try to parse it.
 
     if (typeof numerator === "string") {
-        let parts = n
+        let parts = numerator.match(number_pattern);
+        if (!parts) {
+            return un

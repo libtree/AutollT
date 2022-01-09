@@ -181,4 +181,10 @@ function make(numerator, denominator) {
     if (typeof numerator === "string") {
         let parts = numerator.match(number_pattern);
         if (!parts) {
-            return un
+            return undefined;
+        }
+
+//. Capturing groups:
+//.     [1] sign
+//.     [2] integer
+//.   

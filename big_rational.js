@@ -187,4 +187,10 @@ function make(numerator, denominator) {
 //. Capturing groups:
 //.     [1] sign
 //.     [2] integer
-//.   
+//.     [3] top
+//.     [4] bottom
+//.     [5] frac
+//.     [6] exp
+//.     [7] naked frac
+
+       

@@ -193,4 +193,6 @@ function make(numerator, denominator) {
 //.     [6] exp
 //.     [7] naked frac
 
-       
+        if (parts[7]) {
+            return make(
+                big_integer.make(p

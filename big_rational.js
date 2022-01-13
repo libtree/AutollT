@@ -195,4 +195,5 @@ function make(numerator, denominator) {
 
         if (parts[7]) {
             return make(
-                big_integer.make(p
+                big_integer.make(parts[1] + parts[7]),
+                big_integer.power(big_integer.ten, parts

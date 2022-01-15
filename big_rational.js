@@ -205,4 +205,5 @@ function make(numerator, denominator) {
                 return make(
                     big_integer.add(
                         big_integer.mul(
-           
+                            big_integer.make(parts[1] + parts[2]),
+              

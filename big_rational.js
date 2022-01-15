@@ -203,4 +203,6 @@ function make(numerator, denominator) {
             let bottom = big_integer.make(parts[4]);
             if (parts[3]) {
                 return make(
-   
+                    big_integer.add(
+                        big_integer.mul(
+           

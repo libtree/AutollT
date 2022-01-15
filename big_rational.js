@@ -200,4 +200,7 @@ function make(numerator, denominator) {
             );
         }
         if (parts[4]) {
-         
+            let bottom = big_integer.make(parts[4]);
+            if (parts[3]) {
+                return make(
+   

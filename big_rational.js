@@ -215,4 +215,6 @@ function make(numerator, denominator) {
             }
             return make(parts[1] + parts[2], bottom);
         }
-        let fr
+        let frac = parts[5] || "";
+        let exp = (Number(parts[6]) || 0) - frac.length;
+   

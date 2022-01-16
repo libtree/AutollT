@@ -208,4 +208,8 @@ function make(numerator, denominator) {
                             big_integer.make(parts[1] + parts[2]),
                             bottom
                         ),
-                        big_integer.mak
+                        big_integer.make(parts[3])
+                    ),
+                    bottom
+                );
+     

@@ -212,4 +212,7 @@ function make(numerator, denominator) {
                     ),
                     bottom
                 );
-     
+            }
+            return make(parts[1] + parts[2], bottom);
+        }
+        let fr

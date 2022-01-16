@@ -206,4 +206,6 @@ function make(numerator, denominator) {
                     big_integer.add(
                         big_integer.mul(
                             big_integer.make(parts[1] + parts[2]),
-              
+                            bottom
+                        ),
+                        big_integer.mak

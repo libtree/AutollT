@@ -223,4 +223,6 @@ function make(numerator, denominator) {
                 big_integer.power(big_integer.ten, -exp)
             );
         }
-  
+        return make(
+            big_integer.mul(
+                big_integer.make(parts[1] + parts[

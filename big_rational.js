@@ -220,4 +220,7 @@ function make(numerator, denominator) {
         if (exp < 0) {
             return make(
                 parts[1] + parts[2] + frac,
-   
+                big_integer.power(big_integer.ten, -exp)
+            );
+        }
+  

@@ -232,4 +232,6 @@ function make(numerator, denominator) {
         );
     }
 
-// Is the argument a number
+// Is the argument a number? If so, deconstruct it and reconstruct it.
+
+    if (typeof numerato

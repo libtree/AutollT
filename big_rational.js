@@ -225,4 +225,6 @@ function make(numerator, denominator) {
         }
         return make(
             big_integer.mul(
-                big_integer.make(parts[1] + parts[
+                big_integer.make(parts[1] + parts[2] + parts[5]),
+                big_integer.power(big_integer.ten, exp)
+ 

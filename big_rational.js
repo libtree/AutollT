@@ -238,3 +238,6 @@ function make(numerator, denominator) {
         let {sign, coefficient, exponent} = deconstruct(numerator);
         if (sign < 0) {
             coefficient = -coefficient;
+        }
+        coefficient = big_integer.make(coefficient);
+        if (exponent >= 0)

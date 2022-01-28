@@ -243,4 +243,7 @@ function make(numerator, denominator) {
         if (exponent >= 0) {
             return make(
                 big_integer.mul(
-                    coe
+                    coefficient,
+                    big_integer.power(big_integer.two, exponent)
+                ),
+ 

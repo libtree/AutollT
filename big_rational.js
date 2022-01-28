@@ -240,4 +240,7 @@ function make(numerator, denominator) {
             coefficient = -coefficient;
         }
         coefficient = big_integer.make(coefficient);
-        if (exponent >= 0)
+        if (exponent >= 0) {
+            return make(
+                big_integer.mul(
+                    coe

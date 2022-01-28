@@ -246,4 +246,7 @@ function make(numerator, denominator) {
                     coefficient,
                     big_integer.power(big_integer.two, exponent)
                 ),
- 
+                big_integer.wun
+            );
+        }
+        return normal

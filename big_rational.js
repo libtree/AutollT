@@ -249,4 +249,6 @@ function make(numerator, denominator) {
                 big_integer.wun
             );
         }
-        return normal
+        return normalize(make(
+            coefficient,
+            big_integer.power(big_intege

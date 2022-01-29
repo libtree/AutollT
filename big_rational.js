@@ -257,4 +257,7 @@ function make(numerator, denominator) {
     return make(numerator, big_integer.wun);
 }
 
-fu
+function neg(a) {
+    return make(big_integer.neg(a.numerator), a.denominator);
+}
+

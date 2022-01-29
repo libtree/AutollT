@@ -251,4 +251,10 @@ function make(numerator, denominator) {
         }
         return normalize(make(
             coefficient,
-            big_integer.power(big_intege
+            big_integer.power(big_integer.two, -exponent)
+        ));
+    }
+    return make(numerator, big_integer.wun);
+}
+
+fu

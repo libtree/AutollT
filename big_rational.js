@@ -261,3 +261,8 @@ function neg(a) {
     return make(big_integer.neg(a.numerator), a.denominator);
 }
 
+function abs(a) {
+    return (
+        is_negative(a)
+        ? neg(a)
+        

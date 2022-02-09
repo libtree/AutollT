@@ -278,4 +278,6 @@ function inc(a) {
 }
 
 function dec(a) {
-    
+    return make(
+        big_integer.sub(a.numerator, a.denominator),
+        a.denominator

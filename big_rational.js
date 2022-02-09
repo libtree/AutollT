@@ -272,4 +272,10 @@ function abs(a) {
 
 function inc(a) {
     return make(
-        big_integer.add(
+        big_integer.add(a.numerator, a.denominator),
+        a.denominator
+    );
+}
+
+function dec(a) {
+    

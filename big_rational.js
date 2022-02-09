@@ -281,3 +281,9 @@ function dec(a) {
     return make(
         big_integer.sub(a.numerator, a.denominator),
         a.denominator
+    );
+}
+
+function conform_op(op) {
+    return function (a, b) {
+        try 

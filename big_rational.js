@@ -265,4 +265,11 @@ function abs(a) {
     return (
         is_negative(a)
         ? neg(a)
-        
+        : a
+    );
+}
+
+
+function inc(a) {
+    return make(
+        big_integer.add(

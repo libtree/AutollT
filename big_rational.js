@@ -288,4 +288,6 @@ function conform_op(op) {
     return function (a, b) {
         try {
             if (big_integer.eq(a.denominator, b.denominator)) {
-                r
+                return make(
+                    op(a.numerator, b.numerator),
+               

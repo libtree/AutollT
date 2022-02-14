@@ -290,4 +290,7 @@ function conform_op(op) {
             if (big_integer.eq(a.denominator, b.denominator)) {
                 return make(
                     op(a.numerator, b.numerator),
-               
+                    a.denominator
+                );
+            }
+            return n

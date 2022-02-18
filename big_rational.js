@@ -298,4 +298,6 @@ function conform_op(op) {
                     big_integer.mul(a.numerator, b.denominator),
                     big_integer.mul(b.numerator, a.denominator)
                 ),
-   
+                big_integer.mul(a.denominator, b.denominator)
+            ));
+        } catch (i

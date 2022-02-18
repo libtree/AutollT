@@ -295,4 +295,7 @@ function conform_op(op) {
             }
             return normalize(make(
                 op(
-                    big_integer.mul(a.numerator, b.denominator)
+                    big_integer.mul(a.numerator, b.denominator),
+                    big_integer.mul(b.numerator, a.denominator)
+                ),
+   

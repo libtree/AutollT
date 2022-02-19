@@ -300,4 +300,10 @@ function conform_op(op) {
                 ),
                 big_integer.mul(a.denominator, b.denominator)
             ));
-        } catch (i
+        } catch (ignore) {
+        }
+    };
+}
+
+const add = conform_op(big_integer.add);
+const sub = 

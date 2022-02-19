@@ -309,4 +309,6 @@ const add = conform_op(big_integer.add);
 const sub = conform_op(big_integer.sub);
 
 function mul(multiplicand, multiplier) {
-    return make
+    return make(
+        big_integer.mul(multiplicand.numerator, multiplier.numerator),
+        big_integ

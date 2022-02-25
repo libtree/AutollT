@@ -315,4 +315,6 @@ function mul(multiplicand, multiplier) {
     );
 }
 
-functio
+function div(a, b) {
+    return make(
+        big_integer.mul(a.numerator, b.denomina

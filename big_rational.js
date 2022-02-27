@@ -322,4 +322,7 @@ function div(a, b) {
     );
 }
 
-function rem
+function remainder(a, b) {
+    const quotient = div(normalize(a), normalize(b));
+    return make(
+      

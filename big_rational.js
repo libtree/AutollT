@@ -317,4 +317,9 @@ function mul(multiplicand, multiplier) {
 
 function div(a, b) {
     return make(
-        big_integer.mul(a.numerator, b.denomina
+        big_integer.mul(a.numerator, b.denominator),
+        big_integer.mul(a.denominator, b.numerator)
+    );
+}
+
+function rem

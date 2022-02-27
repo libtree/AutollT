@@ -325,4 +325,8 @@ function div(a, b) {
 function remainder(a, b) {
     const quotient = div(normalize(a), normalize(b));
     return make(
-      
+        big_integer.divrem(quotient.numerator, quotient.denominator)[1]
+    );
+}
+
+function

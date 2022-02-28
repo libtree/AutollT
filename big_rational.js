@@ -329,4 +329,8 @@ function remainder(a, b) {
     );
 }
 
-function
+function reciprocal(a) {
+    return make(a.denominator, a.numerator);
+}
+
+function in

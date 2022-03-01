@@ -333,4 +333,8 @@ function reciprocal(a) {
     return make(a.denominator, a.numerator);
 }
 
-function in
+function integer(a) {
+    return (
+        a.denominator === wun
+        ? a
+        : make(big_int

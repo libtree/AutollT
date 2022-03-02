@@ -345,4 +345,8 @@ function fraction(a) {
     return sub(a, integer(a));
 }
 
-function eq(comparahend, c
+function eq(comparahend, comparator) {
+    return (
+        comparahend === comparator
+        ? true
+    

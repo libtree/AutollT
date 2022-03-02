@@ -337,4 +337,8 @@ function integer(a) {
     return (
         a.denominator === wun
         ? a
-        : make(big_int
+        : make(big_integer.div(a.numerator, a.denominator), big_integer.wun)
+    );
+}
+
+functio

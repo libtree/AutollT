@@ -341,4 +341,8 @@ function integer(a) {
     );
 }
 
-functio
+function fraction(a) {
+    return sub(a, integer(a));
+}
+
+function eq(comparahend, c

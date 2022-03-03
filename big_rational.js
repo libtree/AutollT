@@ -350,4 +350,6 @@ function eq(comparahend, comparator) {
         comparahend === comparator
         ? true
         : (
-            big_integer.eq(comparahend.denominator, comparator.denominato
+            big_integer.eq(comparahend.denominator, comparator.denominator)
+            ? big_integer.eq(comparahend.numerator, comparator.numerator)
+ 

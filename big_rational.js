@@ -354,4 +354,10 @@ function eq(comparahend, comparator) {
             ? big_integer.eq(comparahend.numerator, comparator.numerator)
             : big_integer.eq(
                 big_integer.mul(comparahend.numerator, comparator.denominator),
-                big_integer.mul
+                big_integer.mul(comparator.numerator, comparahend.denominator)
+            )
+        )
+    );
+}
+
+function l

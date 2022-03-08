@@ -360,4 +360,6 @@ function eq(comparahend, comparator) {
     );
 }
 
-function l
+function lt(comparahend, comparator) {
+    return (
+        is_negative(comparahend) !== is_negat

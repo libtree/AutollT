@@ -362,4 +362,6 @@ function eq(comparahend, comparator) {
 
 function lt(comparahend, comparator) {
     return (
-        is_negative(comparahend) !== is_negat
+        is_negative(comparahend) !== is_negative(comparator)
+        ? is_negative(comparator)
+        : is_negative(sub(com

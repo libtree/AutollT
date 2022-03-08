@@ -364,4 +364,9 @@ function lt(comparahend, comparator) {
     return (
         is_negative(comparahend) !== is_negative(comparator)
         ? is_negative(comparator)
-        : is_negative(sub(com
+        : is_negative(sub(comparahend, comparator))
+    );
+}
+
+function number(a) {
+    return big_integer.n

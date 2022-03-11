@@ -369,4 +369,8 @@ function lt(comparahend, comparator) {
 }
 
 function number(a) {
-    return big_integer.n
+    return big_integer.number(a.numerator) / big_integer.number(a.demoninator);
+}
+
+function string(a, nr_places) {
+    if (a =

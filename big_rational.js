@@ -373,4 +373,8 @@ function number(a) {
 }
 
 function string(a, nr_places) {
-    if (a =
+    if (a === zero) {
+        return "0";
+    }
+    let {numerator, denominator} = normalize(a);
+

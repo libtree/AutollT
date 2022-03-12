@@ -379,4 +379,6 @@ function string(a, nr_places) {
     let {numerator, denominator} = normalize(a);
 
 // Divide the numerator by the demominator.
-// If there was no remainder, then we hav
+// If there was no remainder, then we have our result.
+
+    let [quotient, remains] = big_integer.divrem(numerat

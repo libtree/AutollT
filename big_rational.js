@@ -387,4 +387,7 @@ function string(a, nr_places) {
 
 // If 'nr_places' was provided, then the result will be in the decimal
 // format. We scale the remains by a power of ten and do an integer
-// division. If the resid
+// division. If the residue is not less than half the denominator,
+// then round up.
+
+        remains = big

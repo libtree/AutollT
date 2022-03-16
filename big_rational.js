@@ -381,4 +381,6 @@ function string(a, nr_places) {
 // Divide the numerator by the demominator.
 // If there was no remainder, then we have our result.
 
-    let [quotient, remains] = big_integer.divrem(numerat
+    let [quotient, remains] = big_integer.divrem(numerator, denominator);
+    let result = big_integer.string(quotient);
+    if (remains !== big_int

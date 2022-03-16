@@ -386,4 +386,5 @@ function string(a, nr_places) {
     if (remains !== big_integer.zero) {
 
 // If 'nr_places' was provided, then the result will be in the decimal
-// format.
+// format. We scale the remains by a power of ten and do an integer
+// division. If the resid

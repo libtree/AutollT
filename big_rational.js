@@ -383,4 +383,7 @@ function string(a, nr_places) {
 
     let [quotient, remains] = big_integer.divrem(numerator, denominator);
     let result = big_integer.string(quotient);
-    if (remains !== big_int
+    if (remains !== big_integer.zero) {
+
+// If 'nr_places' was provided, then the result will be in the decimal
+// format.

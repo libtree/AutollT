@@ -392,4 +392,6 @@ function string(a, nr_places) {
 
         remains = big_integer.abs(remains);
         if (nr_places !== undefined) {
-            let [fractus, r
+            let [fractus, residue] = big_integer.divrem(
+                big_integer.mul(
+           

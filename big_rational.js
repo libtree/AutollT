@@ -394,4 +394,6 @@ function string(a, nr_places) {
         if (nr_places !== undefined) {
             let [fractus, residue] = big_integer.divrem(
                 big_integer.mul(
-           
+                    remains,
+                    big_integer.power(big_integer.ten, nr_places)
+      

@@ -390,4 +390,6 @@ function string(a, nr_places) {
 // division. If the residue is not less than half the denominator,
 // then round up.
 
-        remains = big
+        remains = big_integer.abs(remains);
+        if (nr_places !== undefined) {
+            let [fractus, r

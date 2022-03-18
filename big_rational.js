@@ -396,4 +396,7 @@ function string(a, nr_places) {
                 big_integer.mul(
                     remains,
                     big_integer.power(big_integer.ten, nr_places)
-      
+                ),
+                denominator
+            );
+            if (!big_in

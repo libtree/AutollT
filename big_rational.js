@@ -401,4 +401,6 @@ function string(a, nr_places) {
             );
             if (!big_integer.abs_lt(
                 big_integer.mul(residue, big_integer.two),
-             
+                denominator
+            )) {
+                fractus = big_integer.add(fractus, 

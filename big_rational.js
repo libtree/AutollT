@@ -399,4 +399,6 @@ function string(a, nr_places) {
                 ),
                 denominator
             );
-            if (!big_in
+            if (!big_integer.abs_lt(
+                big_integer.mul(residue, big_integer.two),
+             

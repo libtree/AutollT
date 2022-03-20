@@ -403,4 +403,6 @@ function string(a, nr_places) {
                 big_integer.mul(residue, big_integer.two),
                 denominator
             )) {
-                fractus = big_integer.add(fractus, 
+                fractus = big_integer.add(fractus, big_integer.wun);
+            }
+            result += "." + big_integer.string(fractus).padStar

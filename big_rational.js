@@ -405,4 +405,8 @@ function string(a, nr_places) {
             )) {
                 fractus = big_integer.add(fractus, big_integer.wun);
             }
-            result += "." + big_integer.string(fractus).padStar
+            result += "." + big_integer.string(fractus).padStart(
+                big_integer.number(nr_places),
+                "0"
+            );
+      

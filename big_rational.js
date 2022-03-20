@@ -409,4 +409,8 @@ function string(a, nr_places) {
                 big_integer.number(nr_places),
                 "0"
             );
-      
+        } else {
+
+// The result will be in mixed fraction form.
+
+            result

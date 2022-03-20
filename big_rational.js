@@ -413,4 +413,8 @@ function string(a, nr_places) {
 
 // The result will be in mixed fraction form.
 
-            result
+            result = (
+                (
+                    result === "0"
+                    ? ""
+     

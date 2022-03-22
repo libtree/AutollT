@@ -417,4 +417,6 @@ function string(a, nr_places) {
                 (
                     result === "0"
                     ? ""
-     
+                    : result + " "
+                )
+                + big_integer.

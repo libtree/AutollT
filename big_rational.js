@@ -419,4 +419,7 @@ function string(a, nr_places) {
                     ? ""
                     : result + " "
                 )
-                + big_integer.
+                + big_integer.string(remains)
+                + "/"
+                + big_integer.string(denominator)
+    

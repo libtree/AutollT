@@ -422,4 +422,11 @@ function string(a, nr_places) {
                 + big_integer.string(remains)
                 + "/"
                 + big_integer.string(denominator)
-    
+            );
+        }
+    }
+    return result;
+}
+
+export default Object.freeze({
+    abs

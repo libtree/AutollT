@@ -429,4 +429,11 @@ function string(a, nr_places) {
 }
 
 export default Object.freeze({
-    abs
+    abs,
+    add,
+    dec,
+    div,
+    eq,
+    fraction,
+    inc,
+    i

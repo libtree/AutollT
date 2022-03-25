@@ -436,4 +436,12 @@ export default Object.freeze({
     eq,
     fraction,
     inc,
-    i
+    integer,
+    is_big_rational,
+    is_integer,
+    is_negative,
+    lt,
+    make,
+    mul,
+    neg,
+    normalize

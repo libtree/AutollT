@@ -444,4 +444,12 @@ export default Object.freeze({
     make,
     mul,
     neg,
-    normalize
+    normalize,
+    number,
+    wun,
+    reciprocal,
+    remainder,
+    string,
+    sub,
+    two,
+   

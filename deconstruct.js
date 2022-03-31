@@ -5,4 +5,8 @@ function deconstruct(number) {
 
 //            number = sign * coefficient * (2 ** exponent)
 
-    let sig
+    let sign = 1;
+    let coefficient = number;
+    let exponent = 0;
+
+// Remove the sign fr

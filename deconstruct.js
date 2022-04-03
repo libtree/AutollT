@@ -12,4 +12,8 @@ function deconstruct(number) {
 // Remove the sign from the coefficient.
 
     if (coefficient < 0) {
-        coefficient
+        coefficient = -coefficient;
+        sign = -1;
+    }
+
+    if (Number.isFinite(number) && number 

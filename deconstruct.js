@@ -9,4 +9,7 @@ function deconstruct(number) {
     let coefficient = number;
     let exponent = 0;
 
-// Remove the sign fr
+// Remove the sign from the coefficient.
+
+    if (coefficient < 0) {
+        coefficient

@@ -16,4 +16,6 @@ function deconstruct(number) {
         sign = -1;
     }
 
-    if (Number.isFinite(number) && number 
+    if (Number.isFinite(number) && number !== 0) {
+
+// Reduce the coefficient: We can obtain the exponent by dividi

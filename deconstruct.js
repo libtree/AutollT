@@ -19,4 +19,5 @@ function deconstruct(number) {
     if (Number.isFinite(number) && number !== 0) {
 
 // Reduce the coefficient: We can obtain the exponent by dividing the number by
-// two until it goes to zero. We add the number of divisions to -11
+// two until it goes to zero. We add the number of divisions to -1128, which is
+// the exponent of 'Number.MIN_VALUE' minus the number of bits in

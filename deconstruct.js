@@ -20,4 +20,8 @@ function deconstruct(number) {
 
 // Reduce the coefficient: We can obtain the exponent by dividing the number by
 // two until it goes to zero. We add the number of divisions to -1128, which is
-// the exponent of 'Number.MIN_VALUE' minus the number of bits in
+// the exponent of 'Number.MIN_VALUE' minus the number of bits in the
+// significand minus the bonus bit.
+
+        exponent = -1128;
+        let reduc

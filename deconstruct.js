@@ -24,4 +24,7 @@ function deconstruct(number) {
 // significand minus the bonus bit.
 
         exponent = -1128;
-        let reduc
+        let reduction = coefficient;
+        while (reduction !== 0) {
+
+// This loop is guaranteed to reach zero. E

@@ -27,4 +27,5 @@ function deconstruct(number) {
         let reduction = coefficient;
         while (reduction !== 0) {
 
-// This loop is guaranteed to reach zero. E
+// This loop is guaranteed to reach zero. Each division will decrement the
+// exponent of the reduction. When the exponent 

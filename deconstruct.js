@@ -29,4 +29,7 @@ function deconstruct(number) {
 
 // This loop is guaranteed to reach zero. Each division will decrement the
 // exponent of the reduction. When the exponent is so small that it can not
-// be decremented, then the internal subnormal significand wil
+// be decremented, then the internal subnormal significand will be shifted
+// right instead. Ultimately, all of the bits will be shifted out.
+
+  

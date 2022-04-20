@@ -36,4 +36,5 @@ function deconstruct(number) {
             reduction /= 2;
         }
 
-// Re
+// Reduce the exponent: When the exponent is zero, the number can be viewed
+// as an integer. 

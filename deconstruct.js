@@ -37,4 +37,7 @@ function deconstruct(number) {
         }
 
 // Reduce the exponent: When the exponent is zero, the number can be viewed
-// as an integer. 
+// as an integer. If the exponent is not zero, then adjust to correct the
+// coefficient.
+
+        reduction =

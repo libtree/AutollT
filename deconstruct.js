@@ -32,4 +32,8 @@ function deconstruct(number) {
 // be decremented, then the internal subnormal significand will be shifted
 // right instead. Ultimately, all of the bits will be shifted out.
 
-  
+            exponent += 1;
+            reduction /= 2;
+        }
+
+// Re

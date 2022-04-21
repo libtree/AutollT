@@ -40,4 +40,7 @@ function deconstruct(number) {
 // as an integer. If the exponent is not zero, then adjust to correct the
 // coefficient.
 
-        reduction =
+        reduction = exponent;
+        while (reduction > 0) {
+            coefficient /= 2;
+   

@@ -46,4 +46,8 @@ function deconstruct(number) {
             reduction -= 1;
         }
         while (reduction < 0) {
-            coeff
+            coefficient *= 2;
+            reduction += 1;
+        }
+
+// The number's coefficient 

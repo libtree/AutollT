@@ -50,4 +50,5 @@ function deconstruct(number) {
             reduction += 1;
         }
 
-// The number's coefficient 
+// The number's coefficient may lie outside the safe integer range, so we shift
+// information into the expone

@@ -51,4 +51,7 @@ function deconstruct(number) {
         }
 
 // The number's coefficient may lie outside the safe integer range, so we shift
-// information into the expone
+// information into the exponent.
+
+        while (coefficient % 2 === 0 && exponent !== 0) {
+            coefficie

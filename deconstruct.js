@@ -54,4 +54,9 @@ function deconstruct(number) {
 // information into the exponent.
 
         while (coefficient % 2 === 0 && exponent !== 0) {
-            coefficie
+            coefficient /= 2;
+            exponent += 1;
+        }
+    }
+
+// Return an object containing the three component

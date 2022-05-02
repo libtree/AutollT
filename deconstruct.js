@@ -64,4 +64,7 @@ function deconstruct(number) {
     return {
         sign,
         coefficient,
- 
+        exponent,
+        number
+    };
+}

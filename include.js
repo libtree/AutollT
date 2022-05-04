@@ -4,4 +4,8 @@
 const rx_include = /@include\u0020"([^"@]+)"/;
 
 //. Capturing groups:
-//.  [0] The w
+//.  [0] The whole '@include' expression
+//.  [1] The key
+
+export default Object.freeze(function include(
+   

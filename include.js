@@ -15,4 +15,5 @@ export default Object.freeze(function include(
 ) {
 
 // The 'include' function replaces '@include' expressions in a string with
-// other strings. If t
+// other strings. If there are no '@include' expressions, then the original
+// string is the result

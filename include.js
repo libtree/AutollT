@@ -14,4 +14,5 @@ export default Object.freeze(function include(
     max_depth = 4
 ) {
 
-// The 'inclu
+// The 'include' function replaces '@include' expressions in a string with
+// other strings. If t

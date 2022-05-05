@@ -8,4 +8,10 @@ const rx_include = /@include\u0020"([^"@]+)"/;
 //.  [1] The key
 
 export default Object.freeze(function include(
-   
+    callback,
+    string,
+    get_inclusion,
+    max_depth = 4
+) {
+
+// The 'inclu

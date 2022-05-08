@@ -21,4 +21,4 @@ export default Object.freeze(function include(
 // The 'include' function takes these parameters:
 
 //       callback(result)
-// 
+//           The 'callback' function is given the processed 'resu

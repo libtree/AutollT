@@ -24,4 +24,8 @@ export default Object.freeze(function include(
 //           The 'callback' function is given the processed 'result' string.
 
 //       string
-//           A string that may contain zero or more '@incl
+//           A string that may contain zero or more '@include' expressions.
+
+//                       @include "key"
+
+//           

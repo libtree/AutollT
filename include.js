@@ -29,4 +29,5 @@ export default Object.freeze(function include(
 //                       @include "key"
 
 //           There is a space between the '@include' and the opening of the
-//         
+//           key. Each '@include' expression is replaced with the inclusion
+//           asso

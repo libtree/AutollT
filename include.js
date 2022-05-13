@@ -31,4 +31,7 @@ export default Object.freeze(function include(
 //           There is a space between the '@include' and the opening of the
 //           key. Each '@include' expression is replaced with the inclusion
 //           associated with the key if possible. A key (which could be a
-//           filename) is w
+//           filename) is wrapped in parens.
+
+//       get_inclusion(callback, key)
+//       

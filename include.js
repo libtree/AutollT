@@ -35,4 +35,5 @@ export default Object.freeze(function include(
 
 //       get_inclusion(callback, key)
 //           Your 'get_inclusion' function takes a key string and eventually
-//     
+//           passes the resulting inclusion string to 'callback('inclusion')'.
+//         

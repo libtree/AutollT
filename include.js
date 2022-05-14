@@ -34,4 +34,5 @@ export default Object.freeze(function include(
 //           filename) is wrapped in parens.
 
 //       get_inclusion(callback, key)
-//       
+//           Your 'get_inclusion' function takes a key string and eventually
+//     

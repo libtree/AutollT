@@ -40,4 +40,7 @@ export default Object.freeze(function include(
 //           database, source control system, content manager, or JSON Object.
 
 //           If inclusions are coming from files, and if the environment is
-//           Node.js, then your 'get_inclusion' function could look like
+//           Node.js, then your 'get_inclusion' function could look like this:
+
+//           function my_little_get_inclusion(callback, key) {
+//  

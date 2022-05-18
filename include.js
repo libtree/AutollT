@@ -39,4 +39,5 @@ export default Object.freeze(function include(
 //           Your 'get_inclusion' function could access a file system,
 //           database, source control system, content manager, or JSON Object.
 
-//           If inclusions are coming from f
+//           If inclusions are coming from files, and if the environment is
+//           Node.js, then your 'get_inclusion' function could look like

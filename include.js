@@ -37,4 +37,6 @@ export default Object.freeze(function include(
 //           Your 'get_inclusion' function takes a key string and eventually
 //           passes the resulting inclusion string to 'callback('inclusion')'.
 //           Your 'get_inclusion' function could access a file system,
-//           database, source c
+//           database, source control system, content manager, or JSON Object.
+
+//           If inclusions are coming from f

@@ -43,4 +43,6 @@ export default Object.freeze(function include(
 //           Node.js, then your 'get_inclusion' function could look like this:
 
 //           function my_little_get_inclusion(callback, key) {
-//  
+//               return (
+//                   (key[0] >= "a" && key[0] <= "z")
+//    

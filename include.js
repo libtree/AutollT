@@ -46,4 +46,6 @@ export default Object.freeze(function include(
 //               return (
 //                   (key[0] >= "a" && key[0] <= "z")
 //                   ? fs.readFile(key, "utf8", function (ignore, data) {
-//               
+//                       return callback(data);
+//                   })
+//                   : callback()

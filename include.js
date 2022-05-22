@@ -58,4 +58,5 @@ export default Object.freeze(function include(
 //           limits the depth to prevent infinite include loops.
 
 // The 'include' function does not need direct access to or knowledge of
-// the file system or the database or anything else becau
+// the file system or the database or anything else because that capability
+// is passed in as your 'get_inclusion' function. 

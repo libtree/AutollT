@@ -57,4 +57,5 @@ export default Object.freeze(function include(
 //           An inclusion may contain more '@include' expressions. 'max_depth'
 //           limits the depth to prevent infinite include loops.
 
-// The 'include' function does not need
+// The 'include' function does not need direct access to or knowledge of
+// the file system or the database or anything else becau

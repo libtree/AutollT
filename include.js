@@ -59,4 +59,7 @@ export default Object.freeze(function include(
 
 // The 'include' function does not need direct access to or knowledge of
 // the file system or the database or anything else because that capability
-// is passed in as your 'get_inclusion' function. 
+// is passed in as your 'get_inclusion' function. That makes the 'include'
+// function versatile and trustworthy.
+
+// Nothing is 

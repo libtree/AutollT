@@ -62,4 +62,7 @@ export default Object.freeze(function include(
 // is passed in as your 'get_inclusion' function. That makes the 'include'
 // function versatile and trustworthy.
 
-// Nothing is 
+// Nothing is returned. The result is communicated eventually through the
+// 'callback'.
+
+    l

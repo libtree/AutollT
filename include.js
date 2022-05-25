@@ -68,4 +68,5 @@ export default Object.freeze(function include(
     let object_of_matching;
     let result = "";
 
-// The 'minion' and its assistants do all o
+// The 'minion' and its assistants do all of the work. The main 'minion'
+// searches for '@include' expressions

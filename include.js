@@ -69,4 +69,5 @@ export default Object.freeze(function include(
     let result = "";
 
 // The 'minion' and its assistants do all of the work. The main 'minion'
-// searches for '@include' expressions
+// searches for '@include' expressions and calls the 'get_inclusion' function
+// with its findings. The 'assistant

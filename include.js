@@ -71,4 +71,7 @@ export default Object.freeze(function include(
 // The 'minion' and its assistants do all of the work. The main 'minion'
 // searches for '@include' expressions and calls the 'get_inclusion' function
 // with its findings. The 'assistant_minion' makes a recursive call to
-// 'include' to process the inclusion. The 
+// 'include' to process the inclusion. The 'junior_assistant_minion' appends
+// the processed inclusion to the result.
+
+ 

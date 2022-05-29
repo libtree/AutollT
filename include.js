@@ -74,4 +74,6 @@ export default Object.freeze(function include(
 // 'include' to process the inclusion. The 'junior_assistant_minion' appends
 // the processed inclusion to the result.
 
- 
+    function minion() {
+
+// If there is no more string to scan, deliver the 

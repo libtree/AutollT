@@ -84,4 +84,6 @@ export default Object.freeze(function include(
 
 // Try matching the regular expression against the remaining string.
 
-        object
+        object_of_matching = rx_include.exec(string);
+
+// If there is no match, then our work 

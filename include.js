@@ -82,4 +82,6 @@ export default Object.freeze(function include(
             return callback(result);
         }
 
-// Try
+// Try matching the regular expression against the remaining string.
+
+        object

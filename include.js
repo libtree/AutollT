@@ -76,4 +76,10 @@ export default Object.freeze(function include(
 
     function minion() {
 
-// If there is no more string to scan, deliver the 
+// If there is no more string to scan, deliver the result.
+
+        if (string === "") {
+            return callback(result);
+        }
+
+// Try

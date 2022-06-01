@@ -86,4 +86,8 @@ export default Object.freeze(function include(
 
         object_of_matching = rx_include.exec(string);
 
-// If there is no match, then our work 
+// If there is no match, then our work is done.
+
+        if (!object_of_matching) {
+            return callback(result + string);
+ 

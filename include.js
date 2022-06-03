@@ -92,4 +92,7 @@ export default Object.freeze(function include(
             return callback(result + string);
         }
 
-// The characters to the left of the expression are part of
+// The characters to the left of the expression are part of the result.
+// Remove that scanned material from the string.
+
+        result += strin

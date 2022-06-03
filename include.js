@@ -95,4 +95,6 @@ export default Object.freeze(function include(
 // The characters to the left of the expression are part of the result.
 // Remove that scanned material from the string.
 
-        result += strin
+        result += string.slice(0, object_of_matching.index);
+        string = string.slice(
+            object_of_m

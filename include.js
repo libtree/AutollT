@@ -100,4 +100,5 @@ export default Object.freeze(function include(
             object_of_matching.index + object_of_matching[0].length
         );
 
-// Call the 'get_inclusion' functi
+// Call the 'get_inclusion' function to obtain the replacement string,
+// passing the 'assistant_minion' and the key.

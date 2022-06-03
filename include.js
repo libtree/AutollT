@@ -97,4 +97,7 @@ export default Object.freeze(function include(
 
         result += string.slice(0, object_of_matching.index);
         string = string.slice(
-            object_of_m
+            object_of_matching.index + object_of_matching[0].length
+        );
+
+// Call the 'get_inclusion' functi

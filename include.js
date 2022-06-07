@@ -102,3 +102,7 @@ export default Object.freeze(function include(
 
 // Call the 'get_inclusion' function to obtain the replacement string,
 // passing the 'assistant_minion' and the key.
+
+        return get_inclusion(
+            assistant_minion,
+            object_of_matc

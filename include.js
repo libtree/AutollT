@@ -105,4 +105,8 @@ export default Object.freeze(function include(
 
         return get_inclusion(
             assistant_minion,
-            object_of_matc
+            object_of_matching[1]
+        );
+    }
+
+    function junior_assistant_minion(processed_inclusion

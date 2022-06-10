@@ -115,4 +115,8 @@ export default Object.freeze(function include(
 // result. Then call 'minion' to begin the search for the next '@include'
 // expression.
 
-   
+        result += processed_inclusion;
+        return minion();
+    }
+
+    function

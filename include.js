@@ -119,4 +119,6 @@ export default Object.freeze(function include(
         return minion();
     }
 
-    function
+    function assistant_minion(inclusion) {
+
+// If 'get_inclusion' did not deliver a

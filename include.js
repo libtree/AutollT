@@ -121,4 +121,5 @@ export default Object.freeze(function include(
 
     function assistant_minion(inclusion) {
 
-// If 'get_inclusion' did not deliver a
+// If 'get_inclusion' did not deliver a string, then add the '@include'
+// expression to the result, effectively leaving 

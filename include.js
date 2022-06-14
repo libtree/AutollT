@@ -130,4 +130,5 @@ export default Object.freeze(function include(
             return minion();
         }
 
-// The
+// The inclusion might contain its own '@include' expressions, so we call
+// 'include' 

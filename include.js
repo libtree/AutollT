@@ -131,4 +131,5 @@ export default Object.freeze(function include(
         }
 
 // The inclusion might contain its own '@include' expressions, so we call
-// 'include' 
+// 'include' to process those, passing the 'junior_assistant_minion' that adds
+// the processed inclus

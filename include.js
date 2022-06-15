@@ -132,4 +132,7 @@ export default Object.freeze(function include(
 
 // The inclusion might contain its own '@include' expressions, so we call
 // 'include' to process those, passing the 'junior_assistant_minion' that adds
-// the processed inclus
+// the processed inclusion to the result. The 'max_depth' is reduced to guard
+// against infinte recursion.
+
+ 

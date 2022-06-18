@@ -135,4 +135,7 @@ export default Object.freeze(function include(
 // the processed inclusion to the result. The 'max_depth' is reduced to guard
 // against infinte recursion.
 
- 
+        return include(
+            junior_assistant_minion,
+            inclusion,
+         

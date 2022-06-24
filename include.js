@@ -150,4 +150,5 @@ export default Object.freeze(function include(
         callback(string);
     } else {
 
-// The '
+// The 'include' function makes the three minion functions
+// and calls the main 'minion

@@ -184,3 +184,89 @@ function record_literal(array) {
                 "o["
                 + JSON.stringify(element.zeroth)
                 + "] = "
+                + expression(element.wunth)
+                + ";"
+            )
+            : (
+                "$NEO.set(o, "
+                + expression(element.zeroth)
+                + ", "
+                + expression(element.wunth)
+                + ");"
+            )
+        );
+    }).join("") + padding + "return o;";
+    outdent();
+    return string + begin() + "}(Object.create(null)))";
+}
+
+function assert_boolean(thing) {
+    const string = expression(thing);
+    return (
+        (
+            boolean_operator[thing.id] === true
+            || (
+                thing.zeroth !== undefined
+                && thing.zeroth.origin === undefined
+                && boolean_operator[thing.zeroth.id]
+            )
+        )
+        ? string
+        : "$NEO.assert_boolean(" + string + ")"
+    );
+}
+
+function statements(array) {
+    const padding = begin();
+    return array.map(function (statement) {
+        return padding + statement_transform[statement.id](statement);
+    }).join("");
+}
+
+function block(array) {
+    indent();
+    const string = statements(array);
+    outdent();
+    return "{" + string + begin() + "}";
+}
+
+statement_transform = $NEO.stone({
+    break: function (ignore) {
+        return "break;";
+    },
+    call: function (thing) {
+        return expression(thing.zeroth) + ";";
+    },
+    def: function (thing) {
+        return (
+            "var " + expression(thing.zeroth)
+            + " = " + expression(thing.wunth) + ";"
+        );
+    },
+    export: function (thing) {
+        const exportation = expression(thing.zeroth);
+        return "export default " + (
+            exportation.startsWith("$NEO.stone(")
+            ? exportation
+            : "$NEO.stone(" + exportation + ")"
+        ) + ";";
+    },
+    fail: function () {
+        return "throw $NEO.fail(\"fail\");";
+    },
+    if: function if_statement(thing) {
+        return (
+            "if ("
+            + assert_boolean(thing.zeroth)
+            + ") "
+            + block(thing.wunth)
+            + (
+                thing.twoth === undefined
+                ? ""
+                : " else " + (
+                    thing.twoth.id === "if"
+                    ? if_statement(thing.twoth)
+                    : block(thing.twoth)
+                )
+            )
+        );

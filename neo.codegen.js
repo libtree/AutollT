@@ -106,3 +106,81 @@ function mangle(name) {
         ? "$" + name
         : name.replace(rx_space_question, "_")
     );
+}
+
+const rx_minus_point = /[\-.]/g;
+
+function numgle(number) {
+
+// We make big decimal literals look as natural as possible by making them into
+// constants. A constant name start with '$'. A '-' or '.' is replaced with '_'.
+
+//  So, '1' becomes '$1', '98.6' becomes '$98_6', and '-1.011e-5' becomes
+//  '$_1_011e_5'.
+
+    const text = big_float.string(number.number);
+    const name = "$" + text.replace(rx_minus_point, "_");
+    if (unique[name] !== true) {
+        unique[name] = true;
+        front_matter.push(
+            "const " + name + " = $NEO.number(\"" + text + "\");\n"
+        );
+    }
+    return name;
+}
+
+function op(thing) {
+    const transform = operator_transform[thing.id];
+    return (
+        typeof transform === "string"
+        ? (
+            thing.zeroth === undefined
+            ? transform
+            : transform + "(" + expression(thing.zeroth) + (
+                thing.wunth === undefined
+                ? ""
+                : ", " + expression(thing.wunth)
+            ) + ")"
+        )
+        : transform(thing)
+    );
+
+}
+
+function expression(thing) {
+    if (thing.id === "(number)") {
+        return numgle(thing);
+    }
+    if (thing.id === "(text)") {
+        return JSON.stringify(thing.text);
+    }
+    if (thing.alphameric) {
+        return (
+            thing.origin === undefined
+            ? primordial[thing.id]
+            : mangle(thing.id)
+        );
+    }
+    return op(thing);
+}
+
+function array_literal(array) {
+    return "[" + array.map(function (element) {
+        return (
+            Array.isArray(element)
+            ? array_literal(element)
+            : expression(element)
+        );
+    }).join(", ") + "]";
+}
+
+function record_literal(array) {
+    indent();
+    const padding = begin();
+    const string = "(function (o) {" + array.map(function (element) {
+        return padding + (
+            typeof element.zeroth === "string"
+            ? (
+                "o["
+                + JSON.stringify(element.zeroth)
+                + "] = "

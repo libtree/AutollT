@@ -270,3 +270,80 @@ statement_transform = $NEO.stone({
                 )
             )
         );
+    },
+    import: function (thing) {
+        return (
+            "import " + expression(thing.zeroth)
+            + " from " + expression(thing.wunth) + ";"
+        );
+    },
+    let: function (thing) {
+        const right = (
+            thing.wunth.id === "[]"
+            ? expression(thing.wunth.zeroth) + ".pop();"
+            : expression(thing.wunth)
+        );
+        if (thing.zeroth.id === "[]") {
+            return expression(thing.zeroth.zeroth) + ".push(" + right + ");";
+        }
+        if (thing.zeroth.id === ".") {
+            return (
+                "$NEO.set(" + expression(thing.zeroth.zeroth)
+                + ", " + JSON.stringify(thing.zeroth.wunth.id)
+                + ", " + right + ");"
+            );
+        }
+        if (thing.zeroth.id === "[") {
+            return (
+                "$NEO.set(" + expression(thing.zeroth.zeroth)
+                + ", " + expression(thing.zeroth.wunth)
+                + ", " + right + ");"
+            );
+        }
+        return expression(thing.zeroth) + " = " + right + ";";
+    },
+    loop: function (thing) {
+        return "while (true) " + block(thing.zeroth);
+    },
+    return: function (thing) {
+        return "return " + expression(thing.zeroth) + ";";
+    },
+    var: function (thing) {
+        return "var " + expression(thing.zeroth) + (
+            thing.wunth === undefined
+            ? ";"
+            : " = " + expression(thing.wunth) + ";"
+        );
+    }
+});
+
+const functino = $NEO.stone({
+    "?": "$NEO.ternary",
+    "|": "$NEO.default",
+    "/\\": "$NEO.and",
+    "\\/": "$NEO.or",
+    "=": "$NEO.eq",
+    "≠": "$NEO.ne",
+    "<": "$NEO.lt",
+    "≥": "$NEO.ge",
+    ">": "$NEO.gt",
+    "≤": "$NEO.le",
+    "~": "$NEO.cat",
+    "≈": "$NEO.cats",
+    "+": "$NEO.add",
+    "-": "$NEO.sub",
+    ">>": "$NEO.max",
+    "<<": "$NEO.min",
+    "*": "$NEO.mul",
+    "/": "$NEO.div",
+    "[]": "$NEO.get",
+    "(": "$NEO.resolve"
+});
+
+operator_transform = $NEO.stone({
+    "?": function (thing) {
+        indent();
+        let padding = begin();
+        let string = (
+            "(" + padding + assert_boolean(thing.zeroth)
+            + padding + "? " + expression(thing.wunth)

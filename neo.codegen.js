@@ -347,3 +347,70 @@ operator_transform = $NEO.stone({
         let string = (
             "(" + padding + assert_boolean(thing.zeroth)
             + padding + "? " + expression(thing.wunth)
+            + padding + ": " + expression(thing.twoth)
+        );
+        outdent();
+        return string + begin() + ")";
+    },
+    "/\\": function (thing) {
+        return (
+            "(" + assert_boolean(thing.zeroth)
+            + " && " + assert_boolean(thing.wunth)
+            + ")"
+        );
+    },
+    "\\/": function (thing) {
+        return (
+            "(" + assert_boolean(thing.zeroth)
+            + " || " + assert_boolean(thing.wunth)
+            + ")"
+        );
+    },
+    "=": "$NEO.eq",
+    "≠": "$NEO.ne",
+    "<": "$NEO.lt",
+    "≥": "$NEO.ge",
+    ">": "$NEO.gt",
+    "≤": "$NEO.le",
+    "~": "$NEO.cat",
+    "≈": "$NEO.cats",
+    "+": "$NEO.add",
+    "-": "$NEO.sub",
+    ">>": "$NEO.max",
+    "<<": "$NEO.min",
+    "*": "$NEO.mul",
+    "/": "$NEO.div",
+    "|": function (thing) {
+        return (
+            "(function (_0) {"
+            + "return (_0 === undefined) ? "
+            + expression(thing.wunth) + " : _0);}("
+            + expression(thing.zeroth) + "))"
+        );
+    },
+    "...": function (thing) {
+        return "..." + expression(thing.zeroth);
+    },
+    ".": function (thing) {
+        return (
+            "$NEO.get(" + expression(thing.zeroth)
+            + ", \"" + thing.wunth.id + "\")"
+        );
+    },
+    "[": function (thing) {
+        if (thing.wunth === undefined) {
+            return array_literal(thing.zeroth);
+        }
+        return (
+            "$NEO.get(" + expression(thing.zeroth)
+            + ", " + expression(thing.wunth) + ")"
+        );
+    },
+    "{": function (thing) {
+        return record_literal(thing.zeroth);
+    },
+    "(": function (thing) {
+        return (
+            expression(thing.zeroth) + "("
+            + thing.wunth.map(expression).join(", ") + ")"
+        );

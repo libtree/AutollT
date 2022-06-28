@@ -414,3 +414,50 @@ operator_transform = $NEO.stone({
             expression(thing.zeroth) + "("
             + thing.wunth.map(expression).join(", ") + ")"
         );
+    },
+    "[]": "[]",
+    "{}": "Object.create(null)",
+    "ƒ": function (thing) {
+        if (typeof thing.zeroth === "string") {
+            return functino[thing.zeroth];
+        }
+        return "$NEO.stone(function (" + thing.zeroth.map(function (param) {
+            if (param.id === "...") {
+                return "..." + mangle(param.zeroth.id);
+            }
+            if (param.id === "|") {
+                return (
+                    mangle(param.zeroth.id) + " = " + expression(param.wunth)
+                );
+            }
+            return mangle(param.id);
+        }).join(", ") + ") " + (function () {
+            if (Array.isArray(thing.wunth)) {
+                if (thing.twoth !== undefined) {
+                    let padding = begin();
+                    let body;
+                    indent();
+                    body = (
+                        "{" + begin() + "try " + block(thing.wunth)
+                        + " catch (ignore) " + block(thing.twoth)
+                        + padding + "}"
+                    );
+                    outdent();
+                    return body;
+                }
+                return block(thing.wunth);
+            }
+            return "{return " + expression(thing.wunth) + ";}";
+        }()) + ")";
+    }
+});
+
+export default $NEO.stone(function codegen(tree) {
+    front_matter = [
+        "import $NEO from \"./neo.runtime.js\"\n"
+    ];
+    indentation = 0;
+    unique = Object.create(null);
+    const bulk = statements(tree.zeroth);
+    return front_matter.join("") + bulk;
+});

@@ -128,3 +128,84 @@ function same_line() {
 }
 
 function line_check(open) {
+    return (
+        open
+        ? at_indentation()
+        : same_line()
+    );
+}
+
+function register(the_token, readonly = false) {
+
+// Add a variable to the current scope.
+
+    if (now_function.scope[the_token.id] !== undefined) {
+        error(the_token, "already defined");
+    }
+    the_token.readonly = readonly;
+    the_token.origin = now_function;
+    now_function.scope[the_token.id] = the_token;
+}
+
+function lookup(id) {
+
+// Look for the definition in the current scope.
+
+    let definition = now_function.scope[id];
+
+// If that fails, search the ancestor scopes.
+
+    if (definition === undefined) {
+        let parent = now_function.parent;
+        while (parent !== undefined) {
+            definition = parent.scope[id];
+            if (definition !== undefined) {
+                break;
+            }
+            parent = parent.parent;
+        }
+
+// If that fails, search the primordials.
+
+        if (definition === undefined) {
+            definition = primordial[id];
+        }
+
+// Remember that the current function used this definition.
+
+        if (definition !== undefined) {
+            now_function.scope[id] = definition;
+        }
+    }
+    return definition;
+}
+
+// The 'parse_statement', 'parse_prefix', and 'parse_suffix' objects
+// contain functions that do the specialized parsing. We are using
+// 'Object.create(null)' to make them because we do not want any of
+// the debris from 'Object.prototype' getting dredged up here.
+
+const parse_statement = Object.create(null);
+const parse_prefix = Object.create(null);
+const parse_suffix = Object.create(null);
+
+function argument_expression(precedence = 0, open = false) {
+
+// The expression function is the heart of this parser.
+// It uses a technique called Top Down Operator Precedence.
+
+// It takes an optional 'open' parameter that allows tolerance of
+// certain line breaks. If 'open' is true, we expect the token to
+// be at the indentation point.
+
+    let definition;
+    let left;
+    let the_token = token;
+
+// Is the token a number literal or text literal?
+
+    if (the_token.id === "(number)" || the_token.id === "(text)") {
+        advance();
+        left = the_token;
+
+// Is the token alphameric?

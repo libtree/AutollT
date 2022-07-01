@@ -209,3 +209,87 @@ function argument_expression(precedence = 0, open = false) {
         left = the_token;
 
 // Is the token alphameric?
+
+    } else if (the_token.alphameric === true) {
+        definition = lookup(the_token.id);
+        if (definition === undefined) {
+            return error(the_token, "expected a variable");
+        }
+        left = definition;
+        advance();
+    } else {
+
+// The token might be a prefix thing: '(', '[', '{', 'ƒ'.
+
+        definition = parse_prefix[the_token.id];
+        if (definition === undefined) {
+            return error(the_token, "expected a variable");
+        }
+        advance();
+        left = definition.parser(the_token);
+    }
+
+// We have the left part. Is there a suffix operator on the right?
+// Does precedence allow consuming that operator?
+// If so, combine the left and right to form a new left.
+
+    while (true) {
+        the_token = token;
+        definition = parse_suffix[the_token.id];
+        if (
+            token.column_nr < indentation
+            || (!open && is_line_break())
+            || definition === undefined
+            || definition.precedence <= precedence
+        ) {
+            break;
+        }
+        line_check(open && is_line_break());
+        advance();
+        the_token.class = "suffix";
+        left = definition.parser(left, the_token);
+    }
+
+// After going zero or more times around the loop,
+// we can return the parse tree of the expression.
+
+    return left;
+}
+
+function expression(precedence, open = false) {
+
+// Expressions do a whitespace check that argument expressions do not need.
+
+    line_check(open);
+    return argument_expression(precedence, open);
+}
+
+function statements() {
+    const statement_list = [];
+    let the_statement;
+    while (true) {
+        if (
+            token === the_end
+            || token.column_nr < indentation
+            || token.alphameric !== true
+            || token.id.startsWith("export")
+        ) {
+            break;
+        }
+        at_indentation();
+        prelude();
+        let parser = parse_statement[prev_token.id];
+        if (parser === undefined) {
+            return error(prev_token, "expected a statement");
+        }
+        prev_token.class = "statement";
+        the_statement = parser(prev_token);
+        statement_list.push(the_statement);
+        if (the_statement.disrupt === true) {
+            if (token.column_nr === indentation) {
+                return error(token, "unreachable");
+            }
+            break;
+        }
+    }
+    if (statement_list.length === 0) {

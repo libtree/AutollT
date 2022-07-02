@@ -293,3 +293,93 @@ function statements() {
         }
     }
     if (statement_list.length === 0) {
+        if (!token.id.startsWith("export")) {
+            return error(token, "expected a statement");
+        }
+    } else {
+        statement_list.disrupt = the_statement.disrupt;
+        statement_list.return = the_statement.return;
+    }
+    return statement_list;
+}
+
+function parse_dot(left, the_dot) {
+
+// The expression on the left must be a variable or an expression
+// that can return an object (excluding object literals).
+
+    if (
+        !left.alphameric
+        && left.id !== "."
+        && (left.id !== "[" || left.wunth === undefined)
+        && left.id !== "("
+    ) {
+        return error(token, "expected a variable");
+    }
+    let the_name = token;
+    if (the_name.alphameric !== true) {
+        return error(the_name, "expected a field name");
+    }
+    the_dot.zeroth = left;
+    the_dot.wunth = the_name;
+    same_line();
+    advance();
+    return the_dot;
+}
+
+function parse_subscript(left, the_bracket) {
+    if (
+        !left.alphameric
+        && left.id !== "."
+        && (left.id !== "[" || left.wunth === undefined)
+        && left.id !== "("
+    ) {
+        return error(token, "expected a variable");
+    }
+    the_bracket.zeroth = left;
+    if (is_line_break()) {
+        indent();
+        the_bracket.wunth = expression(0, true);
+        outdent();
+        at_indentation();
+    } else {
+        the_bracket.wunth = expression();
+        same_line();
+    }
+    advance("]");
+    return the_bracket;
+}
+
+function ellipsis(left) {
+    if (token.id === "...") {
+        const the_ellipsis = token;
+        same_line();
+        advance("...");
+        the_ellipsis.zeroth = left;
+        return the_ellipsis;
+    }
+    return left;
+}
+
+function parse_invocation(left, the_paren) {
+
+//. function invocation:
+//.      expression
+//.      expression...
+
+    const args = [];
+    if (token.id === ")") {
+        same_line();
+    } else {
+        const open = is_line_break();
+        if (open) {
+            indent();
+        }
+        while (true) {
+            line_check(open);
+            args.push(ellipsis(argument_expression()));
+            if (token.id === ")" || token === the_end) {
+                break;
+            }
+            if (!open) {
+                same_line();

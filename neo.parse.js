@@ -383,3 +383,81 @@ function parse_invocation(left, the_paren) {
             }
             if (!open) {
                 same_line();
+                advance(",");
+            }
+        }
+        if (open) {
+            outdent();
+            at_indentation();
+        } else {
+            same_line();
+        }
+    }
+    advance(")");
+    the_paren.zeroth = left;
+    the_paren.wunth = args;
+    return the_paren;
+}
+
+function suffix(
+    id,
+    precedence,
+    optional_parser = function infix(left, the_token) {
+        the_token.zeroth = left;
+        the_token.wunth = expression(precedence);
+        return the_token;
+    }
+) {
+
+// Make an infix or suffix operator.
+
+    const the_symbol = Object.create(null);
+    the_symbol.id = id;
+    the_symbol.precedence = precedence;
+    the_symbol.parser = optional_parser;
+    parse_suffix[id] = Object.freeze(the_symbol);
+}
+
+suffix("|", 111, function parse_default(left, the_bar) {
+    the_bar.zeroth = left;
+    the_bar.wunth = expression(112);
+    advance("|");
+    return the_bar;
+});
+suffix("?", 111, function then_else(left, the_then) {
+    the_then.zeroth = left;
+    the_then.wunth = expression();
+    advance("!");
+    the_then.twoth = expression();
+    return the_then;
+});
+suffix("/\\", 222);
+suffix("\\/", 222);
+suffix("~", 444);
+suffix("≈", 444);
+suffix("+", 555);
+suffix("-", 555);
+suffix("<<", 555);
+suffix(">>", 555);
+suffix("*", 666);
+suffix("/", 666);
+suffix(".", 777, parse_dot);
+suffix("[", 777, parse_subscript);
+suffix("(", 777, parse_invocation);
+
+const rel_op = Object.create(null);
+
+function relational(operator) {
+    rel_op[operator] = true;
+    return suffix(operator, 333, function (left, the_token) {
+        the_token.zeroth = left;
+        the_token.wunth = expression(333);
+        if (rel_op[token.id] === true) {
+            return error(token, "unexpected relational operator");
+        }
+        return the_token;
+    });
+}
+
+relational("=");
+relational("≠");

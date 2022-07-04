@@ -561,3 +561,72 @@ prefix("{", function recordliteral(the_brace) {
     while (true) {
         line_check(open);
         if (token.id === "[") {
+            advance("[");
+            key = expression();
+            advance("]");
+            same_line();
+            advance(":");
+            value = expression();
+        } else {
+            key = token;
+            advance();
+            if (key.alphameric === true) {
+                if (token.id === ":") {
+                    same_line();
+                    advance(":");
+                    value = expression();
+                } else {
+                    value = lookup(key.id);
+                    if (value === undefined) {
+                        return error(key, "expected a variable");
+                    }
+                }
+                key = key.id;
+            } else if (key.id === "(text)") {
+                key = key.text;
+                same_line();
+                advance(":");
+                value = expression();
+            } else {
+                return error(key, "expected a key");
+            }
+        }
+        properties.push({
+            zeroth: key,
+            wunth: value
+        });
+        if (token.column_nr < indentation || token.id === "}") {
+            break;
+        }
+        if (!open) {
+            same_line();
+            advance(",");
+        }
+    }
+    if (open) {
+        outdent();
+        at_indentation();
+    } else {
+        same_line();
+    }
+    advance("}");
+    the_brace.zeroth = properties;
+    return the_brace;
+});
+
+prefix("{}", function emptyrecordliteral(the_braces) {
+    return the_braces;
+});
+
+const functino = (function make_set(array, value = true) {
+    const object = Object.create(null);
+    array.forEach(function (element) {
+        object[element] = value;
+    });
+    return Object.freeze(object);
+}([
+    "?", "|", "/\\", "\\/", "=", "≠", "<", "≥", ">", "≤",
+    "~", "≈", "+", "-", ">>", "<<", "*", "/", "[]", "("
+]));
+
+prefix("ƒ", function function_literal(the_function) {

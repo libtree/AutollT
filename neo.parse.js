@@ -461,3 +461,103 @@ function relational(operator) {
 
 relational("=");
 relational("≠");
+relational("<");
+relational(">");
+relational("≤");
+relational("≥");
+
+function prefix(id, parser) {
+    const the_symbol = Object.create(null);
+    the_symbol.id = id;
+    the_symbol.parser = parser;
+    parse_prefix[id] = Object.freeze(the_symbol);
+}
+
+prefix("(", function (ignore) {
+    let result;
+    if (is_line_break()) {
+        indent();
+        result = expression(0, true);
+        outdent();
+        at_indentation();
+    } else {
+        result = expression(0);
+        same_line();
+    }
+    advance(")");
+    return result;
+});
+
+prefix("[", function arrayliteral(the_bracket) {
+    let matrix = [];
+    let array = [];
+    if (!is_line_break()) {
+        while (true) {
+            array.push(ellipsis(expression()));
+            if (token.id === ",") {
+                same_line();
+                advance(",");
+            } else if (
+                token.id === ";"
+                && array.length > 0
+                && next_token !== "]"
+            ) {
+                same_line();
+                advance(";");
+                matrix.push(array);
+                array = [];
+            } else {
+                break;
+            }
+        }
+        same_line();
+    } else {
+        indent();
+        while (true) {
+            array.push(ellipsis(expression(0, is_line_break())));
+            if (token.id === "]" || token === the_end) {
+                break;
+            }
+            if (token.id === ";") {
+                if (array.length === 0 || next_token.id === "]") {
+                    break;
+                }
+                same_line();
+                advance(";");
+                matrix.push(array);
+                array = [];
+            } else if (token.id === "," || !is_line_break()) {
+                same_line();
+                advance(",");
+            }
+        }
+        outdent();
+        if (token.column_nr !== indentation) {
+            return error(token, "expected at " + indentation);
+        }
+    }
+    advance("]");
+    if (matrix.length > 0) {
+        matrix.push(array);
+        the_bracket.zeroth = matrix;
+    } else {
+        the_bracket.zeroth = array;
+    }
+    return the_bracket;
+});
+
+prefix("[]", function emptyarrayliteral(the_brackets) {
+    return the_brackets;
+});
+
+prefix("{", function recordliteral(the_brace) {
+    const properties = [];
+    let key;
+    let value;
+    const open = the_brace.line_nr !== token.line_nr;
+    if (open) {
+        indent();
+    }
+    while (true) {
+        line_check(open);
+        if (token.id === "[") {

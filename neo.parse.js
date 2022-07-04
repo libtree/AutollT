@@ -630,3 +630,80 @@ const functino = (function make_set(array, value = true) {
 ]));
 
 prefix("ƒ", function function_literal(the_function) {
+
+// If the 'ƒ' is followed by a suffix operator,
+// then produce the corresponding functino.
+
+    const the_operator = token;
+    if (
+        functino[token.id] === true
+        && (the_operator.id !== "(" || next_token.id === ")")
+    ) {
+        advance();
+        if (the_operator.id === "(") {
+            same_line();
+            advance(")");
+        } else if (the_operator.id === "?") {
+            same_line();
+            advance("!");
+        } else if (the_operator.id === "|") {
+            same_line();
+            advance("|");
+        }
+        the_function.zeroth = the_operator.id;
+        return the_function;
+    }
+
+// Set up the new function.
+
+    if (loop.length > 0) {
+        return error(the_function, "Do not make functions in loops.");
+    }
+    the_function.scope = Object.create(null);
+    the_function.parent = now_function;
+    now_function = the_function;
+
+//. Function parameters come in 3 forms.
+//.      name
+//.      name | default |
+//.      name...
+
+// The parameter list can be open or closed.
+
+    const parameters = [];
+    if (token.alphameric === true) {
+        let open = is_line_break();
+        if (open) {
+            indent();
+        }
+        while (true) {
+            line_check(open);
+            let the_parameter = token;
+            register(the_parameter);
+            advance();
+            if (token.id === "...") {
+                parameters.push(ellipsis(the_parameter));
+                break;
+            }
+            if (token.id === "|") {
+                advance("|");
+                parameters.push(parse_suffix["|"](the_parameter, prev_token));
+            } else {
+                parameters.push(the_parameter);
+            }
+            if (open) {
+                if (token.id === ",") {
+                    return error(token, "unexpected ','");
+                }
+                if (token.alphameric !== true) {
+                    break;
+                }
+            } else {
+                if (token.id !== ",") {
+                    break;
+                }
+                same_line();
+                advance(",");
+                if (token.alphameric !== true) {
+                    return error(token, "expected another parameter");
+                }

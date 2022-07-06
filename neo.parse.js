@@ -707,3 +707,76 @@ prefix("ƒ", function function_literal(the_function) {
                 if (token.alphameric !== true) {
                     return error(token, "expected another parameter");
                 }
+            }
+        }
+        if (open) {
+            outdent();
+            at_indentation();
+        } else {
+            same_line();
+        }
+    }
+    the_function.zeroth = parameters;
+
+// A function can have a '('return expression')' or a '{'function body'}'.
+
+// Parse the return expression.
+
+    if (token.id === "(") {
+        advance("(");
+        if (is_line_break()) {
+            indent();
+            the_function.wunth = expression(0, true);
+            outdent();
+            at_indentation();
+        } else {
+            the_function.wunth = expression();
+            same_line();
+        }
+        advance(")");
+    } else {
+
+// Parse the function body. The body must contain an explicit 'return'.
+// There is no implicit return by falling thru the bottom.
+
+        advance("{");
+        indent();
+        the_function.wunth = statements();
+        if (the_function.wunth.return !== true) {
+            return error(prev_token, "missing explicit 'return'");
+        }
+
+// Parse the 'failure' handler.
+
+        if (token.id === "failure") {
+            outdent();
+            at_indentation();
+            advance("failure");
+            indent();
+            the_function.twoth = statements();
+            if (the_function.twoth.return !== true) {
+                return error(prev_token, "missing explicit 'return'");
+            }
+        }
+        outdent();
+        at_indentation();
+        advance("}");
+    }
+    now_function = the_function.parent;
+    return the_function;
+});
+
+parse_statement.break = function (the_break) {
+    if (loop.length === 0) {
+        return error(the_break, "'break' wants to be in a loop.");
+    }
+    loop[loop.length - 1] = "break";
+    the_break.disrupt = true;
+    return the_break;
+};
+
+parse_statement.call = function (the_call) {
+    the_call.zeroth = expression();
+    if (the_call.zeroth.id !== "(") {
+        return error(the_call, "expected a function invocation");
+    }

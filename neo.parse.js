@@ -871,3 +871,90 @@ parse_statement.let = function (the_let) {
         } else if (token.id === "(") {
             readonly = false;
             advance("(");
+            left = parse_invocation(left, prev_token);
+            if (token.id === ":") {
+                return error(left, "assignment to the result of a function");
+            }
+        } else {
+            break;
+        }
+    }
+    advance(":");
+    if (readonly) {
+        return error(left, "assignment to a constant");
+    }
+    the_let.zeroth = left;
+    the_let.wunth = expression();
+
+// A '[]' in this position indicates an array pop operation.
+
+    if (token.id === "[]" && left.id !== "[]" && (
+        the_let.wunth.alphameric === true
+        || the_let.wunth.id === "."
+        || the_let.wunth.id === "["
+        || the_let.wunth.id === "("
+    )) {
+        token.zeroth = the_let.wunth;
+        the_let.wunth = token;
+        same_line();
+        advance("[]");
+    }
+    return the_let;
+};
+
+parse_statement.loop = function (the_loop) {
+    indent();
+    loop.push("infinite");
+    the_loop.zeroth = statements();
+    const exit = loop.pop();
+    if (exit === "infinite") {
+        return error(the_loop, "A loop wants a 'break'.");
+    }
+    if (exit === "return") {
+        the_loop.disrupt = true;
+        the_loop.return = true;
+    }
+    outdent();
+    return the_loop;
+};
+
+parse_statement.return = function (the_return) {
+    if (now_function.parent === undefined) {
+        return error(the_return, "'return' wants to be in a function.");
+    }
+    loop.forEach(function (element, element_nr) {
+        if (element === "infinite") {
+            loop[element_nr] = "return";
+        }
+    });
+    if (is_line_break()) {
+        return error(the_return, "'return' wants a return value.");
+    }
+    the_return.zeroth = expression();
+    the_return.disrupt = true;
+    the_return.return = true;
+    return the_return;
+};
+
+parse_statement.var = function (the_var) {
+    if (!token.alphameric) {
+        return error(token, "expected a name.");
+    }
+    same_line();
+    the_var.zeroth = token;
+    register(token);
+    advance();
+    if (token.id === ":") {
+        same_line();
+        advance(":");
+        the_var.wunth = expression();
+    }
+    return the_var;
+};
+
+Object.freeze(parse_prefix);
+Object.freeze(parse_suffix);
+Object.freeze(parse_statement);
+
+function parse_import(the_import) {
+    same_line();

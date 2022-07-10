@@ -25,3 +25,91 @@ let weakmap_of_weakmaps = new WeakMap();
 
 function get(container, key) {
     try {
+        if (Array.isArray(container) || typeof container === "string") {
+            const element_nr = big_float.number(key);
+            return (
+                Number.isSafeInteger(element_nr)
+                ? container[(
+                    element_nr >= 0
+                    ? element_nr
+                    : container.length + element_nr
+                )]
+                : undefined
+            );
+        }
+        if (typeof container === "object") {
+            if (big_float.is_big_float(key)) {
+                key = big_float.string(key);
+            }
+            return (
+                typeof key === "string"
+                ? container[key]
+                : weakmap_of_weakmaps.get(container).get(key)
+            );
+        }
+        if (typeof container === "function") {
+            return function (...rest) {
+                return container(key, rest);
+            };
+        }
+    } catch (ignore) {
+    }
+}
+
+function set(container, key, value) {
+    if (Object.isFrozen(container)) {
+        return fail("set");
+    }
+    if (Array.isArray(container)) {
+
+// Arrays use only big float for keys.
+
+        let element_nr = big_float.number(key);
+        if (!Number.isSafeInteger(element_nr)) {
+            return fail("set");
+        }
+
+// Negative indexes are aliases, so that '[-1]' sets the last element.
+
+        if (element_nr < 0) {
+            element_nr = container.length + element_nr;
+        }
+
+// The key must be in the allocated range of the array.
+
+        if (element_nr < 0 || element_nr >= container.length) {
+            return fail("set");
+        }
+        container[element_nr] = value;
+    } else {
+        if (big_float.is_big_float(key)) {
+            key = big_float.string(key);
+        }
+
+// If the key is a string, then it is an object update.
+
+        if (typeof key === "string") {
+            if (value === undefined) {
+                delete container[key];
+            } else {
+                container[key] = value;
+            }
+        } else {
+
+// Otherwise, this is a weakmap update.
+// There will be a weakmap associated with each record with object keys.
+// Note that 'typeof key !== "object"' is 'false' when 'key' is an array.
+
+            if (typeof key !== "object") {
+                return fail("set");
+            }
+            let weakmap = weakmap_of_weakmaps.get(container);
+
+// If there is not yet a weakmap associated with this container, then make wun.
+
+            if (weakmap === undefined) {
+                if (value === undefined) {
+                    return;
+                }
+                weakmap = new WeakMap();
+                weakmap_of_weakmaps.set(container, weakmap);

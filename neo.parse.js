@@ -780,3 +780,94 @@ parse_statement.call = function (the_call) {
     if (the_call.zeroth.id !== "(") {
         return error(the_call, "expected a function invocation");
     }
+    return the_call;
+};
+
+parse_statement.def = function (the_def) {
+    if (!token.alphameric) {
+        return error(token, "expected a name.");
+    }
+    same_line();
+    the_def.zeroth = token;
+    register(token, true);
+    advance();
+    same_line();
+    advance(":");
+    the_def.wunth = expression();
+    return the_def;
+};
+
+parse_statement.fail = function (the_fail) {
+    the_fail.disrupt = true;
+    return the_fail;
+};
+
+parse_statement.if = function if_statement(the_if) {
+    the_if.zeroth = expression();
+    indent();
+    the_if.wunth = statements();
+    outdent();
+    if (token.column_nr === indentation) {
+        if (token.id === "else") {
+            advance("else");
+            indent();
+            the_if.twoth = statements();
+            outdent();
+            the_if.disrupt = the_if.wunth.disrupt && the_if.twoth.disrupt;
+            the_if.return = the_if.wunth.return && the_if.twoth.return;
+        } else if (token.id.startsWith("else if ")) {
+            prelude();
+            prelude();
+            the_if.twoth = if_statement(prev_token);
+            the_if.disrupt = the_if.wunth.disrupt && the_if.twoth.disrupt;
+            the_if.return = the_if.wunth.return && the_if.twoth.return;
+        }
+    }
+    return the_if;
+};
+
+parse_statement.let = function (the_let) {
+
+// The 'let' statement is the only place where mutation is allowed.
+
+// The next token must be a name.
+
+    same_line();
+    const name = token;
+    advance();
+    const id = name.id;
+    let left = lookup(id);
+    if (left === undefined) {
+        return error(name, "expected a variable");
+    }
+    let readonly = left.readonly;
+
+// Now we consider the suffix operators ' []  .  [ ' and ' ('.
+
+    while (true) {
+        if (token === the_end) {
+            break;
+        }
+        same_line();
+
+// A '[]' in this position indicates an array append operation.
+
+        if (token.id === "[]") {
+            readonly = false;
+            token.zeroth = left;
+            left = token;
+            same_line();
+            advance("[]");
+            break;
+        }
+        if (token.id === ".") {
+            readonly = false;
+            advance(".");
+            left = parse_dot(left, prev_token);
+        } else if (token.id === "[") {
+            readonly = false;
+            advance("[");
+            left = parse_subscript(left, prev_token);
+        } else if (token.id === "(") {
+            readonly = false;
+            advance("(");

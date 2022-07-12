@@ -262,3 +262,82 @@ function stone(object) {
         }
     }
     return object;
+}
+
+function boolean_(any) {
+    return typeof any === "boolean";
+}
+
+function function_(any) {
+    return typeof any === "function";
+}
+
+function integer_(any) {
+    return (
+        big_float.is_big_float(any)
+        && big_float.normalize(any).exponent === 0
+    );
+}
+
+function number_(any) {
+    return big_float.is_big_float(any);
+}
+
+function record_(any) {
+    return (
+        any !== null
+        && typeof any === "object"
+        && !big_float.is_big_float(any)
+    );
+}
+
+function text_(any) {
+    return typeof any === "string";
+}
+
+function assert_boolean(boolean) {
+    return (
+        typeof boolean === "boolean"
+        ? boolean
+        : fail("boolean")
+    );
+}
+
+function and(zeroth, wunth) {
+    return assert_boolean(zeroth) && assert_boolean(wunth);
+}
+
+function or(zeroth, wunth) {
+    return assert_boolean(zeroth) || assert_boolean(wunth);
+}
+
+function not(boolean) {
+    return !assert_boolean(boolean);
+}
+
+function ternary(zeroth, wunth, twoth) {
+    return (
+        assert_boolean(zeroth)
+        ? wunth
+        : twoth
+    );
+}
+
+function default_function(zeroth, wunth) {
+    return (
+        zeroth === undefined
+        ? wunth
+        : zeroth
+    );
+}
+
+function eq(zeroth, wunth) {
+    return zeroth === wunth || (
+        big_float.is_big_float(zeroth)
+        && big_float.is_big_float(wunth)
+        && big_float.eq(zeroth, wunth)
+    );
+}
+
+function lt(zeroth, wunth) {
+    return (

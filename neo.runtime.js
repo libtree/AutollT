@@ -113,3 +113,78 @@ function set(container, key, value) {
                 }
                 weakmap = new WeakMap();
                 weakmap_of_weakmaps.set(container, weakmap);
+            }
+
+// Update the weakmap.
+
+            if (value === undefined) {
+                weakmap.delete(key);
+            } else {
+                weakmap.set(key, value);
+            }
+        }
+    }
+}
+
+function array(zeroth, wunth, twoth) {
+
+// The 'array' function does the work of 'new Array', array'.fill',
+// array'.slice', 'Object.keys', string'.split', and more.
+
+    if (big_float.is_big_float(zeroth)) {
+        const dimension = big_float.number(zeroth);
+        if (!Number.isSafeInteger(dimension) || dimension < 0) {
+            return fail("array");
+        }
+        let newness = new Array(dimension);
+        return (
+            (wunth === undefined || dimension === 0)
+            ? newness
+            : (
+                typeof wunth === "function"
+                ? newness.fill().map(wunth)
+                : newness.fill(wunth)
+            )
+        );
+    }
+    if (Array.isArray(zeroth)) {
+        if (typeof wunth === "function") {
+            return zeroth.map(wunth);
+        }
+        return zeroth.slice(big_float.number(wunth), big_float.number(twoth));
+    }
+    if (typeof zeroth === "object") {
+        return Object.keys(zeroth);
+    }
+    if (typeof zeroth === "string") {
+        return zeroth.split(wunth || "");
+    }
+    return fail("array");
+}
+
+function number(a, b) {
+    return (
+        typeof a === "string"
+        ? big_float.make(a, b)
+        : (
+            typeof a === "boolean"
+            ? big_float.make(Number(a))
+            : (
+                big_float.is_big_float(a)
+                ? a
+                : undefined
+            )
+        )
+    );
+}
+
+function record(zeroth, wunth) {
+    const newness = Object.create(null);
+    if (zeroth === undefined) {
+        return newness;
+    }
+    if (Array.isArray(zeroth)) {
+        if (wunth === undefined) {
+            wunth = true;
+        }
+        zeroth.forEach(function (element, element_nr) {

@@ -188,3 +188,77 @@ function record(zeroth, wunth) {
             wunth = true;
         }
         zeroth.forEach(function (element, element_nr) {
+            set(
+                newness,
+                element,
+                (
+                    Array.isArray(wunth)
+                    ? wunth[element_nr]
+                    : (
+                        typeof wunth === "function"
+                        ? wunth(element)
+                        : wunth
+                    )
+                )
+            );
+        });
+        return newness;
+    }
+    if (typeof zeroth === "object") {
+        if (wunth === undefined) {
+            return Object.assign(newness, zeroth);
+        }
+        if (Array.isArray(wunth)) {
+            wunth.forEach(function (key) {
+                let value = zeroth[key];
+                if (value !== undefined) {
+                    newness[key] = value;
+                }
+            });
+            return newness;
+        }
+        if (typeof wunth === "object") {
+            return Object.assign(newness, zeroth, wunth);
+        }
+    }
+    return fail("record");
+}
+
+function text(zeroth, wunth, twoth) {
+    if (typeof zeroth === "string") {
+        return zeroth.slice(big_float.number(wunth), big_float.number(twoth));
+    }
+    if (big_float.is_big_float(zeroth)) {
+        return big_float.string(zeroth, wunth);
+    }
+    if (Array.isArray(zeroth)) {
+        let separator = wunth;
+        if (typeof wunth !== "string") {
+            if (wunth !== undefined) {
+                return fail("string");
+            }
+            separator = "";
+        }
+        return zeroth.join(separator);
+    }
+    if (typeof zeroth === "boolean") {
+        return String(zeroth);
+    }
+}
+
+// 'stone' is a deep freeze.
+
+function stone(object) {
+    if (!Object.isFrozen(object)) {
+        object = Object.freeze(object);
+        if (typeof object === "object") {
+            if (Array.isArray(object)) {
+                object.forEach(stone);
+            } else {
+                Object.keys(object).forEach(function (key) {
+                    stone(object[key]);
+                });
+            }
+        }
+    }
+    return object;

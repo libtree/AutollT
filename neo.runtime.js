@@ -341,3 +341,81 @@ function eq(zeroth, wunth) {
 
 function lt(zeroth, wunth) {
     return (
+        zeroth === undefined
+        ? false
+        : (
+            wunth === undefined
+            ? true
+            : (
+                (
+                    big_float.is_big_float(zeroth)
+                    && big_float.is_big_float(wunth)
+                )
+                ? big_float.lt(zeroth, wunth)
+                : (
+                    (typeof zeroth === typeof wunth && (
+                        typeof zeroth === "string"
+                        || typeof zeroth === "number"
+                    ))
+                    ? zeroth < wunth
+                    : fail("lt")
+                )
+            )
+        )
+    );
+}
+
+function ge(zeroth, wunth) {
+    return !lt(zeroth, wunth);
+}
+
+function gt(zeroth, wunth) {
+    return lt(wunth, zeroth);
+}
+
+function le(zeroth, wunth) {
+    return !lt(wunth, zeroth);
+}
+
+function ne(zeroth, wunth) {
+    return !eq(wunth, zeroth);
+}
+
+function add(a, b) {
+    return (
+        (big_float.is_big_float(a) && big_float.is_big_float(b))
+        ? big_float.add(a, b)
+        : undefined
+    );
+}
+
+function sub(a, b) {
+    return (
+        (big_float.is_big_float(a) && big_float.is_big_float(b))
+        ? big_float.sub(a, b)
+        : undefined
+    );
+}
+
+function mul(a, b) {
+    return (
+        (big_float.is_big_float(a) && big_float.is_big_float(b))
+        ? big_float.mul(a, b)
+        : undefined
+    );
+}
+
+function div(a, b) {
+    return (
+        (big_float.is_big_float(a) && big_float.is_big_float(b))
+        ? big_float.div(a, b)
+        : undefined
+    );
+}
+
+function max(a, b) {
+    return (
+        lt(b, a)
+        ? a
+        : b
+    );

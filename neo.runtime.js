@@ -491,3 +491,83 @@ function bitor(a, b) {
             big_float.integer(a).coefficient,
             big_float.integer(b).coefficient
         ),
+        big_integer.wun
+    );
+}
+
+function bitup(a, nr_bits) {
+    return big_float.make(
+        big_integer.shift_up(
+            big_float.integer(a).coefficient,
+            big_float.number(nr_bits)
+        ),
+        big_integer.wun
+    );
+}
+
+function bitxor(a, b) {
+    return big_float.make(
+        big_integer.xor(
+            big_float.integer(a).coefficient,
+            big_float.integer(b).coefficient
+        ),
+        big_integer.wun
+    );
+}
+
+function resolve(value, ...rest) {
+    return (
+        typeof value === "function"
+        ? value(...rest)
+        : value
+    );
+}
+
+function cat(zeroth, wunth) {
+    zeroth = text(zeroth);
+    wunth = text(wunth);
+    if (typeof zeroth === "string" && typeof wunth === "string") {
+        return zeroth + wunth;
+    }
+}
+
+function cats(zeroth, wunth) {
+    zeroth = text(zeroth);
+    wunth = text(wunth);
+    if (typeof zeroth === "string" && typeof wunth === "string") {
+        return (
+            zeroth === ""
+            ? wunth
+            : (
+                wunth === ""
+                ? zeroth
+                : zeroth + " " + wunth
+            )
+        );
+    }
+}
+
+function char(any) {
+    return String.fromCodePoint(big_float.number(any));
+}
+
+function code(any) {
+    return big_float.make(any.codePointAt(0));
+}
+
+function length(linear) {
+    return (
+        (Array.isArray(linear) || typeof linear === "string")
+        ? big_float.make(linear.length)
+        : undefined
+    );
+}
+
+export default stone({
+    abs,
+    add,
+    and,
+    array,
+    assert_boolean,
+    bitand,
+    bitdown,

@@ -12,4 +12,6 @@
 
 import big_float from "./big_float.js";
 
-const rx_unicode_escapement = /\\u\{
+const rx_unicode_escapement = /\\u\{([0-9A-F]{4,6})\}/g;
+
+// 'rx_crfl' matches linefeed, carriage return, and carriage return line

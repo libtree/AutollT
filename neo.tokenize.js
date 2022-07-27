@@ -20,4 +20,6 @@ const rx_unicode_escapement = /\\u\{([0-9A-F]{4,6})\}/g;
 
 const rx_crlf = /\n|\r\n?/;
 
-// 'rx_token' matches a Neo token: comment, 
+// 'rx_token' matches a Neo token: comment, name, number, string, punctuator.
+
+const rx_token = /(\u0020+)|(#.*)|([a-zA-Z](?:\u0020[a-

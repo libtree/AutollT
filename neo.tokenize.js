@@ -22,4 +22,4 @@ const rx_crlf = /\n|\r\n?/;
 
 // 'rx_token' matches a Neo token: comment, name, number, string, punctuator.
 
-const rx_token = /(\u0020+)|(#.*)|([a-zA-Z](?:\u0020[a-
+const rx_token = /(\u0020+)|(#.*)|([a-zA-Z](?:\u0020[a-zA-Z]|[0-9a-zA-Z])*\??)|(-?\d+(?:\.\d+)?(?:e\-?\d+)?)|("(?:[^"\\]|\\(?:[nr"\\]|u\{[0

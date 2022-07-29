@@ -26,3 +26,7 @@ const rx_token = /(\u0020+)|(#.*)|([a-zA-Z](?:\u0020[a-zA-Z]|[0-9a-zA-Z])*\??)|(
 
 //. Capture Group
 //.     [1]  Whitespace
+//.     [2]  Comment
+//.     [3]  Alphameric
+//.     [4]  Number
+//.     

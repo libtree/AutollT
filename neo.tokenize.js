@@ -34,4 +34,5 @@ const rx_token = /(\u0020+)|(#.*)|([a-zA-Z](?:\u0020[a-zA-Z]|[0-9a-zA-Z])*\??)|(
 
 export default Object.freeze(function tokenize(source, comment = false) {
 
-// 'tokenize' takes a source and produces 
+// 'tokenize' takes a source and produces from it an array of token objects.
+// If the 'source' is not an array, then it is

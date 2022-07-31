@@ -29,4 +29,7 @@ const rx_token = /(\u0020+)|(#.*)|([a-zA-Z](?:\u0020[a-zA-Z]|[0-9a-zA-Z])*\??)|(
 //.     [2]  Comment
 //.     [3]  Alphameric
 //.     [4]  Number
-//.     
+//.     [5]  String
+//.     [6]  Punctuator
+
+export default Object.freeze(function tokenize(s

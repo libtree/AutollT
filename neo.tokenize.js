@@ -32,4 +32,6 @@ const rx_token = /(\u0020+)|(#.*)|([a-zA-Z](?:\u0020[a-zA-Z]|[0-9a-zA-Z])*\??)|(
 //.     [5]  String
 //.     [6]  Punctuator
 
-export default Object.freeze(function tokenize(s
+export default Object.freeze(function tokenize(source, comment = false) {
+
+// 'tokenize' takes a source and produces 

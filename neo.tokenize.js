@@ -36,4 +36,5 @@ export default Object.freeze(function tokenize(source, comment = false) {
 
 // 'tokenize' takes a source and produces from it an array of token objects.
 // If the 'source' is not an array, then it is split into lines at the carriage
-// return/linefeed. If 'comment' is true then
+// return/linefeed. If 'comment' is true then comments are included as token
+// objects. The parser does not want to see comments, but a s

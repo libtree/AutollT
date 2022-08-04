@@ -46,4 +46,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
     );
     let line_nr = 0;
     let line = lines[0];
-    rx_t
+    rx_token.lastIndex = 0;
+
+    return function token_generator() {
+        if (line === undefi

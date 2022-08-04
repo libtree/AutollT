@@ -42,4 +42,8 @@ export default Object.freeze(function tokenize(source, comment = false) {
     const lines = (
         Array.isArray(source)
         ? source
-      
+        : source.split(rx_crlf)
+    );
+    let line_nr = 0;
+    let line = lines[0];
+    rx_t

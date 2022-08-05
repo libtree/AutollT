@@ -49,4 +49,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
     rx_token.lastIndex = 0;
 
     return function token_generator() {
-        if (line === undefi
+        if (line === undefined) {
+            return;
+        }
+        let column_nr = rx_token.las

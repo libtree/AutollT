@@ -54,4 +54,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
         }
         let column_nr = rx_token.lastIndex;
         if (column_nr >= line.length) {
-            rx_token.lastIn
+            rx_token.lastIndex = 0;
+            line_nr += 1;
+            line = lines[line_nr];
+   

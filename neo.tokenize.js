@@ -52,4 +52,6 @@ export default Object.freeze(function tokenize(source, comment = false) {
         if (line === undefined) {
             return;
         }
-        let column_nr = rx_token.las
+        let column_nr = rx_token.lastIndex;
+        if (column_nr >= line.length) {
+            rx_token.lastIn

@@ -60,3 +60,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
             return (
                 line === undefined
                 ? undefined
+                : token_generator()
+            );
+        }
+        let captives 

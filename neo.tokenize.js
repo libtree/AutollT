@@ -57,4 +57,6 @@ export default Object.freeze(function tokenize(source, comment = false) {
             rx_token.lastIndex = 0;
             line_nr += 1;
             line = lines[line_nr];
-   
+            return (
+                line === undefined
+                ? undefined

@@ -63,4 +63,9 @@ export default Object.freeze(function tokenize(source, comment = false) {
                 : token_generator()
             );
         }
-        let captives 
+        let captives = rx_token.exec(line);
+
+// Nothing matched.
+
+        if (!captives) {
+       

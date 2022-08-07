@@ -68,4 +68,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
 // Nothing matched.
 
         if (!captives) {
-       
+            return {
+                id: "(error)",
+                line_nr,
+                column_n

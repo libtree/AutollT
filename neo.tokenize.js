@@ -79,4 +79,11 @@ export default Object.freeze(function tokenize(source, comment = false) {
 // Whitespace matched.
 
         if (captives[1]) {
-            return toke
+            return token_generator();
+        }
+
+// A comment matched.
+
+        if (captives[2]) {
+            return (
+ 

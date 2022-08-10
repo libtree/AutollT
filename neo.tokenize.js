@@ -71,4 +71,9 @@ export default Object.freeze(function tokenize(source, comment = false) {
             return {
                 id: "(error)",
                 line_nr,
-                column_n
+                column_nr,
+                string: line.slice(column_nr)
+            };
+        }
+
+// W

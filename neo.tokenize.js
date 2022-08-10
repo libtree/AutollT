@@ -76,4 +76,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
             };
         }
 
-// W
+// Whitespace matched.
+
+        if (captives[1]) {
+            return toke

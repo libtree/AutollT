@@ -86,4 +86,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
 
         if (captives[2]) {
             return (
- 
+                comment
+                ? {
+                    id: "(comment)",
+                    commen

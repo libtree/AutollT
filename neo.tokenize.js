@@ -89,4 +89,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
                 comment
                 ? {
                     id: "(comment)",
-                    commen
+                    comment: captives[2],
+                    line_nr,
+                    column_nr,
+      

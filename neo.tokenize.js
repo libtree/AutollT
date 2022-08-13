@@ -92,4 +92,6 @@ export default Object.freeze(function tokenize(source, comment = false) {
                     comment: captives[2],
                     line_nr,
                     column_nr,
-      
+                    column_to: rx_token.lastIndex
+                }
+                : toke

@@ -94,4 +94,10 @@ export default Object.freeze(function tokenize(source, comment = false) {
                     column_nr,
                     column_to: rx_token.lastIndex
                 }
-                : toke
+                : token_generator()
+            );
+        }
+
+// A name matched.
+
+        if (

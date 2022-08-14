@@ -103,4 +103,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
         if (captives[3]) {
             return {
                 id: captives[3],
-                a
+                alphameric: true,
+                line_nr,
+                column_nr,
+    

@@ -106,4 +106,8 @@ export default Object.freeze(function tokenize(source, comment = false) {
                 alphameric: true,
                 line_nr,
                 column_nr,
-    
+                column_to: rx_token.lastIndex
+            };
+        }
+
+// 

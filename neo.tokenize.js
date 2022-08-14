@@ -100,4 +100,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
 
 // A name matched.
 
-        if (
+        if (captives[3]) {
+            return {
+                id: captives[3],
+                a

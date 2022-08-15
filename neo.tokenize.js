@@ -116,4 +116,5 @@ export default Object.freeze(function tokenize(source, comment = false) {
             return {
                 id: "(number)",
                 readonly: true,
-          
+                number: big_float.normalize(big_float.make(captives[4])),
+                tex

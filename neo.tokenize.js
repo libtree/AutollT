@@ -113,4 +113,7 @@ export default Object.freeze(function tokenize(source, comment = false) {
 // A number literal matched.
 
         if (captives[4]) {
-            r
+            return {
+                id: "(number)",
+                readonly: true,
+          

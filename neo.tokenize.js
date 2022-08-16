@@ -120,3 +120,8 @@ export default Object.freeze(function tokenize(source, comment = false) {
                 text: captives[4],
                 line_nr,
                 column_nr,
+                column_to: rx_token.lastIndex
+            };
+        }
+
+// A tex

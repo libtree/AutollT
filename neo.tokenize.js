@@ -124,4 +124,8 @@ export default Object.freeze(function tokenize(source, comment = false) {
             };
         }
 
-// A tex
+// A text literal matched.
+
+        if (captives[5]) {
+
+// We use '.replace' to convert '\u{xxxxxx}' to a 

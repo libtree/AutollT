@@ -128,4 +128,5 @@ export default Object.freeze(function tokenize(source, comment = false) {
 
         if (captives[5]) {
 
-// We use '.replace' to convert '\u{xxxxxx}' to a 
+// We use '.replace' to convert '\u{xxxxxx}' to a codepoint
+// and 'JSON.parse' to process the remaining escapes and remove t

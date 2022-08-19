@@ -135,4 +135,5 @@ export default Object.freeze(function tokenize(source, comment = false) {
                 id: "(text)",
                 readonly: true,
                 text: JSON.parse(captives[5].replace(
-     
+                    rx_unicode_escapement,
+                    function (ignore, cod

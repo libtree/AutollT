@@ -136,4 +136,5 @@ export default Object.freeze(function tokenize(source, comment = false) {
                 readonly: true,
                 text: JSON.parse(captives[5].replace(
                     rx_unicode_escapement,
-                    function (ignore, cod
+                    function (ignore, code) {
+                        return String.fromCodePoint(parseInt(code, 16

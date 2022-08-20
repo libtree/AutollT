@@ -141,4 +141,9 @@ export default Object.freeze(function tokenize(source, comment = false) {
                     }
                 )),
                 line_nr,
-                colu
+                column_nr,
+                column_to: rx_token.lastIndex
+            };
+        }
+
+// 

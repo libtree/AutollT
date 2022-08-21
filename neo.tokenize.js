@@ -146,4 +146,8 @@ export default Object.freeze(function tokenize(source, comment = false) {
             };
         }
 
-// 
+// A punctuator matched.
+
+        if (captives[6]) {
+            return {
+            

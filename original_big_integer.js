@@ -7,4 +7,5 @@
 
 /*jslint bitwise */
 
-/*pro
+/*property
+    abs, abs_lt, add, and, clz32, concat, create, div, divrem, 

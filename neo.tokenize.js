@@ -153,4 +153,9 @@ export default Object.freeze(function tokenize(source, comment = false) {
                 id: captives[6],
                 line_nr,
                 column_nr,
-                colum
+                column_to: rx_token.lastIndex
+            };
+        }
+    };
+});
+

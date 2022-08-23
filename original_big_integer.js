@@ -8,4 +8,6 @@
 /*jslint bitwise */
 
 /*property
-    abs, abs_lt, add, and, clz32, concat, create, div, divrem, 
+    abs, abs_lt, add, and, clz32, concat, create, div, divrem, eq, every, fill,
+    floor, forEach, freeze, gcd, isArray, isInteger, isSafeInteger,
+    

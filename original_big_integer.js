@@ -10,4 +10,5 @@
 /*property
     abs, abs_lt, add, and, clz32, concat, create, div, divrem, eq, every, fill,
     floor, forEach, freeze, gcd, isArray, isInteger, isSafeInteger,
-    
+    is_big_integer, is_negative, is_positive, is_zero, join, length, lt, make,
+    map, mask, mul, neg

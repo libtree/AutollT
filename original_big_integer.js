@@ -13,4 +13,8 @@
     is_big_integer, is_negative, is_positive, is_zero, join, length, lt, make,
     map, mask, mul, neg, not, number, or, population, power, push, random,
     reduce, reverse, shift_down, shift_up, significant_bits, signum, slice,
-    split, string, sub, ten,
+    split, string, sub, ten, toUpperCase, two, wun, xor, zero
+*/
+
+const radix = 16777216;
+const radix_s

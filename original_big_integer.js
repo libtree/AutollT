@@ -20,4 +20,9 @@ const radix = 16777216;
 const radix_squared = radix * radix;
 const log2_radix = 24;
 const plus = "+";
-const minus 
+const minus = "-";
+const sign = 0;
+const least = 1;
+
+function last(array) {
+    return array[a

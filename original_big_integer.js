@@ -17,4 +17,7 @@
 */
 
 const radix = 16777216;
-const radix_s
+const radix_squared = radix * radix;
+const log2_radix = 24;
+const plus = "+";
+const minus 

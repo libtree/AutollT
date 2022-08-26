@@ -32,4 +32,6 @@ function next_to_last(array) {
     return array[array.length - 2];
 }
 
-c
+const zero = Object.freeze([plus]);
+const wun = Object.freeze([plus, 1]);
+const two 

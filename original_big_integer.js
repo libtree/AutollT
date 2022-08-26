@@ -34,4 +34,6 @@ function next_to_last(array) {
 
 const zero = Object.freeze([plus]);
 const wun = Object.freeze([plus, 1]);
-const two 
+const two = Object.freeze([plus, 2]);
+const ten = Object.freeze([plus, 10]);
+const

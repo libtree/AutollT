@@ -36,4 +36,6 @@ const zero = Object.freeze([plus]);
 const wun = Object.freeze([plus, 1]);
 const two = Object.freeze([plus, 2]);
 const ten = Object.freeze([plus, 10]);
-const
+const negative_wun = Object.freeze([minus, 1]);
+
+function mint(proto_big_integer) {

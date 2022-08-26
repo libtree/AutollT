@@ -25,4 +25,11 @@ const sign = 0;
 const least = 1;
 
 function last(array) {
-    return array[a
+    return array[array.length - 1];
+}
+
+function next_to_last(array) {
+    return array[array.length - 2];
+}
+
+c

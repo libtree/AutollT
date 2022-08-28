@@ -43,4 +43,7 @@ function mint(proto_big_integer) {
 // Mint a big integer number from a proto big integer. Delete leading zero
 // megadigits. Substitute a popular constant if possible.
 
-    while (last(proto_bi
+    while (last(proto_big_integer) === 0) {
+        proto_big_integer.length -= 1;
+    }
+    if (proto_big_i

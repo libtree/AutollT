@@ -40,4 +40,7 @@ const negative_wun = Object.freeze([minus, 1]);
 
 function mint(proto_big_integer) {
 
-// Mint a big integer number from a proto big integer. Delete leading ze
+// Mint a big integer number from a proto big integer. Delete leading zero
+// megadigits. Substitute a popular constant if possible.
+
+    while (last(proto_bi

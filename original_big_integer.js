@@ -46,4 +46,7 @@ function mint(proto_big_integer) {
     while (last(proto_big_integer) === 0) {
         proto_big_integer.length -= 1;
     }
-    if (proto_big_i
+    if (proto_big_integer.length <= 1) {
+        return zero;
+    }
+    if (proto_big_int

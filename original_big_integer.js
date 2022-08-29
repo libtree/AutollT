@@ -54,4 +54,6 @@ function mint(proto_big_integer) {
             if (proto_big_integer[least] === 1) {
                 return wun;
             }
-  
+            if (proto_big_integer[least] === 2) {
+                return two;
+   

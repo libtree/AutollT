@@ -51,4 +51,7 @@ function mint(proto_big_integer) {
     }
     if (proto_big_integer[sign] === plus) {
         if (proto_big_integer.length === 2) {
-            i
+            if (proto_big_integer[least] === 1) {
+                return wun;
+            }
+  

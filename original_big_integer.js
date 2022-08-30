@@ -61,4 +61,6 @@ function mint(proto_big_integer) {
                 return ten;
             }
         }
-    } else if (proto_big_integer.length ==
+    } else if (proto_big_integer.length === 2) {
+        if (proto_big_integer[least] === 1) {
+            return negati

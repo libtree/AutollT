@@ -58,4 +58,7 @@ function mint(proto_big_integer) {
                 return two;
             }
             if (proto_big_integer[least] === 10) {
-          
+                return ten;
+            }
+        }
+    } else if (proto_big_integer.length ==

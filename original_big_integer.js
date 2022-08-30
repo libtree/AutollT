@@ -56,4 +56,6 @@ function mint(proto_big_integer) {
             }
             if (proto_big_integer[least] === 2) {
                 return two;
-   
+            }
+            if (proto_big_integer[least] === 10) {
+          

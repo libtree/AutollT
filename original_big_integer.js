@@ -69,4 +69,5 @@ function mint(proto_big_integer) {
     return Object.freeze(proto_big_integer);
 }
 
-func
+function is_big_integer(big) {
+    return Array.isArray(big) && (big[sign] ==

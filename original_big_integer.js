@@ -70,4 +70,8 @@ function mint(proto_big_integer) {
 }
 
 function is_big_integer(big) {
-    return Array.isArray(big) && (big[sign] ==
+    return Array.isArray(big) && (big[sign] === plus || big[sign] === minus);
+}
+
+function is_negative(big) {
+    return Arr

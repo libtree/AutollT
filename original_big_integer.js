@@ -78,4 +78,8 @@ function is_negative(big) {
 }
 
 function is_positive(big) {
-    return Array.isArray
+    return Array.isArray(big) && big[sign] === plus;
+}
+
+function is_zero(big) {
+    return !Array.isArray(bi

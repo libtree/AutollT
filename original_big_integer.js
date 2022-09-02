@@ -82,4 +82,9 @@ function is_positive(big) {
 }
 
 function is_zero(big) {
-    return !Array.isArray(bi
+    return !Array.isArray(big) || big.length < 2;
+}
+
+function neg(big) {
+    if (is_zero(big)) {
+    

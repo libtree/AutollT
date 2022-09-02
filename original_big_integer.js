@@ -74,4 +74,8 @@ function is_big_integer(big) {
 }
 
 function is_negative(big) {
-    return Arr
+    return Array.isArray(big) && big[sign] === minus;
+}
+
+function is_positive(big) {
+    return Array.isArray

@@ -87,4 +87,7 @@ function is_zero(big) {
 
 function neg(big) {
     if (is_zero(big)) {
-    
+        return zero;
+    }
+    let negation = big.slice();
+    negation[sign]

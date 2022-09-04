@@ -90,4 +90,12 @@ function neg(big) {
         return zero;
     }
     let negation = big.slice();
-    negation[sign]
+    negation[sign] = (
+        is_negative(big)
+        ? plus
+        : minus
+    );
+    return mint(negation);
+}
+
+f

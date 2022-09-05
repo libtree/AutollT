@@ -106,3 +106,10 @@ function abs(big) {
             is_negative(big)
             ? neg(big)
             : big
+        )
+    );
+}
+
+function signum(big) {
+    return (
+        is_zero(

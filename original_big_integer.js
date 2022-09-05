@@ -103,3 +103,6 @@ function abs(big) {
         is_zero(big)
         ? zero
         : (
+            is_negative(big)
+            ? neg(big)
+            : big

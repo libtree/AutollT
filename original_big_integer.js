@@ -112,4 +112,9 @@ function abs(big) {
 
 function signum(big) {
     return (
-        is_zero(
+        is_zero(big)
+        ? zero
+        : (
+            is_negative(big)
+            ? negative_wun
+   

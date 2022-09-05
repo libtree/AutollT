@@ -98,4 +98,8 @@ function neg(big) {
     return mint(negation);
 }
 
-f
+function abs(big) {
+    return (
+        is_zero(big)
+        ? zero
+        : (

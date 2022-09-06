@@ -126,4 +126,9 @@ function eq(comparahend, comparator) {
     return comparahend === comparator || (
         comparahend.length === comparator.length
         && comparahend.every(function (element, element_nr) {
-            return elemen
+            return element === comparator[element_nr];
+        })
+    );
+}
+
+function abs_lt(comparahend, comparator

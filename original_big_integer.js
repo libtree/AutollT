@@ -123,4 +123,6 @@ function signum(big) {
 }
 
 function eq(comparahend, comparator) {
-  
+    return comparahend === comparator || (
+        comparahend.length === comparator.length
+      

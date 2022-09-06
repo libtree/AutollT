@@ -125,4 +125,5 @@ function signum(big) {
 function eq(comparahend, comparator) {
     return comparahend === comparator || (
         comparahend.length === comparator.length
-      
+        && comparahend.every(function (element, element_nr) {
+            return elemen

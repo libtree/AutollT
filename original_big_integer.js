@@ -117,4 +117,10 @@ function signum(big) {
         : (
             is_negative(big)
             ? negative_wun
-   
+            : wun
+        )
+    );
+}
+
+function eq(comparahend, comparator) {
+  

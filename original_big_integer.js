@@ -131,4 +131,7 @@ function eq(comparahend, comparator) {
     );
 }
 
-function abs_lt(comparahend, comparator
+function abs_lt(comparahend, comparator) {
+    return (
+
+// Ignoring the sign, the number with more megadigits is t

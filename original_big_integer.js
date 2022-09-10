@@ -140,4 +140,5 @@ function abs_lt(comparahend, comparator) {
 
         comparahend.length === comparator.length
         ? comparahend.reduce(
-  
+            function (reduction, element, element_nr) {
+                if (elemen

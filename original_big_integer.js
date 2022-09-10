@@ -136,4 +136,8 @@ function abs_lt(comparahend, comparator) {
 
 // Ignoring the sign, the number with more megadigits is the larger.
 // If the two numbers contain the same number of megadigits,
-// then we must examine ea
+// then we must examine each pair.
+
+        comparahend.length === comparator.length
+        ? comparahend.reduce(
+  

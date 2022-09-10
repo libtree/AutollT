@@ -134,4 +134,6 @@ function eq(comparahend, comparator) {
 function abs_lt(comparahend, comparator) {
     return (
 
-// Ignoring the sign, the number with more megadigits is t
+// Ignoring the sign, the number with more megadigits is the larger.
+// If the two numbers contain the same number of megadigits,
+// then we must examine ea

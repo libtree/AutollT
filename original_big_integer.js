@@ -144,4 +144,8 @@ function abs_lt(comparahend, comparator) {
                 if (element_nr !== sign) {
                     const other = comparator[element_nr];
                     if (element !== other) {
-                        return element < othe
+                        return element < other;
+                    }
+                }
+                return reduction;
+          

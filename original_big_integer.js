@@ -152,4 +152,9 @@ function abs_lt(comparahend, comparator) {
             false
         )
         : comparahend.length < comparator.length
-  
+    );
+}
+
+function lt(comparahend, comparator) {
+    return (
+        comparahen

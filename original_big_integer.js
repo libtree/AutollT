@@ -159,4 +159,6 @@ function lt(comparahend, comparator) {
     return (
         comparahend[sign] !== comparator[sign]
         ? is_negative(comparahend)
-        : 
+        : (
+            is_negative(comparahend)
+            ? abs_lt(comparator, comparahen

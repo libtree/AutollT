@@ -161,4 +161,10 @@ function lt(comparahend, comparator) {
         ? is_negative(comparahend)
         : (
             is_negative(comparahend)
-            ? abs_lt(comparator, comparahen
+            ? abs_lt(comparator, comparahend)
+            : abs_lt(comparahend, comparator)
+        )
+    );
+}
+
+functio

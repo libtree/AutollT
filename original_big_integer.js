@@ -170,4 +170,7 @@ function lt(comparahend, comparator) {
 function int(big) {
     let result;
     if (typeof big === "number") {
-        if 
+        if (Number.isSafeInteger(big)) {
+            return big;
+        }
+    } else if (is_big_i

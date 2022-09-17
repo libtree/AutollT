@@ -167,4 +167,7 @@ function lt(comparahend, comparator) {
     );
 }
 
-functio
+function int(big) {
+    let result;
+    if (typeof big === "number") {
+        if 

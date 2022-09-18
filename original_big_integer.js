@@ -177,4 +177,6 @@ function int(big) {
         if (big.length < 2) {
             return 0;
         }
-        if
+        if (big.length === 2) {
+            return (
+                is_nega

@@ -173,4 +173,8 @@ function int(big) {
         if (Number.isSafeInteger(big)) {
             return big;
         }
-    } else if (is_big_i
+    } else if (is_big_integer(big)) {
+        if (big.length < 2) {
+            return 0;
+        }
+        if

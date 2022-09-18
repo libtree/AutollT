@@ -179,4 +179,7 @@ function int(big) {
         }
         if (big.length === 2) {
             return (
-                is_nega
+                is_negative(big)
+                ? -big[least]
+                : big[least]
+     

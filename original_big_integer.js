@@ -182,4 +182,7 @@ function int(big) {
                 is_negative(big)
                 ? -big[least]
                 : big[least]
-     
+            );
+        }
+        if (big.length === 3) {
+            result = big[le

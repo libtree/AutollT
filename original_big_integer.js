@@ -185,4 +185,6 @@ function int(big) {
             );
         }
         if (big.length === 3) {
-            result = big[le
+            result = big[least + 1] * radix + big[least];
+            return (
+                is_negative(

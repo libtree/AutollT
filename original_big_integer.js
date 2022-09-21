@@ -191,4 +191,7 @@ function int(big) {
                 ? -result
                 : result
             );
-     
+        }
+        if (big.length === 4) {
+            result = (
+                big[least + 2] * radix_squ

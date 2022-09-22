@@ -200,3 +200,6 @@ function int(big) {
             );
             if (Number.isSafeInteger(result)) {
                 return (
+                    is_negative(big)
+                    ? -result
+     

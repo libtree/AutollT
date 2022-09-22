@@ -197,4 +197,6 @@ function int(big) {
                 big[least + 2] * radix_squared
                 + big[least + 1] * radix
                 + big[least]
-   
+            );
+            if (Number.isSafeInteger(result)) {
+                return (

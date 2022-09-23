@@ -213,4 +213,6 @@ function number(big) {
     let value = 0;
     let the_sign = 1;
     let factor = 1;
-    big.forE
+    big.forEach(function (element, element_nr) {
+        if (element_nr === 0) {
+            

@@ -202,4 +202,11 @@ function int(big) {
                 return (
                     is_negative(big)
                     ? -result
-     
+                    : result
+                );
+            }
+        }
+    }
+}
+
+function number(

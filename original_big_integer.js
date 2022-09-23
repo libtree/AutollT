@@ -215,4 +215,7 @@ function number(big) {
     let factor = 1;
     big.forEach(function (element, element_nr) {
         if (element_nr === 0) {
-            
+            if (element === minus) {
+                the_sign = -1;
+            }
+        } e

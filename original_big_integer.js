@@ -218,4 +218,6 @@ function number(big) {
             if (element === minus) {
                 the_sign = -1;
             }
-        } e
+        } else {
+            value += element * factor;
+         

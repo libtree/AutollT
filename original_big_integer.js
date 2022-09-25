@@ -220,4 +220,10 @@ function number(big) {
             }
         } else {
             value += element * factor;
-         
+            factor *= radix;
+        }
+    });
+    return the_sign * value;
+}
+
+function and(a, b) {

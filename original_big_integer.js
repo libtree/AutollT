@@ -231,4 +231,8 @@ function and(a, b) {
 // Make 'a' the shorter array.
 
     if (a.length > b.length) {
-        [a, b] = [b
+        [a, b] = [b, a];
+    }
+    return mint(a.map(function (element, element_nr) {
+        return (
+            e

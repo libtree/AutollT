@@ -227,3 +227,8 @@ function number(big) {
 }
 
 function and(a, b) {
+
+// Make 'a' the shorter array.
+
+    if (a.length > b.length) {
+        [a, b] = [b

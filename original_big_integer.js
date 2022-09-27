@@ -239,4 +239,11 @@ function and(a, b) {
             ? plus
             : element & b[element_nr]
         );
- 
+    }));
+}
+
+function or(a, b) {
+
+// Make 'a' the longer array.
+
+    if (a.length < b.le

@@ -260,4 +260,7 @@ function or(a, b) {
 
 function xor(a, b) {
 
-// Make 'a
+// Make 'a' the longer array.
+
+    if (a.length < b.length) {
+        [a, b] = [b, a]

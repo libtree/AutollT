@@ -249,4 +249,8 @@ function or(a, b) {
     if (a.length < b.length) {
         [a, b] = [b, a];
     }
-    return mint(a.map(function (eleme
+    return mint(a.map(function (element, element_nr) {
+        return (
+            element_nr === sign
+            ? plus
+            : 

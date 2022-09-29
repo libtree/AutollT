@@ -253,4 +253,11 @@ function or(a, b) {
         return (
             element_nr === sign
             ? plus
-            : 
+            : element | (b[element_nr] || 0)
+        );
+    }));
+}
+
+function xor(a, b) {
+
+// Make 'a

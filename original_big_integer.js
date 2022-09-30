@@ -263,4 +263,8 @@ function xor(a, b) {
 // Make 'a' the longer array.
 
     if (a.length < b.length) {
-        [a, b] = [b, a]
+        [a, b] = [b, a];
+    }
+    return mint(a.map(function (element, element_nr) {
+        return (
+            eleme

@@ -267,4 +267,6 @@ function xor(a, b) {
     }
     return mint(a.map(function (element, element_nr) {
         return (
-            eleme
+            element_nr === sign
+            ? plus
+            : element ^ (b[element_nr] || 0)

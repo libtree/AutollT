@@ -276,4 +276,8 @@ function xor(a, b) {
 
 function mask(nr_bits) {
 
-// Make a string o
+// Make a string of 1 bits.
+
+    nr_bits = int(nr_bits);
+    if (nr_bits !== undefined && nr_bits >= 0) {
+        let

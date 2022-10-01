@@ -270,3 +270,10 @@ function xor(a, b) {
             element_nr === sign
             ? plus
             : element ^ (b[element_nr] || 0)
+        );
+    }));
+}
+
+function mask(nr_bits) {
+
+// Make a string o

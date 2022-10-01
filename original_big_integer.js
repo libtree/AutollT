@@ -280,4 +280,5 @@ function mask(nr_bits) {
 
     nr_bits = int(nr_bits);
     if (nr_bits !== undefined && nr_bits >= 0) {
-        let
+        let mega = Math.floor(nr_bits / log2_radix);
+        let result = new Array(mega + 1).fi

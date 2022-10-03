@@ -283,4 +283,6 @@ function mask(nr_bits) {
         let mega = Math.floor(nr_bits / log2_radix);
         let result = new Array(mega + 1).fill(radix - 1);
         result[sign] = plus;
-        let leftover = nr_
+        let leftover = nr_bits - (mega * log2_radix);
+        if (leftover > 0) {
+            result.pu

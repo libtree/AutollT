@@ -291,4 +291,9 @@ function mask(nr_bits) {
     }
 }
 
-function n
+function not(a, nr_bits) {
+    return xor(a, mask(nr_bits));
+}
+
+function shift_up(big, places) {
+    if (i

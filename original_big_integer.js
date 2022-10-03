@@ -285,4 +285,10 @@ function mask(nr_bits) {
         result[sign] = plus;
         let leftover = nr_bits - (mega * log2_radix);
         if (leftover > 0) {
-            result.pu
+            result.push((1 << leftover) - 1);
+        }
+        return mint(result);
+    }
+}
+
+function n

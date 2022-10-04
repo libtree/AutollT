@@ -296,4 +296,8 @@ function not(a, nr_bits) {
 }
 
 function shift_up(big, places) {
-    if (i
+    if (is_zero(big)) {
+        return zero;
+    }
+    places = int(places);
+    

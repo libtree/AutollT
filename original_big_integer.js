@@ -300,4 +300,6 @@ function shift_up(big, places) {
         return zero;
     }
     places = int(places);
-    
+    if (Number.isSafeInteger(places)) {
+        if (places === 0) {
+            return

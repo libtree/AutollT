@@ -306,4 +306,6 @@ function shift_up(big, places) {
         }
         if (places < 0) {
             return shift_down(big, -places);
-      
+        }
+        let blanks = Math.floor(places / log2_radix);
+     

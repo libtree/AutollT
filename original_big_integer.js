@@ -302,4 +302,8 @@ function shift_up(big, places) {
     places = int(places);
     if (Number.isSafeInteger(places)) {
         if (places === 0) {
-            return
+            return abs(big);
+        }
+        if (places < 0) {
+            return shift_down(big, -places);
+      

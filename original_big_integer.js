@@ -308,4 +308,6 @@ function shift_up(big, places) {
             return shift_down(big, -places);
         }
         let blanks = Math.floor(places / log2_radix);
-     
+        let result = new Array(blanks + 1).fill(0);
+        result[sign] = plus;
+        places

@@ -310,4 +310,6 @@ function shift_up(big, places) {
         let blanks = Math.floor(places / log2_radix);
         let result = new Array(blanks + 1).fill(0);
         result[sign] = plus;
-        places
+        places -= blanks * log2_radix;
+        if (places === 0) {
+            return mint

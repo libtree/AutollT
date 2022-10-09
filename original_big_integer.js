@@ -312,4 +312,6 @@ function shift_up(big, places) {
         result[sign] = plus;
         places -= blanks * log2_radix;
         if (places === 0) {
-            return mint
+            return mint(result.concat(big.slice(least)));
+        }
+        let carry = big.reduce(function

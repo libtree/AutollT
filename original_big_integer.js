@@ -316,4 +316,6 @@ function shift_up(big, places) {
         }
         let carry = big.reduce(function (accumulator, element, element_nr) {
             if (element_nr === sign) {
-         
+                return 0;
+            }
+            result.push(((element << places) | accumulator

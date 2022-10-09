@@ -314,4 +314,6 @@ function shift_up(big, places) {
         if (places === 0) {
             return mint(result.concat(big.slice(least)));
         }
-        let carry = big.reduce(function
+        let carry = big.reduce(function (accumulator, element, element_nr) {
+            if (element_nr === sign) {
+         

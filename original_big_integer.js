@@ -318,4 +318,6 @@ function shift_up(big, places) {
             if (element_nr === sign) {
                 return 0;
             }
-            result.push(((element << places) | accumulator
+            result.push(((element << places) | accumulator) & (radix - 1));
+            return element >> (log2_radix - places);
+     

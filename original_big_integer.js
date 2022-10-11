@@ -330,3 +330,7 @@ function shift_up(big, places) {
 
 function shift_down(big, places) {
     if (is_zero(big)) {
+        return zero;
+    }
+    places = int(places);
+    if (Number.isSafeInteger(

@@ -333,4 +333,8 @@ function shift_down(big, places) {
         return zero;
     }
     places = int(places);
-    if (Number.isSafeInteger(
+    if (Number.isSafeInteger(places)) {
+        if (places === 0) {
+            return abs(big);
+        }
+        if (place

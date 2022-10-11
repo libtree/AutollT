@@ -324,4 +324,9 @@ function shift_up(big, places) {
         if (carry > 0) {
             result.push(carry);
         }
-      
+        return mint(result);
+    }
+}
+
+function shift_down(big, places) {
+    if (is_zero(big)) {

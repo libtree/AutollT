@@ -320,4 +320,8 @@ function shift_up(big, places) {
             }
             result.push(((element << places) | accumulator) & (radix - 1));
             return element >> (log2_radix - places);
-     
+        }, 0);
+        if (carry > 0) {
+            result.push(carry);
+        }
+      

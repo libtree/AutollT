@@ -337,4 +337,7 @@ function shift_down(big, places) {
         if (places === 0) {
             return abs(big);
         }
-        if (place
+        if (places < 0) {
+            return shift_up(big, -places);
+        }
+        let skip 

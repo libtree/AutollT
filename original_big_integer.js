@@ -342,4 +342,8 @@ function shift_down(big, places) {
         }
         let skip = Math.floor(places / log2_radix);
         places -= skip * log2_radix;
-        if (
+        if (skip + 1 >= big.length) {
+            return zero;
+        }
+        big = (
+ 

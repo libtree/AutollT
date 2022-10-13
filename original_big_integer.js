@@ -353,3 +353,5 @@ function shift_down(big, places) {
         if (places === 0) {
             return big;
         }
+        return mint(big.map(function (element, element_nr) {
+            if (element_nr

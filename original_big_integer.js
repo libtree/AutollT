@@ -346,4 +346,6 @@ function shift_down(big, places) {
             return zero;
         }
         big = (
- 
+            skip > 0
+            ? mint(zero.concat(big.slice(skip + 1)))
+        

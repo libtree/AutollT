@@ -354,4 +354,7 @@ function shift_down(big, places) {
             return big;
         }
         return mint(big.map(function (element, element_nr) {
-            if (element_nr
+            if (element_nr === sign) {
+                return plus;
+            }
+            return ((radix - 1) &

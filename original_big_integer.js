@@ -365,4 +365,6 @@ function shift_down(big, places) {
     }
 }
 
-funct
+function random(nr_bits, random = Math.random) {
+
+// Make a string of random bits.

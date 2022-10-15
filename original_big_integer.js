@@ -357,4 +357,6 @@ function shift_down(big, places) {
             if (element_nr === sign) {
                 return plus;
             }
-            return ((radix - 1) &
+            return ((radix - 1) & (
+                (element >> places)
+                | ((big[element_nr + 

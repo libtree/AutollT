@@ -359,4 +359,10 @@ function shift_down(big, places) {
             }
             return ((radix - 1) & (
                 (element >> places)
-                | ((big[element_nr + 
+                | ((big[element_nr + 1] || 0) << (log2_radix - places))
+            ));
+        }));
+    }
+}
+
+funct

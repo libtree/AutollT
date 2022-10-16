@@ -367,4 +367,5 @@ function shift_down(big, places) {
 
 function random(nr_bits, random = Math.random) {
 
-// Make a string of random bits.
+// Make a string of random bits. If you are concerned with security,
+// you can pass in a stronger random number generato

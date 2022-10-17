@@ -368,4 +368,9 @@ function shift_down(big, places) {
 function random(nr_bits, random = Math.random) {
 
 // Make a string of random bits. If you are concerned with security,
-// you can pass in a stronger random number generato
+// you can pass in a stronger random number generator.
+
+// First make a string of '1' bits.
+
+    const wuns = mask(nr_bits);
+    if

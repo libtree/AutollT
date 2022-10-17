@@ -373,4 +373,6 @@ function random(nr_bits, random = Math.random) {
 // First make a string of '1' bits.
 
     const wuns = mask(nr_bits);
-    if
+    if (wuns !== undefined) {
+
+// For each megadigit, get a random number between '0.

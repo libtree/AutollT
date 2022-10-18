@@ -375,4 +375,6 @@ function random(nr_bits, random = Math.random) {
     const wuns = mask(nr_bits);
     if (wuns !== undefined) {
 
-// For each megadigit, get a random number between '0.
+// For each megadigit, get a random number between '0.0' and '1.0'.
+// Take some upper bits and some lower bits and 'xor' them together.
+// 

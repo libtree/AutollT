@@ -379,4 +379,5 @@ function random(nr_bits, random = Math.random) {
 // Take some upper bits and some lower bits and 'xor' them together.
 // Then 'and' it to the megadigit and put it into the new number.
 
-        r
+        return mint(wuns.map(function (element, element_nr) {
+            

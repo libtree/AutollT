@@ -377,4 +377,6 @@ function random(nr_bits, random = Math.random) {
 
 // For each megadigit, get a random number between '0.0' and '1.0'.
 // Take some upper bits and some lower bits and 'xor' them together.
-// 
+// Then 'and' it to the megadigit and put it into the new number.
+
+        r

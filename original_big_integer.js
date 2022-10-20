@@ -384,4 +384,9 @@ function random(nr_bits, random = Math.random) {
                 return plus;
             }
             const bits = random();
-            return ((bits * rad
+            return ((bits * radix_squared) ^ (bits * radix)) & element;
+        }));
+    }
+}
+
+function add(augend, addend

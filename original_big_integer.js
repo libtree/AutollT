@@ -382,4 +382,6 @@ function random(nr_bits, random = Math.random) {
         return mint(wuns.map(function (element, element_nr) {
             if (element_nr === sign) {
                 return plus;
-       
+            }
+            const bits = random();
+            return ((bits * rad

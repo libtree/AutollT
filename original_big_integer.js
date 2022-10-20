@@ -389,4 +389,8 @@ function random(nr_bits, random = Math.random) {
     }
 }
 
-function add(augend, addend
+function add(augend, addend) {
+    if (is_zero(augend)) {
+        return addend;
+    }
+    if (is_zero(addend

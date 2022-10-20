@@ -380,4 +380,6 @@ function random(nr_bits, random = Math.random) {
 // Then 'and' it to the megadigit and put it into the new number.
 
         return mint(wuns.map(function (element, element_nr) {
-            
+            if (element_nr === sign) {
+                return plus;
+       

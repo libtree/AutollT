@@ -397,4 +397,6 @@ function add(augend, addend) {
         return augend;
     }
 
-// If the signs are different, then turn this into
+// If the signs are different, then turn this into a subtraction problem.
+
+    if (augend[sign] !== addend[sign]

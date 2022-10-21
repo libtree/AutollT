@@ -393,4 +393,8 @@ function add(augend, addend) {
     if (is_zero(augend)) {
         return addend;
     }
-    if (is_zero(addend
+    if (is_zero(addend)) {
+        return augend;
+    }
+
+// If the signs are different, then turn this into

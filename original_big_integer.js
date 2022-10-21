@@ -403,4 +403,5 @@ function add(augend, addend) {
         return sub(augend, neg(addend));
     }
 
-// The signs are the same. Add all
+// The signs are the same. Add all the bits, giving the result the same sign.
+// We can add numbers of different lengths. We

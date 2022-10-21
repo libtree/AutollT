@@ -399,4 +399,8 @@ function add(augend, addend) {
 
 // If the signs are different, then turn this into a subtraction problem.
 
-    if (augend[sign] !== addend[sign]
+    if (augend[sign] !== addend[sign]) {
+        return sub(augend, neg(addend));
+    }
+
+// The signs are the same. Add all

@@ -411,4 +411,6 @@ function add(augend, addend) {
         [addend, augend] = [augend, addend];
     }
     let carry = 0;
-    let result = augend.map(functio
+    let result = augend.map(function (element, element_nr) {
+        if (element_nr !== sign) {
+            element += (addend[e

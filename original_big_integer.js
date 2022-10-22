@@ -408,4 +408,7 @@ function add(augend, addend) {
 // and use the '||' operator to replace nonexistant elements with zeros.
 
     if (augend.length < addend.length) {
-        [addend, augend] = [augend,
+        [addend, augend] = [augend, addend];
+    }
+    let carry = 0;
+    let result = augend.map(functio

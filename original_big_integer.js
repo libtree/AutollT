@@ -404,4 +404,5 @@ function add(augend, addend) {
     }
 
 // The signs are the same. Add all the bits, giving the result the same sign.
-// We can add numbers of different lengths. We
+// We can add numbers of different lengths. We give '.map' the longer wun,
+// and use the '||' operator to replace nonexistant elements w

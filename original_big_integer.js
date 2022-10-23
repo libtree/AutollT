@@ -424,4 +424,7 @@ function add(augend, addend) {
         return element;
     });
 
-// If the number overflowed, 
+// If the number overflowed, then append another element to contain the carry.
+
+    if (carry > 0) {
+        result

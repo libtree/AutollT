@@ -420,4 +420,8 @@ function add(augend, addend) {
             } else {
                 carry = 0;
             }
-    
+        }
+        return element;
+    });
+
+// If the number overflowed, 

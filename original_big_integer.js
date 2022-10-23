@@ -416,4 +416,8 @@ function add(augend, addend) {
             element += (addend[element_nr] || 0) + carry;
             if (element >= radix) {
                 carry = 1;
-      
+                element -= radix;
+            } else {
+                carry = 0;
+            }
+    

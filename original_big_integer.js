@@ -413,4 +413,7 @@ function add(augend, addend) {
     let carry = 0;
     let result = augend.map(function (element, element_nr) {
         if (element_nr !== sign) {
-            element += (addend[e
+            element += (addend[element_nr] || 0) + carry;
+            if (element >= radix) {
+                carry = 1;
+      

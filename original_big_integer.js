@@ -427,4 +427,9 @@ function add(augend, addend) {
 // If the number overflowed, then append another element to contain the carry.
 
     if (carry > 0) {
-        result
+        result.push(carry);
+    }
+    return mint(result);
+}
+
+function sub(minuend, subtrahen

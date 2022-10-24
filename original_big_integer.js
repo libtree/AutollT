@@ -432,4 +432,8 @@ function add(augend, addend) {
     return mint(result);
 }
 
-function sub(minuend, subtrahen
+function sub(minuend, subtrahend) {
+    if (is_zero(subtrahend)) {
+        return minuend;
+    }
+    if 

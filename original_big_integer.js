@@ -436,4 +436,7 @@ function sub(minuend, subtrahend) {
     if (is_zero(subtrahend)) {
         return minuend;
     }
-    if 
+    if (is_zero(minuend)) {
+        return neg(subtrahend);
+    }
+    let minuend_s

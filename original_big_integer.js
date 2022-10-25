@@ -439,4 +439,6 @@ function sub(minuend, subtrahend) {
     if (is_zero(minuend)) {
         return neg(subtrahend);
     }
-    let minuend_s
+    let minuend_sign = minuend[sign];
+
+// If the signs are different, turn this into 

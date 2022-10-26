@@ -444,4 +444,7 @@ function sub(minuend, subtrahend) {
 // If the signs are different, turn this into an addition problem.
 
     if (minuend_sign !== subtrahend[sign]) {
-        re
+        return add(minuend, neg(subtrahend));
+    }
+
+// Subtract the smaller from the large

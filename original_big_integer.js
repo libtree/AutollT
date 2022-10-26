@@ -441,4 +441,7 @@ function sub(minuend, subtrahend) {
     }
     let minuend_sign = minuend[sign];
 
-// If the signs are different, turn this into 
+// If the signs are different, turn this into an addition problem.
+
+    if (minuend_sign !== subtrahend[sign]) {
+        re

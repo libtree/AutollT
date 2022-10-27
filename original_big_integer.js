@@ -450,4 +450,7 @@ function sub(minuend, subtrahend) {
 // Subtract the smaller from the larger.
 
     if (abs_lt(minuend, subtrahend)) {
-        [subtrahend, minuend] = [mi
+        [subtrahend, minuend] = [minuend, subtrahend];
+        minuend_sign = (
+            minuend_sign === minus
+            ? 

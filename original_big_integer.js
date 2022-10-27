@@ -453,4 +453,9 @@ function sub(minuend, subtrahend) {
         [subtrahend, minuend] = [minuend, subtrahend];
         minuend_sign = (
             minuend_sign === minus
-            ? 
+            ? plus
+            : minus
+        );
+    }
+    let borrow = 0;
+    return min

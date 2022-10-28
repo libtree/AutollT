@@ -462,4 +462,6 @@ function sub(minuend, subtrahend) {
         if (element_nr === sign) {
             return minuend_sign;
         }
-        let diff = e
+        let diff = element - ((subtrahend[element_nr] || 0) + borrow);
+        if (diff < 0) {
+            diff += 1677

@@ -464,4 +464,9 @@ function sub(minuend, subtrahend) {
         }
         let diff = element - ((subtrahend[element_nr] || 0) + borrow);
         if (diff < 0) {
-            diff += 1677
+            diff += 16777216;
+            borrow = 1;
+        } else {
+            borrow = 0;
+        }
+        return dif

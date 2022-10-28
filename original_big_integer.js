@@ -459,4 +459,7 @@ function sub(minuend, subtrahend) {
     }
     let borrow = 0;
     return mint(minuend.map(function (element, element_nr) {
-        if (element_nr =
+        if (element_nr === sign) {
+            return minuend_sign;
+        }
+        let diff = e

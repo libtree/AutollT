@@ -469,4 +469,9 @@ function sub(minuend, subtrahend) {
         } else {
             borrow = 0;
         }
-        return dif
+        return diff;
+    }));
+}
+
+function mul(multiplicand, multiplier) {
+    if (is_zero(multiplicand) ||

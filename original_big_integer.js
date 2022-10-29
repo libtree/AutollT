@@ -474,4 +474,8 @@ function sub(minuend, subtrahend) {
 }
 
 function mul(multiplicand, multiplier) {
-    if (is_zero(multiplicand) ||
+    if (is_zero(multiplicand) || is_zero(multiplier)) {
+        return zero;
+    }
+
+// The sign of the result wi

@@ -478,4 +478,7 @@ function mul(multiplicand, multiplier) {
         return zero;
     }
 
-// The sign of the result wi
+// The sign of the result will be positive if the signs match.
+
+    let result = [
+        multiplicand[sign] ==

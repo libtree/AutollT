@@ -481,4 +481,9 @@ function mul(multiplicand, multiplier) {
 // The sign of the result will be positive if the signs match.
 
     let result = [
-        multiplicand[sign] ==
+        multiplicand[sign] === multiplier[sign]
+        ? plus
+        : minus
+    ];
+
+// Multiply each element 

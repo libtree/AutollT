@@ -491,4 +491,7 @@ function mul(multiplicand, multiplier) {
 
     multiplicand.forEach(function (
         multiplicand_element,
-        multiplicand
+        multiplicand_element_nr
+    ) {
+        if (multiplicand_element_nr !== sign) {
+            l

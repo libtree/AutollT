@@ -489,4 +489,6 @@ function mul(multiplicand, multiplier) {
 // Multiply each element of 'multiplicand' by each element of 'multiplier',
 // propagating the carry.
 
-    multip
+    multiplicand.forEach(function (
+        multiplicand_element,
+        multiplicand

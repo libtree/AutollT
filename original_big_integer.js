@@ -486,4 +486,7 @@ function mul(multiplicand, multiplier) {
         : minus
     ];
 
-// Multiply each element 
+// Multiply each element of 'multiplicand' by each element of 'multiplier',
+// propagating the carry.
+
+    multip

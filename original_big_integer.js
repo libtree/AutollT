@@ -499,4 +499,6 @@ function mul(multiplicand, multiplier) {
                 multiplier_element,
                 multiplier_element_nr
             ) {
-                if (multiplier_elemen
+                if (multiplier_element_nr !== sign) {
+                    let at = (
+                        multiplicand_element_n

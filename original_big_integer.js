@@ -496,4 +496,7 @@ function mul(multiplicand, multiplier) {
         if (multiplicand_element_nr !== sign) {
             let carry = 0;
             multiplier.forEach(function (
-                multiplier_el
+                multiplier_element,
+                multiplier_element_nr
+            ) {
+                if (multiplier_elemen

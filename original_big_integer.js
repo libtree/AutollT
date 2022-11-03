@@ -501,4 +501,6 @@ function mul(multiplicand, multiplier) {
             ) {
                 if (multiplier_element_nr !== sign) {
                     let at = (
-                        multiplicand_element_n
+                        multiplicand_element_nr + multiplier_element_nr - 1
+                    );
+                    let product = (

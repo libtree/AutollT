@@ -504,3 +504,5 @@ function mul(multiplicand, multiplier) {
                         multiplicand_element_nr + multiplier_element_nr - 1
                     );
                     let product = (
+                        (multiplicand_element * multiplier_element)
+   

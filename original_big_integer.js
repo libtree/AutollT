@@ -505,4 +505,6 @@ function mul(multiplicand, multiplier) {
                     );
                     let product = (
                         (multiplicand_element * multiplier_element)
-   
+                        + (result[at] || 0)
+                        + carry
+                   

@@ -512,4 +512,5 @@ function mul(multiplicand, multiplier) {
                     carry = Math.floor(product / radix);
                 }
             });
-            i
+            if (carry > 0) {
+                result[multiplicand_element_nr + multiplier.leng

@@ -507,4 +507,6 @@ function mul(multiplicand, multiplier) {
                         (multiplicand_element * multiplier_element)
                         + (result[at] || 0)
                         + carry
-                   
+                    );
+                    result[at] = product & 16777215;
+                    c

@@ -513,4 +513,11 @@ function mul(multiplicand, multiplier) {
                 }
             });
             if (carry > 0) {
-                result[multiplicand_element_nr + multiplier.leng
+                result[multiplicand_element_nr + multiplier.length - 1] = carry;
+            }
+        }
+    });
+    return mint(result);
+}
+
+function di

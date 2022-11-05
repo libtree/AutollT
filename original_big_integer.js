@@ -509,4 +509,7 @@ function mul(multiplicand, multiplier) {
                         + carry
                     );
                     result[at] = product & 16777215;
-                    c
+                    carry = Math.floor(product / radix);
+                }
+            });
+            i

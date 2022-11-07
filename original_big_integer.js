@@ -522,3 +522,7 @@ function mul(multiplicand, multiplier) {
 
 function divrem(dividend, divisor) {
     if (is_zero(dividend) || abs_lt(dividend, divisor)) {
+        return [zero, dividend];
+    }
+    if (is_zero(divisor)) {
+    

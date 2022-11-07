@@ -520,4 +520,5 @@ function mul(multiplicand, multiplier) {
     return mint(result);
 }
 
-function di
+function divrem(dividend, divisor) {
+    if (is_zero(dividend) || abs_lt(dividend, divisor)) {

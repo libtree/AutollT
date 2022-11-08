@@ -525,4 +525,9 @@ function divrem(dividend, divisor) {
         return [zero, dividend];
     }
     if (is_zero(divisor)) {
-    
+        return undefined;
+    }
+
+// Make the operands positive.
+
+    let quotient_is_negat

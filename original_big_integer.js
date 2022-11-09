@@ -531,4 +531,6 @@ function divrem(dividend, divisor) {
 // Make the operands positive.
 
     let quotient_is_negative = dividend[sign] !== divisor[sign];
-    let remainder_is_negative = dividend[sign] === 
+    let remainder_is_negative = dividend[sign] === minus;
+    let remainder = dividend;
+    dividend = abs(dividend

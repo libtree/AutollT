@@ -536,4 +536,6 @@ function divrem(dividend, divisor) {
     dividend = abs(dividend);
     divisor = abs(divisor);
 
-// We do long division just like you did in school. We 
+// We do long division just like you did in school. We estimate the next
+// digit of the quotient. We subtract the divisor times that estimate
+// 

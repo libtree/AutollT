@@ -539,4 +539,6 @@ function divrem(dividend, divisor) {
 // We do long division just like you did in school. We estimate the next
 // digit of the quotient. We subtract the divisor times that estimate
 // from the dividend, and then we go again. We are using base 16777216
-// instead of 
+// instead of base 10, and we are being more systematic in predicting
+// the next digit of the quotent.
+

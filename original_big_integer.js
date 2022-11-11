@@ -542,3 +542,5 @@ function divrem(dividend, divisor) {
 // instead of base 10, and we are being more systematic in predicting
 // the next digit of the quotent.
 
+// In order to improve our predictions, we first mint the divisor. We shift it
+// left until its most signif

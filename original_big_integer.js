@@ -543,4 +543,5 @@ function divrem(dividend, divisor) {
 // the next digit of the quotent.
 
 // In order to improve our predictions, we first mint the divisor. We shift it
-// left until its most signif
+// left until its most significant bit is '1'. We also shift the dividend by
+// the same amount. See Algo

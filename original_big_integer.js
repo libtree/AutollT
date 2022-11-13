@@ -544,4 +544,6 @@ function divrem(dividend, divisor) {
 
 // In order to improve our predictions, we first mint the divisor. We shift it
 // left until its most significant bit is '1'. We also shift the dividend by
-// the same amount. See Algo
+// the same amount. See Algorithm 4.3.1D in 'The Art of Computer Programming'.
+
+// To determine the shi

@@ -548,4 +548,8 @@ function divrem(dividend, divisor) {
 
 // To determine the shift count, we find the number of leading zero bits.
 // The 'clz32' function counts in a field of 32 bits, but we are only
-// concerned with a field of 24 bits, so we s
+// concerned with a field of 24 bits, so we subtract 8.
+
+    let shift = Math.clz32(last(divisor)) - 8;
+
+    dividend = shift_up(di

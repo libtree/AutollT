@@ -546,4 +546,5 @@ function divrem(dividend, divisor) {
 // left until its most significant bit is '1'. We also shift the dividend by
 // the same amount. See Algorithm 4.3.1D in 'The Art of Computer Programming'.
 
-// To determine the shi
+// To determine the shift count, we find the number of leading zero bits.
+// The 'clz32' function counts

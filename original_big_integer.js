@@ -554,4 +554,6 @@ function divrem(dividend, divisor) {
 
     dividend = shift_up(dividend, shift);
     divisor = shift_up(divisor, shift);
-    let place = dividend.length - d
+    let place = dividend.length - divisor.length;
+    let dividend_prefix = last(dividend);
+    let divisor_pref

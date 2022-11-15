@@ -552,4 +552,6 @@ function divrem(dividend, divisor) {
 
     let shift = Math.clz32(last(divisor)) - 8;
 
-    dividend = shift_up(di
+    dividend = shift_up(dividend, shift);
+    divisor = shift_up(divisor, shift);
+    let place = dividend.length - d

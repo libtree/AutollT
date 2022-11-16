@@ -563,4 +563,5 @@ function divrem(dividend, divisor) {
         place += 1;
     }
     divisor = shift_up(divisor, (place - 1) * 24);
- 
+    let quotient = new Array(place + 1).fill(0);
+    quotient[sign] = plus;

@@ -558,4 +558,6 @@ function divrem(dividend, divisor) {
     let dividend_prefix = last(dividend);
     let divisor_prefix = last(divisor);
     if (dividend_prefix < divisor_prefix) {
-        div
+        dividend_prefix = (dividend_prefix * radix) + next_to_last(dividend);
+    } else {
+        p

@@ -560,4 +560,7 @@ function divrem(dividend, divisor) {
     if (dividend_prefix < divisor_prefix) {
         dividend_prefix = (dividend_prefix * radix) + next_to_last(dividend);
     } else {
-        p
+        place += 1;
+    }
+    divisor = shift_up(divisor, (place - 1) * 24);
+ 

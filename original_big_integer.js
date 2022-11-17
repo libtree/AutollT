@@ -570,4 +570,6 @@ function divrem(dividend, divisor) {
 // The estimate will not be too small, but it might be too large. If it is
 // too large then subtracting the product of the estimate and the divisor
 // from the dividend produces a negative. When that happens, make the
-// es
+// estimate smaller and try again.
+
+        let estimated = Math.floor(di

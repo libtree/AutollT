@@ -567,4 +567,5 @@ function divrem(dividend, divisor) {
     quotient[sign] = plus;
     while (true) {
 
-// The estimate will not be too small, but it might be
+// The estimate will not be too small, but it might be too large. If it is
+// too large then subtracting the product of the estimate and the

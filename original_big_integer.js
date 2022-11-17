@@ -568,4 +568,6 @@ function divrem(dividend, divisor) {
     while (true) {
 
 // The estimate will not be too small, but it might be too large. If it is
-// too large then subtracting the product of the estimate and the
+// too large then subtracting the product of the estimate and the divisor
+// from the dividend produces a negative. When that happens, make the
+// es

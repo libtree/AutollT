@@ -574,4 +574,6 @@ function divrem(dividend, divisor) {
 
         let estimated = Math.floor(dividend_prefix / divisor_prefix);
         if (estimated > 0) {
-            wh
+            while (true) {
+                let trial = sub(dividend, mul(divisor, [plus, estimated]));
+   

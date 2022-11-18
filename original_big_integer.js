@@ -572,4 +572,6 @@ function divrem(dividend, divisor) {
 // from the dividend produces a negative. When that happens, make the
 // estimate smaller and try again.
 
-        let estimated = Math.floor(di
+        let estimated = Math.floor(dividend_prefix / divisor_prefix);
+        if (estimated > 0) {
+            wh

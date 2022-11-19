@@ -577,4 +577,8 @@ function divrem(dividend, divisor) {
             while (true) {
                 let trial = sub(dividend, mul(divisor, [plus, estimated]));
                 if (!is_negative(trial)) {
-                    dividend = tri
+                    dividend = trial;
+                    break;
+                }
+                estimated -= 1;
+ 

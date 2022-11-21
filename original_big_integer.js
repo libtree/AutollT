@@ -581,4 +581,7 @@ function divrem(dividend, divisor) {
                     break;
                 }
                 estimated -= 1;
- 
+            }
+        }
+
+// The corrected estimate is stored in the 'quot

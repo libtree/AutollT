@@ -587,4 +587,7 @@ function divrem(dividend, divisor) {
 // The corrected estimate is stored in the 'quotient'.
 // If that was the final place, then move on.
 
-        quotient[place] = es
+        quotient[place] = estimated;
+        place -= 1;
+        if (place === 0) {
+            

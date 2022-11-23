@@ -593,4 +593,7 @@ function divrem(dividend, divisor) {
             break;
         }
 
-// Prepare for the next place. Update 'dividend_prefix' with the 
+// Prepare for the next place. Update 'dividend_prefix' with the first two
+// words of the remaining 'dividend', and scale down the 'divisor'.
+
+        if (is_zero(di

@@ -590,4 +590,7 @@ function divrem(dividend, divisor) {
         quotient[place] = estimated;
         place -= 1;
         if (place === 0) {
-            
+            break;
+        }
+
+// Prepare for the next place. Update 'dividend_prefix' with the 

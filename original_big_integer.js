@@ -596,4 +596,7 @@ function divrem(dividend, divisor) {
 // Prepare for the next place. Update 'dividend_prefix' with the first two
 // words of the remaining 'dividend', and scale down the 'divisor'.
 
-        if (is_zero(di
+        if (is_zero(dividend)) {
+            break;
+        }
+        dividend_prefix = last(dividend) * radix

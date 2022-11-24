@@ -599,4 +599,8 @@ function divrem(dividend, divisor) {
         if (is_zero(dividend)) {
             break;
         }
-        dividend_prefix = last(dividend) * radix
+        dividend_prefix = last(dividend) * radix + next_to_last(dividend);
+        divisor = shift_down(divisor, 24);
+    }
+
+// Fix t

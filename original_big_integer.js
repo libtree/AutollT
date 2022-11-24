@@ -603,4 +603,7 @@ function divrem(dividend, divisor) {
         divisor = shift_down(divisor, 24);
     }
 
-// Fix t
+// Fix the remainder.
+
+    quotient = mint(quotient);
+    remainder = shift_down(divi

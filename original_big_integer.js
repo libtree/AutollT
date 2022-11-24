@@ -606,4 +606,7 @@ function divrem(dividend, divisor) {
 // Fix the remainder.
 
     quotient = mint(quotient);
-    remainder = shift_down(divi
+    remainder = shift_down(dividend, shift);
+    return [
+        (
+            quotient_is_nega

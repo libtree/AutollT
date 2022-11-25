@@ -613,4 +613,6 @@ function divrem(dividend, divisor) {
             ? neg(quotient)
             : quotient
         ),
-       
+        (
+            remainder_is_negative
+            ? neg(remainder)

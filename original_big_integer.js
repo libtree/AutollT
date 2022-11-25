@@ -609,4 +609,8 @@ function divrem(dividend, divisor) {
     remainder = shift_down(dividend, shift);
     return [
         (
-            quotient_is_nega
+            quotient_is_negative
+            ? neg(quotient)
+            : quotient
+        ),
+       

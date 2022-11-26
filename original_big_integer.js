@@ -622,3 +622,8 @@ function divrem(dividend, divisor) {
 }
 
 function div(dividend, divisor) {
+    let temp = divrem(dividend, divisor);
+    if (temp) {
+        return temp[0];
+    }
+}

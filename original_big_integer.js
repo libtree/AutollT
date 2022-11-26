@@ -627,3 +627,8 @@ function div(dividend, divisor) {
         return temp[0];
     }
 }
+
+function power(big, exponent) {
+    let exp = int(exponent);
+    if (exp === 0) {
+     

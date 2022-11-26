@@ -616,3 +616,9 @@ function divrem(dividend, divisor) {
         (
             remainder_is_negative
             ? neg(remainder)
+            : remainder
+        )
+    ];
+}
+
+function div(dividend, divisor) {

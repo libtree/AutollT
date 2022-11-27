@@ -636,4 +636,7 @@ function power(big, exponent) {
     if (is_zero(big)) {
         return zero;
     }
-    if
+    if (exp === undefined || exp < 0) {
+        return undefined;
+    }
+    let result = 

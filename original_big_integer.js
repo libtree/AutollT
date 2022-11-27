@@ -631,4 +631,9 @@ function div(dividend, divisor) {
 function power(big, exponent) {
     let exp = int(exponent);
     if (exp === 0) {
-     
+        return wun;
+    }
+    if (is_zero(big)) {
+        return zero;
+    }
+    if

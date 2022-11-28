@@ -642,4 +642,8 @@ function power(big, exponent) {
     let result = wun;
     while (true) {
         if ((exp & 1) !== 0) {
-            result = mul(result, 
+            result = mul(result, big);
+        }
+        exp = Math.floor(exp / 2);
+        if (exp < 1) {
+    

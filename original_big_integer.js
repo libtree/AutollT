@@ -639,4 +639,7 @@ function power(big, exponent) {
     if (exp === undefined || exp < 0) {
         return undefined;
     }
-    let result = 
+    let result = wun;
+    while (true) {
+        if ((exp & 1) !== 0) {
+            result = mul(result, 

@@ -650,4 +650,10 @@ function power(big, exponent) {
         }
         big = mul(big, big);
     }
-    return m
+    return mint(result);
+}
+
+function gcd(a, b) {
+    a = abs(a);
+    b = abs(b);
+    while (

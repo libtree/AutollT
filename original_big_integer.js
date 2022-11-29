@@ -656,4 +656,7 @@ function power(big, exponent) {
 function gcd(a, b) {
     a = abs(a);
     b = abs(b);
-    while (
+    while (!is_zero(b)) {
+        let [ignore, remainder] = divrem(a, b);
+        a = b;
+        

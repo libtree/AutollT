@@ -646,4 +646,8 @@ function power(big, exponent) {
         }
         exp = Math.floor(exp / 2);
         if (exp < 1) {
-    
+            break;
+        }
+        big = mul(big, big);
+    }
+    return m

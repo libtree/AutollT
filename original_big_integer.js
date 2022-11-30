@@ -664,4 +664,6 @@ function gcd(a, b) {
     return a;
 }
 
-const digitset = "012345678
+const digitset = "0123456789ABCDEFGHJKMNPQRSTVWXYZ*~$=U";
+const charset = (function (object) {
+    digitset.split("").for

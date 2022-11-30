@@ -659,4 +659,9 @@ function gcd(a, b) {
     while (!is_zero(b)) {
         let [ignore, remainder] = divrem(a, b);
         a = b;
-        
+        b = remainder;
+    }
+    return a;
+}
+
+const digitset = "012345678

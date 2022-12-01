@@ -666,4 +666,6 @@ function gcd(a, b) {
 
 const digitset = "0123456789ABCDEFGHJKMNPQRSTVWXYZ*~$=U";
 const charset = (function (object) {
-    digitset.split("").for
+    digitset.split("").forEach(function (element, element_nr) {
+        object[element] = element_nr;
+   

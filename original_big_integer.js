@@ -668,4 +668,8 @@ const digitset = "0123456789ABCDEFGHJKMNPQRSTVWXYZ*~$=U";
 const charset = (function (object) {
     digitset.split("").forEach(function (element, element_nr) {
         object[element] = element_nr;
-   
+    });
+    return Object.freeze(object);
+}(Object.create(null)));
+
+function make(value,

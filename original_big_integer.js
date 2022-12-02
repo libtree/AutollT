@@ -672,4 +672,6 @@ const charset = (function (object) {
     return Object.freeze(object);
 }(Object.create(null)));
 
-function make(value,
+function make(value, radix_2_37) {
+
+// The 'make' function returns a big integer. The value parameter is

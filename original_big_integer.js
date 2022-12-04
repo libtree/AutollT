@@ -683,4 +683,7 @@ function make(value, radix_2_37) {
         if (radix_2_37 === undefined) {
             radix_2_37 = 10;
             radish = ten;
-        } 
+        } else {
+            if (
+                !Number.isInteger(radix_2_37)
+      

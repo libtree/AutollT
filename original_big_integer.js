@@ -686,4 +686,6 @@ function make(value, radix_2_37) {
         } else {
             if (
                 !Number.isInteger(radix_2_37)
-      
+                || radix_2_37 < 2
+                || radix_2_37 > 37
+            

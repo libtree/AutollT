@@ -688,4 +688,7 @@ function make(value, radix_2_37) {
                 !Number.isInteger(radix_2_37)
                 || radix_2_37 < 2
                 || radix_2_37 > 37
-            
+            ) {
+                return undefined;
+            }
+            radish = make

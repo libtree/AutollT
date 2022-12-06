@@ -697,4 +697,5 @@ function make(value, radix_2_37) {
         let good = false;
         let negative = false;
         if (value.toUpperCase().split("").every(
-     
+            function (element, element_nr) {
+                let digit = charse

@@ -695,4 +695,6 @@ function make(value, radix_2_37) {
         }
         result = zero;
         let good = false;
-        le
+        let negative = false;
+        if (value.toUpperCase().split("").every(
+     

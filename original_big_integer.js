@@ -698,4 +698,5 @@ function make(value, radix_2_37) {
         let negative = false;
         if (value.toUpperCase().split("").every(
             function (element, element_nr) {
-                let digit = charse
+                let digit = charset[element];
+                if (digit !== undefined && digit < radix_2_37) 

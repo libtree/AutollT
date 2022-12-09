@@ -699,4 +699,5 @@ function make(value, radix_2_37) {
         if (value.toUpperCase().split("").every(
             function (element, element_nr) {
                 let digit = charset[element];
-                if (digit !== undefined && digit < radix_2_37) 
+                if (digit !== undefined && digit < radix_2_37) {
+                    result = add(mul(result, radish), [plus

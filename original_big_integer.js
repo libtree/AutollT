@@ -703,4 +703,6 @@ function make(value, radix_2_37) {
                     result = add(mul(result, radish), [plus, digit]);
                     good = true;
                     return true;
-   
+                }
+                if (element_nr === sign) {
+                    i

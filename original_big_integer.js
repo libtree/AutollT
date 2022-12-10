@@ -700,4 +700,7 @@ function make(value, radix_2_37) {
             function (element, element_nr) {
                 let digit = charset[element];
                 if (digit !== undefined && digit < radix_2_37) {
-                    result = add(mul(result, radish), [plus
+                    result = add(mul(result, radish), [plus, digit]);
+                    good = true;
+                    return true;
+   

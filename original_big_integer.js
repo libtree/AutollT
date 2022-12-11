@@ -705,4 +705,7 @@ function make(value, radix_2_37) {
                     return true;
                 }
                 if (element_nr === sign) {
-                    i
+                    if (element === plus) {
+                        return true;
+                    }
+                  

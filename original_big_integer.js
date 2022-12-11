@@ -708,4 +708,6 @@ function make(value, radix_2_37) {
                     if (element === plus) {
                         return true;
                     }
-                  
+                    if (element === minus) {
+                        negative = true;
+         

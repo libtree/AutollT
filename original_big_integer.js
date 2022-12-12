@@ -720,4 +720,8 @@ function make(value, radix_2_37) {
                 result = neg(result);
             }
             return mint(result);
-   
+        }
+        return undefined;
+    }
+    if (Number.isInteger(value)) {
+ 

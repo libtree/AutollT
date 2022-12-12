@@ -710,4 +710,7 @@ function make(value, radix_2_37) {
                     }
                     if (element === minus) {
                         negative = true;
-         
+                        return true;
+                    }
+                }
+       

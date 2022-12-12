@@ -713,4 +713,7 @@ function make(value, radix_2_37) {
                         return true;
                     }
                 }
-       
+                return digit === "_";
+            }
+        ) && good) {
+            if (negative) {

@@ -717,3 +717,7 @@ function make(value, radix_2_37) {
             }
         ) && good) {
             if (negative) {
+                result = neg(result);
+            }
+            return mint(result);
+   

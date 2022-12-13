@@ -724,4 +724,7 @@ function make(value, radix_2_37) {
         return undefined;
     }
     if (Number.isInteger(value)) {
- 
+        let whole = Math.abs(value);
+        result = [(
+            value < 0
+           

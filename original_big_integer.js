@@ -731,4 +731,5 @@ function make(value, radix_2_37) {
             : plus
         )];
         while (whole >= radix) {
-            let quo
+            let quotient = Math.floor(whole / radix);
+            result.push(whole - (quotien

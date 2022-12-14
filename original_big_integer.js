@@ -735,4 +735,9 @@ function make(value, radix_2_37) {
             result.push(whole - (quotient * radix));
             whole = quotient;
         }
-        if (whole > 0)
+        if (whole > 0) {
+            result.push(whole);
+        }
+        return mint(result);
+    }
+    if (Ar

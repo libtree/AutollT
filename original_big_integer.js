@@ -732,4 +732,7 @@ function make(value, radix_2_37) {
         )];
         while (whole >= radix) {
             let quotient = Math.floor(whole / radix);
-            result.push(whole - (quotien
+            result.push(whole - (quotient * radix));
+            whole = quotient;
+        }
+        if (whole > 0)

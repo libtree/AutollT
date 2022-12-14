@@ -740,4 +740,9 @@ function make(value, radix_2_37) {
         }
         return mint(result);
     }
-    if (Ar
+    if (Array.isArray(value)) {
+        return mint(value);
+    }
+}
+
+function string(a, radix_2_th

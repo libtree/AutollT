@@ -745,4 +745,8 @@ function make(value, radix_2_37) {
     }
 }
 
-function string(a, radix_2_th
+function string(a, radix_2_thru_37 = 10) {
+    if (is_zero(a)) {
+        return "0";
+    }
+    radix_2_thru_37 = 

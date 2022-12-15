@@ -749,4 +749,7 @@ function string(a, radix_2_thru_37 = 10) {
     if (is_zero(a)) {
         return "0";
     }
-    radix_2_thru_37 = 
+    radix_2_thru_37 = int(radix_2_thru_37);
+    if (
+        !Number.isSafeInteger(radix_2_thru_37)
+        || radix_2_thru

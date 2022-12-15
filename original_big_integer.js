@@ -752,4 +752,9 @@ function string(a, radix_2_thru_37 = 10) {
     radix_2_thru_37 = int(radix_2_thru_37);
     if (
         !Number.isSafeInteger(radix_2_thru_37)
-        || radix_2_thru
+        || radix_2_thru_37 < 2
+        || radix_2_thru_37 > 37
+    ) {
+        return undefined;
+    }
+    c

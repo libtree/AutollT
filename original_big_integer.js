@@ -766,4 +766,5 @@ function string(a, radix_2_thru_37 = 10) {
     a = abs(a);
     let digits = [];
     while (!is_zero(a)) {
-        let 
+        let [quotient, remainder] = divrem(a, radish);
+        digits.push(digitset[number(remain

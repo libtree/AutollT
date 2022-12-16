@@ -761,4 +761,9 @@ function string(a, radix_2_thru_37 = 10) {
     const the_sign = (
         a[sign] === minus
         ? "-"
-     
+        : ""
+    );
+    a = abs(a);
+    let digits = [];
+    while (!is_zero(a)) {
+        let 

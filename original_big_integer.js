@@ -771,4 +771,9 @@ function string(a, radix_2_thru_37 = 10) {
         a = quotient;
     }
     digits.push(the_sign);
-    return digits.re
+    return digits.reverse().join("");
+}
+
+function population_32(int32) {
+
+// Produce the total count of '1'

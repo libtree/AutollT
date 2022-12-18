@@ -783,4 +783,5 @@ function population_32(int32) {
 // which converts the two bits into a count.
 //.                     HL - H = count
 //.                     00 - 0 = 00
-//.
+//.                     01 - 0 = 01
+//.                     10 - 1 = 01

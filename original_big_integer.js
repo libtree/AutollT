@@ -778,4 +778,5 @@ function population_32(int32) {
 
 // Produce the total count of '1' bits in a 32 bit integer.
 
-// Count 16 pairs of bits, producing 16 tw
+// Count 16 pairs of bits, producing 16 two bit counts (0, 1, or 2).
+// For each pair, we subtract the higher bit from the 

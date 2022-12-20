@@ -795,4 +795,5 @@ function population_32(int32) {
     int32 = (int32 & 0x33333333) + ((int32 >>> 2) & 0x33333333);
 
 // Combine 4 pairs of four bit counts, producing 4 eight bit counts, ranging
-// from 0 thr
+// from 0 thru 8. Overflow into neighbor counts is no longer possible, so we
+// only n

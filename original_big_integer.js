@@ -800,4 +800,7 @@ function population_32(int32) {
 
     int32 = (int32 + (int32 >>> 4)) & 0x0F0F0F0F;
 
-// Combine 2 pairs of eight bit counts, producing 2 s
+// Combine 2 pairs of eight bit counts, producing 2 sixteen bit counts,
+// ranging from 0 thru 16.
+
+    int32 = (int32 + (int32 >>> 8)

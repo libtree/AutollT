@@ -806,4 +806,6 @@ function population_32(int32) {
     int32 = (int32 + (int32 >>> 8)) & 0x001F001F;
 
 // Finally, combine the 2 sixteen bit counts,
-// producing a num
+// producing a number ranging number from 0 thru 32.
+
+    return (int32 + (int32 >>> 16)) & 0x000000

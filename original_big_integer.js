@@ -808,4 +808,11 @@ function population_32(int32) {
 // Finally, combine the 2 sixteen bit counts,
 // producing a number ranging number from 0 thru 32.
 
-    return (int32 + (int32 >>> 16)) & 0x000000
+    return (int32 + (int32 >>> 16)) & 0x0000003F;
+}
+
+function population(big) {
+
+// Count the total number of '1' bits.
+
+    return

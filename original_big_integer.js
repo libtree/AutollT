@@ -815,4 +815,6 @@ function population(big) {
 
 // Count the total number of '1' bits.
 
-    return
+    return big.reduce(
+        function (reduction, element, element_nr) {
+ 

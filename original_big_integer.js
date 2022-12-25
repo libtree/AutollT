@@ -817,4 +817,6 @@ function population(big) {
 
     return big.reduce(
         function (reduction, element, element_nr) {
- 
+            return reduction + (
+                element_nr === sign
+      

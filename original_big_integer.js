@@ -823,4 +823,10 @@ function population(big) {
                 : population_32(element)
             );
         },
-   
+        0
+    );
+}
+
+function significant_bits(big) {
+
+// Count the total num

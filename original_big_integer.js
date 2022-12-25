@@ -819,4 +819,8 @@ function population(big) {
         function (reduction, element, element_nr) {
             return reduction + (
                 element_nr === sign
-      
+                ? 0
+                : population_32(element)
+            );
+        },
+   

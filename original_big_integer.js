@@ -829,4 +829,8 @@ function population(big) {
 
 function significant_bits(big) {
 
-// Count the total num
+// Count the total number of bits excluding leading zeros.
+
+    return (
+        big.length > 1
+        ? make(

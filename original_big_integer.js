@@ -833,4 +833,5 @@ function significant_bits(big) {
 
     return (
         big.length > 1
-        ? make(
+        ? make((big.length - 2) * log2_radix + (32 - Math.clz32(last(big))))
+        : zero

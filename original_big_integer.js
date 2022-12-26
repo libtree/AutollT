@@ -835,3 +835,10 @@ function significant_bits(big) {
         big.length > 1
         ? make((big.length - 2) * log2_radix + (32 - Math.clz32(last(big))))
         : zero
+    );
+}
+
+export default Object.freeze({
+    abs,
+    abs_lt,
+    ad

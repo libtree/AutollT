@@ -841,4 +841,12 @@ function significant_bits(big) {
 export default Object.freeze({
     abs,
     abs_lt,
-    ad
+    add,
+    and,
+    div,
+    divrem,
+    eq,
+    gcd,
+    is_big_integer,
+    is_negative,
+    is_

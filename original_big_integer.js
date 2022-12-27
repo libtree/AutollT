@@ -864,4 +864,10 @@ export default Object.freeze({
     random,
     shift_down,
     shift_up,
-   
+    significant_bits,
+    signum,
+    string,
+    sub,
+    ten,
+    two,
+    w

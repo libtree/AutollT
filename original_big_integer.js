@@ -858,4 +858,10 @@ export default Object.freeze({
     neg,
     not,
     number,
- 
+    or,
+    population,
+    power,
+    random,
+    shift_down,
+    shift_up,
+   

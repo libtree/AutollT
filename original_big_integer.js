@@ -849,4 +849,13 @@ export default Object.freeze({
     gcd,
     is_big_integer,
     is_negative,
-    is_
+    is_positive,
+    is_zero,
+    lt,
+    make,
+    mask,
+    mul,
+    neg,
+    not,
+    number,
+ 

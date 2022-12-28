@@ -870,4 +870,8 @@ export default Object.freeze({
     sub,
     ten,
     two,
-    w
+    wun,
+    xor,
+    zero
+});
+

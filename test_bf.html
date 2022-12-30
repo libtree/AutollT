@@ -17,4 +17,6 @@ function bigdecimal(max_nr_bits) {
         let nr_bits = Math.floor(Math.random() * max_nr_bits);
         let coefficient = big_integer.random(Math.floor(Math.random() * nr_bits));
         if (Math.random() < 0.5) {
-            coefficient = big_integer.
+            coefficient = big_integer.neg(coefficient);
+        }
+        let exponent = Math.floor(Math.random() * 256

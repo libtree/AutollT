@@ -32,4 +32,6 @@ jsc.claim("add & sub", function (verdict, a, b) {
 }, [bigdecimal(100), bigdecimal(100)]);
 
 jsc.claim("mul", function (verdict, a, b) {
-    let c = big_float.
+    let c = big_float.mul(a, b);
+    let cc = big_float.mul(b, a);
+    return verdict(big_float.e

@@ -26,4 +26,6 @@ function bigdecimal(max_nr_bits) {
 
 jsc.claim("add & sub", function (verdict, a, b) {
     let c = big_float.add(a, b);
-    let aa = bi
+    let aa = big_float.sub(c, b);
+    let cc = big_float.add(aa, b);
+    return ve

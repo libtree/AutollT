@@ -28,4 +28,7 @@ jsc.claim("add & sub", function (verdict, a, b) {
     let c = big_float.add(a, b);
     let aa = big_float.sub(c, b);
     let cc = big_float.add(aa, b);
-    return ve
+    return verdict(big_float.eq(c, cc));
+}, [bigdecimal(100), bigdecimal(100)]);
+
+js

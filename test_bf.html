@@ -39,4 +39,7 @@ jsc.claim("mul", function (verdict, a, b) {
 
 jsc.claim("mul & div", function (verdict, a, b) {
     let c = big_float.mul(a, b);
-    let aa
+    let aa = big_float.div(c, b);
+    if (!big_float.eq(a, aa)) {
+        debugger;
+       

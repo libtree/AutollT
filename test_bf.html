@@ -46,4 +46,8 @@ jsc.claim("mul & div", function (verdict, a, b) {
         let aaa = big_float.div(c, b);
     }
     return verdict(big_float.eq(a, aa));
-}, [bigdecimal(99), bigdecimal(99)], function classifi
+}, [bigdecimal(99), bigdecimal(99)], function classifier(a, b) {
+    if (big_float.is_zero(b)) {
+        return false;
+    }
+    return Strin

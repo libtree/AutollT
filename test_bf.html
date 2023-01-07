@@ -50,4 +50,10 @@ jsc.claim("mul & div", function (verdict, a, b) {
     if (big_float.is_zero(b)) {
         return false;
     }
-    return Strin
+    return String(a.exponent > 0);
+});
+
+jsc.check({
+    detail: 3,
+    nr_trials: 100,
+    on_re

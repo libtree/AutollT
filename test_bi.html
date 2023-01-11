@@ -18,3 +18,83 @@
 <pre id=output>Watch this space.</pre>
 
 <script type=module>
+
+import big_integer from "./big_integer.js";
+import JSCheck from "./jscheck.js";
+const jsc = JSCheck();
+
+function bigint(max_nr_bits) {
+    let nr_bits = Math.floor(Math.random() * max_nr_bits);
+    return function () {
+        let result = big_integer.random(nr_bits);
+        return (
+            Math.random() < 0.5
+            ? big_integer.neg(result)
+            : result
+        );
+    }
+}
+
+jsc.claim(
+    "shift & significant_bits",
+    function (verdict, n) {
+        return verdict(big_integer.eq(
+            big_integer.significant_bits(big_integer.shift_up(big_integer.wun, big_integer.sub(n, big_integer.wun))),
+            n
+        ));
+    },
+    [bigint(10)],
+    function classifier(a) {
+        if (big_integer.is_negative(a)) {
+            return undefined;
+        }
+        return "";
+    }
+);
+
+jsc.claim(
+    "mask & significant_bits",
+    function (verdict, n) {
+        let m = big_integer.mask(n);
+        let s = big_integer.significant_bits(m);
+        if (big_integer.eq(n, s)) {
+            return verdict(true);
+        }
+        console.log(big_integer.string(n) + " " + big_integer.string(s));
+        debugger;
+        return verdict(false);
+    },
+    [bigint(10)],
+    function classifier(a) {
+        if (big_integer.is_negative(a)) {
+            return undefined;
+        }
+        return "";
+    }
+);
+
+jsc.claim("mask & shift_up", function (verdict, n) {
+    return verdict(big_integer.eq(
+        big_integer.sub(big_integer.shift_up(big_integer.wun, n), big_integer.wun),
+        big_integer.mask(n)
+    ));
+}, [jsc.integer(0, 96)]);
+
+jsc.claim("demorgan", function (verdict, n) {
+
+//     !(a && b) === !a || !b
+
+    let a = big_integer.random(n);
+    let b = big_integer.random(n);
+    let mask = big_integer.mask(n);
+    let left = big_integer.xor(mask, big_integer.and(a, b));
+    let right = big_integer.or(big_integer.xor(mask, a), big_integer.xor(mask, b));
+    return verdict(big_integer.eq(left, right));
+}, [jsc.integer()]);
+
+jsc.claim("add & sub", function (verdict, a, b) {
+    let c = big_integer.add(a, b);
+    let aa = big_integer.sub(c, b);
+    let cc = big_integer.add(aa, b);
+    return verdict(big_integer.eq(c, cc));
+}, [bigint(100), bigint(100)]);

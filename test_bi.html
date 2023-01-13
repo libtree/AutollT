@@ -98,3 +98,77 @@ jsc.claim("add & sub", function (verdict, a, b) {
     let cc = big_integer.add(aa, b);
     return verdict(big_integer.eq(c, cc));
 }, [bigint(100), bigint(100)]);
+
+jsc.claim("add & sub & neg", function (verdict, a, b) {
+    let c = big_integer.add(a, b);
+    let na = big_integer.sub(b, c);
+    let aa = big_integer.neg(na);
+    return verdict(big_integer.eq(a, aa));
+}, [bigint(24), bigint(24)]);
+
+jsc.claim("mul", function (verdict, a, b) {
+    let c = big_integer.mul(a, b);
+    let cc = big_integer.mul(b, a);
+    return verdict(big_integer.eq(c, cc));
+}, [bigint(100), bigint(100)]);
+
+jsc.claim("exp & mask", function (verdict, n) {
+    return verdict(big_integer.eq(
+        big_integer.add(big_integer.mask(n), big_integer.wun),
+        big_integer.power(big_integer.two, n)
+    ));
+}, [jsc.integer(100)]);
+
+jsc.claim("shift_up & shift_down", function (verdict, a, b) {
+    a = big_integer.abs(a);
+    b = big_integer.abs(b);
+    let c = big_integer.shift_up(a, b);
+    let aa = big_integer.shift_down(c, b);
+    return verdict(big_integer.eq(a, aa));
+}, [bigint(100), jsc.integer(100)]);
+
+jsc.claim("mul & div", function (verdict, a, b) {
+    let product = big_integer.mul(a, b);
+    let aa = big_integer.div(product, b);
+    return verdict(big_integer.eq(a, aa));
+}, [bigint(99), bigint(99)], function classifier(a, b) {
+    if (big_integer.is_zero(b)) {
+        return undefined;
+    }
+    return "";
+});
+
+jsc.claim("div & mul & remainder", function (verdict, a, b) {
+    let [quotient, remainder] = big_integer.divrem(a, b);
+    let aa = big_integer.add(big_integer.mul(quotient, b), remainder);
+    return verdict(big_integer.eq(a, aa));
+}, [bigint(99), bigint(99)], function classifier(a, b) {
+    if (big_integer.is_zero(b)) {
+        return undefined;
+    }
+    return a[0] + b[0];
+});
+
+jsc.claim("and & divrem", function (verdict, a, b) {
+    let c = big_integer.shift_up(big_integer.wun, b);
+    let cc = big_integer.sub(c, big_integer.wun);
+    let [d, r] = big_integer.divrem(a, c);
+    let m = big_integer.and(a, cc);
+    return verdict(big_integer.eq(r, m));
+}, [bigint(100), jsc.integer(100)], function classifier(a, b) {
+    if (!big_integer.is_negative(a)) {
+        return (
+            big_integer.is_zero(a)
+            ? "zero"
+            : "positive"
+        );
+    }
+});
+
+jsc.claim("shift_up & mul", function (verdict, a, b) {
+    a = big_integer.abs(a);
+    let c = big_integer.power(big_integer.two, b);
+    let p = big_integer.mul(a, c);
+    let l = big_integer.shift_up(a, b);
+    return verdict(big_integer.eq(p, l));
+}, [bigint(100), jsc.integer(100)], function classifier(a, b) {

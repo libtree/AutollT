@@ -172,3 +172,82 @@ jsc.claim("shift_up & mul", function (verdict, a, b) {
     let l = big_integer.shift_up(a, b);
     return verdict(big_integer.eq(p, l));
 }, [bigint(100), jsc.integer(100)], function classifier(a, b) {
+    if (!big_integer.is_negative(a)) {
+        return (
+            big_integer.is_zero(a)
+            ? "zero"
+            : "positive"
+        );
+    }
+});
+
+function gcd(a, b) {
+
+// Stein's Binary Greatest Common Divisor Algorithm
+
+// First make sure everything is greater than zero.
+
+    a = big_integer.abs(a);
+    b = big_integer.abs(b);
+    if (a === undefined || b === undefined) {
+        return undefined;
+    }
+    if (big_integer.is_zero(a)) {
+        return b;
+    }
+    if (big_integer.is_zero(b)) {
+        return a;
+    }
+
+// It is easy to find common factors of two by examining the least
+// significant bits. We examine both for evenness.
+// We count the number of zero bits that are removed. We know that
+// neither a nor b is zero, so each contains at least 1 wun bit.
+
+    let twos = 0;
+    let zero = big_integer.zero;
+    let wun = big_integer.wun;
+    let ord = big_integer.or(a, b);
+    while (big_integer.eq(
+        big_integer.and(ord, wun),
+        zero
+    )) {
+        ord = big_integer.shift_down(ord, wun);
+        twos += 1;
+    }
+    a = big_integer.shift_down(a, twos);
+    b = big_integer.shift_down(b, twos);
+
+// At this point, we know that a and b are not both even. If b is even
+// then a must be odd. Swap them, so that the new b is odd.
+
+    if (big_integer.and(b, wun)) {
+        [a, b] = [b, a];
+    }
+
+// Loop until the gcd is found.
+
+    while (true) {
+
+// Remove any remaining trailing zeros from a, making it odd. We can do this
+// because we have already removed all of the common factors of two, so any
+// remaining factors of two are not in the gcd.
+
+    while (big_integer.eq(
+            big_integer.and(a, wun),
+            zero
+        )) {
+            a = big_integer.shift_down(a, wun);
+        }
+
+// The gcd is found when we reach equality.
+
+        if (big_integer.eq(a, b)) {
+            break;
+        }
+
+// Make sure that a is greater than b before replacing a with their difference.
+
+        if (big_integer.abs_lt(a, b)) {
+            [a, b] = [b, a];
+        }

@@ -251,3 +251,72 @@ function gcd(a, b) {
         if (big_integer.abs_lt(a, b)) {
             [a, b] = [b, a];
         }
+        a = big_integer.sub(a, b);
+    }
+
+// Incorporate the twos that were extracted earlier.
+
+    return big_integer.shift_up(a, twos);
+}
+
+jsc.claim("gcd", function (verdict, a, b) {
+
+// Compare big_integer.gcd to Stein.
+
+    let euc = big_integer.gcd(a, b);
+    let stn = gcd(a, b);
+    return verdict(big_integer.eq(stn, euc));
+}, [bigint(99), bigint(99)]);
+
+jsc.claim("gcd again", function (verdict, a, b, c) {
+    a = big_integer.mul(a, c);
+    b = big_integer.mul(b, c);
+    let bin = big_integer.gcd(a, b);
+    return verdict(!big_integer.lt(bin, c));
+}, [bigint(99), bigint(99), bigint(99)]);
+
+jsc.claim("gcd one", function (verdict, a) {
+    let b = big_integer.add(a, big_integer.wun);
+    let bin = big_integer.gcd(a, b);
+    return verdict(big_integer.eq(bin, big_integer.wun));
+}, [bigint(100)]);
+
+jsc.claim("mask & population", function (verdict, a, b) {
+    a = big_integer.abs(a);
+    b = big_integer.abs(b);
+    let c = big_integer.shift_up(big_integer.mask(a), b);
+    let aa = big_integer.population(c);
+    return verdict(a === aa);
+}, [bigint(99), bigint(99)]);
+
+jsc.claim("number & make", function (verdict, n) {
+    let a = big_integer.random(n);
+    let x = big_integer.number(a);
+    let aa = big_integer.make(x);
+    if (!(big_integer.eq(a, aa))) {
+        alert("x: " + x + ", a: " + a + ", aa: " + aa);
+    }
+    return verdict(big_integer.eq(a, aa));
+}, jsc.integer(0, 53));
+
+jsc.claim("string & make", function (verdict, n) {
+    let a = big_integer.random(n);
+    let x = big_integer.string(a);
+    let aa = big_integer.make(x);
+    if (!big_integer.eq(a, aa)) {
+        debugger;
+    }
+    return verdict(big_integer.eq(a, aa));
+}, jsc.integer(99));
+
+jsc.check({
+    detail: 3,
+    nr_trials: 100,
+    on_report: function (report) {
+        let output = document.getElementById("output");
+        output.innerHTML = report;
+    }
+});
+
+</script>
+</body></html>

@@ -19,4 +19,5 @@ function bigrational(max_nr_bits) {
         if (Math.random() < 0.5) {
             numerator = big_integer.neg(numerator);
         }
-        let denominator = big_integer.random(Math.floor(
+        let denominator = big_integer.random(Math.floor(Math.random() * nr_bits));
+        let result = big_rational.make(numerator, denominato

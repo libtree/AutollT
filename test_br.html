@@ -20,4 +20,6 @@ function bigrational(max_nr_bits) {
             numerator = big_integer.neg(numerator);
         }
         let denominator = big_integer.random(Math.floor(Math.random() * nr_bits));
-        let result = big_rational.make(numerator, denominato
+        let result = big_rational.make(numerator, denominator);
+        if (result === undefined) {
+            return big_rational.ze

@@ -22,4 +22,11 @@ function bigrational(max_nr_bits) {
         let denominator = big_integer.random(Math.floor(Math.random() * nr_bits));
         let result = big_rational.make(numerator, denominator);
         if (result === undefined) {
-            return big_rational.ze
+            return big_rational.zero;
+        }
+        return result;
+    };
+}
+
+function bigint(max_nr_bits) {
+    return 

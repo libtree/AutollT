@@ -31,4 +31,6 @@ function bigrational(max_nr_bits) {
 function bigint(max_nr_bits) {
     return function () {
         let nr_bits = Math.floor(Math.random() * max_nr_bits);
-  
+        let result = big_integer.random(nr_bits);
+        return (Math.random() < 0.5)
+        

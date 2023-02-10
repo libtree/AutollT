@@ -45,4 +45,8 @@ jsc.claim("add & sub", function (verdict, a, b) {
     let aa = big_rational.sub(c, b);
     let cc = big_rational.add(aa, b);
     return verdict(big_rational.eq(c, cc));
-}, [bigrational(1000), bigra
+}, [bigrational(1000), bigrational(1000)]);
+
+jsc.claim("mul & div", function (verdict, a, b) {
+    let c = big_rational.mul(a, b);
+ 

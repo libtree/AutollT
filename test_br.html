@@ -53,4 +53,10 @@ jsc.claim("mul & div", function (verdict, a, b) {
     return verdict(big_rational.eq(a, aa));
 }, [bigrational(999), bigrational(999)], function classifier(a, b) {
     if (b === big_rational.zero) {
-  
+        return false;
+    }
+    return "valid";
+});
+
+jsc.claim("eq", function (verdict, a, b, c) {
+    let

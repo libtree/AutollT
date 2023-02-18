@@ -63,4 +63,7 @@ jsc.claim("eq", function (verdict, a, b, c) {
     let second = big_rational.make(big_integer.mul(a, c), big_integer.mul(b, c));
     return verdict(big_rational.eq(first, second));
 }, [bigint(99), bigint(99), bigint(99)], function classifier(a, b, c) {
-    if 
+    if (b === big_integer.zero || c === big_integer.zero) {
+        return false;
+    }
+   

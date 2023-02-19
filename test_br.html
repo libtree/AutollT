@@ -66,4 +66,8 @@ jsc.claim("eq", function (verdict, a, b, c) {
     if (b === big_integer.zero || c === big_integer.zero) {
         return false;
     }
-   
+    return "valid";
+});
+
+jsc.claim("normalize", function (verdict, a, b, c) {
+    

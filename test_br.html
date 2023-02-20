@@ -72,4 +72,5 @@ jsc.claim("eq", function (verdict, a, b, c) {
 jsc.claim("normalize", function (verdict, a, b, c) {
     let first = big_rational.make(a, b);
     let second = big_rational.normalize(big_rational.make(big_integer.mul(a, c), big_integer.mul(b, c)));
-    return verdict(big_
+    return verdict(big_rational.eq(first, second));
+}, [bigint(99), bigint(99), bigint(99)], function classifier(a, b,

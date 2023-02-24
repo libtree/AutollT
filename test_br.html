@@ -82,4 +82,6 @@ jsc.claim("normalize", function (verdict, a, b, c) {
 
 jsc.check({
     detail: 3,
-    nr_trials
+    nr_trials: 100,
+    on_report: function (report) {
+        let output = document.getElementById("output");
